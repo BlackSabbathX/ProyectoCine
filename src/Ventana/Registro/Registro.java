@@ -1,6 +1,7 @@
 package Ventana.Registro;
 
 import BaseDeDatos.Usuario;
+import Estructuras.TipoUsuario;
 import Ventana.Dialog;
 import Ventana.Login.Login;
 import com.jfoenix.controls.JFXComboBox;
@@ -24,16 +25,16 @@ public class Registro implements Initializable {
     public static Stage registro;
     public static Registro controlador;
     @FXML
+    public JFXTextField nombre;
+    @FXML
     private JFXTextField usuario;
     @FXML
     private JFXPasswordField contrasena;
     @FXML
     private JFXPasswordField contrasena1;
     @FXML
-    private JFXComboBox tipo;
-    @FXML
     private StackPane content;
-    private boolean pass, user, type;
+    private boolean pass, user, name;
 
     public static void toogleVisible() {
         if (registro.isShowing()) {
@@ -47,26 +48,7 @@ public class Registro implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         pass = false;
         user = false;
-        type = false;
-        tipo.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
-            @Override
-            public ListCell<String> call(ListView<String> p) {
-                return new ListCell<String>() {
-                    @Override
-                    protected void updateItem(String item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (item != null) {
-                            setText(item);
-                            setStyle("" +
-                                    "-fx-font-family: \"Segoe UI\";" +
-                                    "-fx-text-fill: #111111");
-                        }
-                    }
-                };
-            }
-        });
-        tipo.getItems().add("Evaluador");
-        tipo.getItems().add("Usuario");
+        name = false;
         verificar();
     }
 
@@ -75,7 +57,7 @@ public class Registro implements Initializable {
             if (!newValue) {
                 String u = usuario.getText().trim();
                 if (Usuario.usuarioExists(u)) {
-                    Dialog.showSimpleDialog(content, "Error", "El nombre de usuario escogido ya existe.", "Aceptar");
+                    Dialog.showSimpleDialog(content, "Error", "El documento ingresado ya ha sido registrado.", "Aceptar");
                     usuario.setUnFocusColor(Color.RED);
                     user = false;
                     return;
@@ -146,11 +128,19 @@ public class Registro implements Initializable {
                 pass = true;
             }
         });
-    }
-
-    @FXML
-    public void cambioTipo() {
-        type = true;
+        nombre.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                String n = nombre.getText().trim();
+                if (n.equals("")) {
+                    name = false;
+                    nombre.setUnFocusColor(Color.RED);
+                    return;
+                } else {
+                    nombre.setUnFocusColor(Color.WHITE);
+                }
+                name = true;
+            }
+        });
     }
 
     @FXML
@@ -168,10 +158,9 @@ public class Registro implements Initializable {
     public void registrarClick() {
         String c = contrasena.getText().trim();
         String c1 = contrasena1.getText().trim();
-        if (pass && user && type) {
+        if (pass && user && name) {
             String u = usuario.getText().trim();
-            String t = tipo.getValue().toString();
-            Usuario.add(u, c, t);
+            Usuario.add(u, c, TipoUsuario.Usuario);
             Usuario.save(content);
             cleanForm();
             Dialog.showSimpleDialog(content, "Correcto", "Usuario creado exitosamente.", "Aceptar");

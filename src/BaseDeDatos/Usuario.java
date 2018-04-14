@@ -3,6 +3,7 @@ package BaseDeDatos;
 //import Estructura.Lista;
 //import Estructura.Separator;
 //import Estructura.TipoUsuario;
+
 import Estructuras.Lista;
 import Estructuras.Separator;
 import Estructuras.TipoUsuario;
@@ -16,15 +17,6 @@ public class Usuario implements Comparable<Usuario> {
     private static final String DBPATH = "Usuario.txt";
     private static final File DBFILE = new File(DBPATH);
     private static Lista<Usuario> usuarios;
-    private final String usuario;
-    private final TipoUsuario tipo;
-    private String contrasena;
-
-    private Usuario(String _usuario, String _contrasena, String _tipo) {
-        usuario = _usuario;
-        contrasena = _contrasena;
-        tipo = TipoUsuario.fromString(_tipo);
-    }
 
     public static void init(StackPane content) {
         usuarios = new Lista<>();
@@ -66,7 +58,7 @@ public class Usuario implements Comparable<Usuario> {
                 String[] registro = linea.split(Separator.A);
                 String _usuario = registro[0];
                 String _contrasena = registro[1];
-                String _tipo = registro[2];
+                TipoUsuario _tipo = TipoUsuario.fromString(registro[2]);
                 add(_usuario, _contrasena, _tipo);
                 linea = lector.readLine();
             }
@@ -99,7 +91,7 @@ public class Usuario implements Comparable<Usuario> {
         }
     }
 
-    public static void add(String _usuarioStr, String _contrasena, String _tipo) {
+    public static void add(String _usuarioStr, String _contrasena, TipoUsuario _tipo) {
         Usuario _usuario = new Usuario(_usuarioStr, _contrasena, _tipo);
         usuarios.insertar(_usuario);
     }
@@ -129,6 +121,12 @@ public class Usuario implements Comparable<Usuario> {
         return null;
     }
 
+    private Usuario(String _usuario, String _contrasena, TipoUsuario _tipo) {
+        usuario = _usuario;
+        contrasena = _contrasena;
+        tipo = _tipo;
+    }
+
     private boolean contrasenaCorrecta(String _contrasena) {
         return (contrasena.equals(_contrasena.trim()));
     }
@@ -155,4 +153,8 @@ public class Usuario implements Comparable<Usuario> {
     public int compareTo(Usuario o) {
         return usuario.compareTo(o.usuario);
     }
+
+    private final String usuario;
+    private final TipoUsuario tipo;
+    private String contrasena;
 }

@@ -1,12 +1,8 @@
 package Ventana.Login;
 
-//import BaseDeDatos.Usuario;
-//import Ventana.Dialog;
-//import Ventana.PrincipalEvaluador.PrincipalEvaluador;
-//import Ventana.PrincipalUsuario.PrincipalUsuario;
-//import Ventana.Registro.Registro;
 import BaseDeDatos.Usuario;
 import Ventana.Dialog;
+import Ventana.Registro.Registro;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -50,7 +46,7 @@ public class Login implements Initializable {
 
     @FXML
     public void registrarClick() {
-//        Registro.toogleVisible();
+        Registro.toogleVisible();
         toogleVisible();
     }
 
