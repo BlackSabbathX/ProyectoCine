@@ -29,10 +29,10 @@ public class Usuario implements Comparable<Usuario> {
         }
     }
 
-    public static int nEvaluadores() {
+    public static int nAdministradores() {
         int n = 0;
         for (Usuario usuario : usuarios) {
-            if (usuario.getTipo() == TipoUsuario.Evaluador) {
+            if (usuario.getTipo() == TipoUsuario.Administrador) {
                 n++;
             }
         }
@@ -96,7 +96,7 @@ public class Usuario implements Comparable<Usuario> {
         usuarios.insertar(_usuario);
     }
 
-    public static boolean usuarioExists(String _usuario) {
+    public static boolean exists(String _usuario) {
         for (Usuario usuario : usuarios) {
             if (usuario.getUsuario().equals(_usuario)) {
                 usuarios.reset();

@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -37,6 +38,12 @@ public class Login implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        usuario.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) usuario.setUnFocusColor(Color.RED);
+        });
+        contrasena.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) contrasena.setUnFocusColor(Color.RED);
+        });
     }
 
     @FXML
@@ -52,28 +59,27 @@ public class Login implements Initializable {
 
     @FXML
     public void iniciarSesion() {
-        if (usuario.getText().trim().equals("") || contrasena.getText().trim().equals("")) {
-            Dialog.showSimpleDialog(content, "Complete", "Formulario de inicio de sesión incompleto. Llene todos los campos", "Aceptar");
+        String u = usuario.getText().trim();
+        String c = contrasena.getText().trim();
+        if (u.equals("")) {
+            usuario.setUnFocusColor(Color.RED);
             return;
         }
-        Usuario _usuario = Usuario.logear(usuario.getText(), contrasena.getText());
+        if (c.equals("")) {
+            contrasena.setUnFocusColor(Color.RED);
+            return;
+        }
+        Usuario _usuario = Usuario.logear(u, c);
         if (_usuario == null) {
             Dialog.showSimpleDialog(content, "Error", "Usuario o contraseña incorrectos", "Aceptar");
-        } else {
-//            switch (_usuario.getTipo()) {
-//                case Evaluador:
-//                    PrincipalEvaluador.toogleVisible();
-//                    break;
-//                case Usuario:
-//                    PrincipalUsuario.toogleVisible();
-//                    break;
-//            }
-            if (!recordar.isSelected()) {
-                usuario.setText("");
-            }
-            toogleVisible();
+            return;
         }
+        if (!recordar.isSelected()) {
+            usuario.setText("");
+        }
+        toogleVisible();
         contrasena.setText("");
+        //Abrir pantalla principal
     }
 
     @FXML

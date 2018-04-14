@@ -75,6 +75,16 @@ public class Cliente implements Comparable<Cliente> {
         _pos++;
     }
 
+    public static boolean exists(String _cedula) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getCedula().equals(_cedula)) {
+                clientes.reset();
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void removeAt(int i) {
         if (i >= 0 && i < clientes.getItemCount()) {
             clientes.remove(i);

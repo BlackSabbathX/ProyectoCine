@@ -8,7 +8,7 @@ public enum TipoUsuario {
             return "Usuario";
         }
     },
-    Evaluador("Evaluador") {
+    Administrador("Administrador") {
         @Override
         public String toString() {
             return "Evaluador";
