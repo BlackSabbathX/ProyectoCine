@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Login/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Login/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Login/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Login/img/exiticon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Login/img/exiticon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Login/img/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Login/img/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Login/img/pass.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Login/img/pass.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Login/img/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Login/img/user.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/Registro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Registro/Registro.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/img/exiticon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Registro/img/exiticon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/img/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Registro/img/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/img/pass.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Registro/img/pass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/img/key.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Registro/img/key.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/img/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Registro/img/user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,25 +75,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Registro.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Registro.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="162" column="21" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Usuario.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Usuario.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+            <state relative-caret-position="103">
+              <caret line="148" column="47" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Registro.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="66" column="57" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="57" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -131,8 +121,8 @@
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Funcion.java" />
         <option value="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java" />
         <option value="$PROJECT_DIR$/src/Ventana/Login/Login.java" />
-        <option value="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" />
       </list>
     </option>
   </component>
@@ -199,6 +189,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Ventana" type="462c0819:PsiDirectoryNode" />
               <item name="Registro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoCine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoCine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Ventana" type="462c0819:PsiDirectoryNode" />
+              <item name="Registro" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -362,12 +360,12 @@
       <workItem from="1523647188724" duration="2478000" />
       <workItem from="1523650892699" duration="639000" />
       <workItem from="1523658140098" duration="1070000" />
-      <workItem from="1523673057192" duration="4634000" />
+      <workItem from="1523673057192" duration="6479000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13980000" />
+    <option name="totallyTimeSpent" value="15825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
@@ -385,7 +383,7 @@
       <window_info anchor="bottom" id="Floobits" order="9" weight="0.32913387" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24963397" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24963397" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -578,25 +576,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2352">
+          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
+        <state relative-caret-position="189">
+          <caret line="66" column="57" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="57" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="162" column="21" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+        <state relative-caret-position="103">
+          <caret line="148" column="47" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

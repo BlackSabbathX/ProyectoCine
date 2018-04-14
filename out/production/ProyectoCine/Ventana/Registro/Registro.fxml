@@ -37,33 +37,32 @@
                                 <Image url="@img/icon.png" />
                             </image>
                         </ImageView>
-                        <JFXTextField fx:id="usuario" focusColor="BLACK" layoutX="60.0" layoutY="203.0" prefHeight="31.0" prefWidth="268.0" promptText="Usuario" style="-fx-text-fill: #000;" unFocusColor="BLACK">
+                        <JFXTextField fx:id="usuario" focusColor="BLACK" layoutX="57.0" layoutY="203.0" prefHeight="31.0" prefWidth="268.0" promptText="No. de identificación" style="-fx-text-fill: #000;" unFocusColor="BLACK">
                             <font>
                                 <Font name="Segoe UI" size="15.0" />
                             </font>
                         </JFXTextField>
-                        <JFXPasswordField fx:id="contrasena" focusColor="BLACK" layoutX="60.0" layoutY="255.0" prefHeight="31.0" prefWidth="268.0" promptText="Contraseña" style="-fx-text-fill: #000;" unFocusColor="BLACK">
+                        <JFXPasswordField fx:id="contrasena" focusColor="BLACK" layoutX="57.0" layoutY="255.0" prefHeight="31.0" prefWidth="268.0" promptText="Contraseña" style="-fx-text-fill: #000;" unFocusColor="BLACK">
                             <font>
                                 <Font name="Segoe UI" size="15.0" />
                             </font>
                         </JFXPasswordField>
-                        <JFXPasswordField fx:id="contrasena1" focusColor="BLACK" layoutX="60.0" layoutY="296.0" prefHeight="31.0" prefWidth="268.0" promptText="Ingrese nuevamente la contraseña" style="-fx-text-fill: #000;" unFocusColor="BLACK">
+                        <JFXPasswordField fx:id="contrasena1" focusColor="BLACK" layoutX="57.0" layoutY="296.0" prefHeight="31.0" prefWidth="268.0" promptText="Ingrese nuevamente la contraseña" style="-fx-text-fill: #000;" unFocusColor="BLACK">
                             <font>
                                 <Font name="Segoe UI" size="15.0" />
                             </font>
                         </JFXPasswordField>
-                        <JFXComboBox fx:id="tipo" focusColor="BLACK" layoutX="60.0" layoutY="350.0" onAction="#cambioTipo" prefHeight="31.0" prefWidth="268.0" promptText="Tipo de cuenta" style="-fx-font-size: 15; -fx-text-fill: #000; -fx-font-family: &quot;Segoe UI&quot;;" unFocusColor="BLACK" />
                         <JFXButton layoutX="234.0" layoutY="419.0" onAction="#registrarClick" ripplerFill="#80e5ff" style="-fx-background-color: #FF7043;" text="Registrarse">
                             <font>
                                 <Font name="Segoe UI" size="15.0" />
                             </font>
                         </JFXButton>
-                        <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="14.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="image" fitHeight="31.0" fitWidth="33.0" layoutX="16.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@img/user.png" />
+                                <Image url="@img/key.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="14.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="16.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@img/pass.png" />
                             </image>
@@ -83,6 +82,16 @@
                         <Font name="Segoe UI Light" size="30.0" />
                      </font>
                   </Label>
+                  <JFXTextField fx:id="nombre" focusColor="BLACK" layoutX="102.0" layoutY="350.0" prefHeight="31.0" prefWidth="223.0" promptText="Nombre" style="-fx-text-fill: #000;" unFocusColor="BLACK">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXCheckBox fx:id="admin" checkedColor="BLACK" contentDisplay="RIGHT" focusTraversable="false" graphicTextGap="1.0" layoutX="18.0" layoutY="356.0" nodeOrientation="RIGHT_TO_LEFT" text="Admin" textAlignment="RIGHT" unCheckedColor="BLACK">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </JFXCheckBox>
                     </children>
                 </Pane>
             </children>

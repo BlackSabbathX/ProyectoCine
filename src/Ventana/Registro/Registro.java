@@ -4,6 +4,7 @@ import BaseDeDatos.Usuario;
 import Estructuras.TipoUsuario;
 import Ventana.Dialog;
 import Ventana.Login.Login;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -11,12 +12,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -25,7 +29,9 @@ public class Registro implements Initializable {
     public static Stage registro;
     public static Registro controlador;
     @FXML
-    public JFXTextField nombre;
+    private JFXCheckBox admin;
+    @FXML
+    private JFXTextField nombre;
     @FXML
     private JFXTextField usuario;
     @FXML
@@ -49,6 +55,17 @@ public class Registro implements Initializable {
         pass = false;
         user = false;
         name = false;
+        admin.selectedProperty().addListener(((observable, oldValue, newValue) -> {
+            if (newValue) {
+                nombre.setPromptText("Codigo de verificación");
+                nombre.setText("");
+                usuario.setPromptText("Digite un usuario");
+            } else {
+                nombre.setPromptText("Nombre");
+                nombre.setText("");
+                usuario.setPromptText("No. de identificación");
+            }
+        }));
         verificar();
     }
 
@@ -129,8 +146,8 @@ public class Registro implements Initializable {
             }
         });
         nombre.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            String n = nombre.getText().trim();
             if (!newValue) {
-                String n = nombre.getText().trim();
                 if (n.equals("")) {
                     name = false;
                     nombre.setUnFocusColor(Color.RED);
