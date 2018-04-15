@@ -83,6 +83,10 @@ public class Registro implements Initializable {
             Dialog.showSimpleDialog(content, "Error", "El documento o usuario ingresado ya ha sido registrado.", "Aceptar");
             return;
         }
+        if (u.equals("")) {
+            usuario.setUnFocusColor(Color.RED);
+            return;
+        }
         if (c.equals("")) {
             contrasena.setUnFocusColor(Color.RED);
             return;
@@ -105,8 +109,12 @@ public class Registro implements Initializable {
             Usuario.add(u, c, TipoUsuario.Administrador);
             Usuario.save(content);
         } else {
-            if (!Cliente.exists(u)) Cliente.add(u, n);
+            if (!Cliente.exists(u)) {
+                Cliente.add(u, n);
+                Cliente.save(content);
+            }
             Usuario.add(u, c, TipoUsuario.Usuario);
+            Usuario.save(content);
         }
         cleanForm();
         Dialog.showSimpleDialog(content, "Correcto", "Usuario creado exitosamente.", "Aceptar");
