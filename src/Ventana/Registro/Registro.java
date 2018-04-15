@@ -44,26 +44,10 @@ public class Registro implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        usuario.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) {
-                usuario.setUnFocusColor(Color.BLACK);
-            }
-        });
-        contrasena.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue) {
-                contrasena.setUnFocusColor(Color.BLACK);
-            }
-        });
-        contrasena1.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue) {
-                contrasena1.setUnFocusColor(Color.BLACK);
-            }
-        });
-        nombre.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue) {
-                nombre.setUnFocusColor(Color.BLACK);
-            }
-        });
+        usuario.focusedProperty().addListener(observable -> usuario.setUnFocusColor(Color.BLACK));
+        contrasena.focusedProperty().addListener(observable -> contrasena.setUnFocusColor(Color.BLACK));
+        contrasena1.focusedProperty().addListener(observable -> contrasena1.setUnFocusColor(Color.BLACK));
+        nombre.focusedProperty().addListener(observable -> nombre.setUnFocusColor(Color.BLACK));
         admin.selectedProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue) {
                 nombre.setPromptText("Codigo de verificación");

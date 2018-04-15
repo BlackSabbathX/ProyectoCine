@@ -67,13 +67,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Ventana/Login/Login.java">
+      <file leaf-file-name="Registro.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="41" column="102" selection-start-line="41" selection-start-column="102" selection-end-line="41" selection-end-column="102" />
+            <state relative-caret-position="235">
+              <caret line="49" column="94" selection-start-line="49" selection-start-column="94" selection-end-line="49" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2162#2163#0" expanded="true" />
+                <element signature="e#2193#2194#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,7 +105,6 @@
         <option value="$PROJECT_DIR$/src/MainClass.java" />
         <option value="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java" />
         <option value="$PROJECT_DIR$/src/Estructuras/TipoUsuario.java" />
-        <option value="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Cliente.java" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Funcion.java" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Pelicula.java" />
@@ -111,6 +112,7 @@
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Sala.java" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" />
         <option value="$PROJECT_DIR$/src/Ventana/Login/Login.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" />
       </list>
     </option>
   </component>
@@ -165,7 +167,7 @@
               <item name="ProyectoCine" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Ventana" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="462c0819:PsiDirectoryNode" />
+              <item name="Registro" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -330,12 +332,12 @@
       <workItem from="1523650892699" duration="639000" />
       <workItem from="1523658140098" duration="1070000" />
       <workItem from="1523673057192" duration="6479000" />
-      <workItem from="1523741977091" duration="7752000" />
+      <workItem from="1523741977091" duration="8030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23577000" />
+    <option name="totallyTimeSpent" value="23855000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
@@ -353,7 +355,7 @@
       <window_info anchor="bottom" id="Floobits" order="15" weight="0.32913387" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24963397" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24963397" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -614,16 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="126" column="20" lean-forward="true" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -650,6 +642,18 @@
           <caret line="41" column="102" selection-start-line="41" selection-start-column="102" selection-end-line="41" selection-end-column="102" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="49" column="94" selection-start-line="49" selection-start-column="94" selection-end-line="49" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2162#2163#0" expanded="true" />
+            <element signature="e#2193#2194#0" expanded="true" />
           </folding>
         </state>
       </provider>
