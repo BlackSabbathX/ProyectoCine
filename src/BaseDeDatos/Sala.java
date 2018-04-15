@@ -66,9 +66,8 @@ public class Sala implements Comparable<Sala> {
         } catch (IOException error) {
             Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de las salas.", "Aceptar");
         } catch (NullPointerException error) {
-            PrintWriter esc;
             try {
-                esc = new PrintWriter(new FileWriter(DBFILE));
+                PrintWriter esc = new PrintWriter(new FileWriter(DBFILE));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
@@ -85,7 +84,7 @@ public class Sala implements Comparable<Sala> {
                     + "\n"));
             escritor.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de las salas.", "Aceptar");
+            Dialog.showSimpleDialog(content, "Error", "Error al guardar la base de datos de las salas.", "Aceptar");
         }
     }
 
@@ -138,7 +137,7 @@ public class Sala implements Comparable<Sala> {
     private final int pos;
     private String sala;
 
-    Sala(int _id, int _pos, String _sala) {
+    public Sala(int _id, int _pos, String _sala) {
         id = _id;
         pos = _pos;
         sala = _sala;

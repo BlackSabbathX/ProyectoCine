@@ -44,21 +44,6 @@ public class Registro implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        admin.selectedProperty().addListener(((observable, oldValue, newValue) -> {
-            if (newValue) {
-                nombre.setPromptText("Codigo de verificación");
-                nombre.setText("");
-                usuario.setPromptText("Digite un usuario");
-            } else {
-                nombre.setPromptText("Nombre");
-                nombre.setText("");
-                usuario.setPromptText("No. de identificación");
-            }
-        }));
-        verificar();
-    }
-
-    private void verificar() {
         usuario.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
                 usuario.setUnFocusColor(Color.BLACK);
@@ -79,6 +64,17 @@ public class Registro implements Initializable {
                 nombre.setUnFocusColor(Color.BLACK);
             }
         });
+        admin.selectedProperty().addListener(((observable, oldValue, newValue) -> {
+            if (newValue) {
+                nombre.setPromptText("Codigo de verificación");
+                nombre.setText("");
+                usuario.setPromptText("Digite un usuario");
+            } else {
+                nombre.setPromptText("Nombre");
+                nombre.setText("");
+                usuario.setPromptText("No. de identificación");
+            }
+        }));
     }
 
     @FXML

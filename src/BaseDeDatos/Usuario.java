@@ -1,9 +1,5 @@
 package BaseDeDatos;
 
-//import Estructura.Lista;
-//import Estructura.Separator;
-//import Estructura.TipoUsuario;
-
 import Estructuras.Lista;
 import Estructuras.Separator;
 import Estructuras.TipoUsuario;
@@ -87,7 +83,7 @@ public class Usuario implements Comparable<Usuario> {
             );
             escritor.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(content, "Error", "Error al grabar la base de datos de los usuarios.", "Aceptar");
+            Dialog.showSimpleDialog(content, "Error", "Error al guardar la base de datos de los usuarios.", "Aceptar");
         }
     }
 

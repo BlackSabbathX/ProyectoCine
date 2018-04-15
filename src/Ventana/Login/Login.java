@@ -38,12 +38,8 @@ public class Login implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        usuario.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) usuario.setUnFocusColor(Color.RED);
-        });
-        contrasena.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) contrasena.setUnFocusColor(Color.RED);
-        });
+        usuario.focusedProperty().addListener(observable -> usuario.setUnFocusColor(Color.BLACK));
+        contrasena.focusedProperty().addListener(observable -> contrasena.setUnFocusColor(Color.BLACK));
     }
 
     @FXML

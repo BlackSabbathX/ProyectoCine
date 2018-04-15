@@ -47,9 +47,8 @@ public class Cliente implements Comparable<Cliente> {
         } catch (IOException error) {
             Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de los clientes.", "Aceptar");
         } catch (NullPointerException error) {
-            PrintWriter esc;
             try {
-                esc = new PrintWriter(new FileWriter(DBFILE));
+                PrintWriter esc = new PrintWriter(new FileWriter(DBFILE));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
@@ -58,7 +57,7 @@ public class Cliente implements Comparable<Cliente> {
         }
     }
 
-    public static void save() {
+    public static void save(StackPane content) {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
             clientes.forEach(c -> escritor.write(c.getCedula() + Separator.A
@@ -66,7 +65,7 @@ public class Cliente implements Comparable<Cliente> {
                     + "\n"));
             escritor.close();
         } catch (IOException error) {
-
+            Dialog.showSimpleDialog(content, "Error", "Error al guardar la base de datos de los clientes.", "Aceptar");
         }
     }
 
@@ -104,7 +103,7 @@ public class Cliente implements Comparable<Cliente> {
 
     public static int indexOf(String _cedula) {
         for (Cliente cliente : clientes) {
-            if (cliente.getCedula().equalsIgnoreCase(_cedula)) {
+            if (cliente.getCedula().equals(_cedula)) {
                 int p = cliente.getPos();
                 clientes.reset();
                 return p;

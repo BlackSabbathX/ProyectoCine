@@ -67,9 +67,8 @@ public class Pelicula implements Comparable<Pelicula> {
         } catch (IOException error) {
             Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de las peliculas.", "Aceptar");
         } catch (NullPointerException error) {
-            PrintWriter esc;
             try {
-                esc = new PrintWriter(new FileWriter(DBFILE));
+                PrintWriter esc = new PrintWriter(new FileWriter(DBFILE));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
@@ -87,7 +86,7 @@ public class Pelicula implements Comparable<Pelicula> {
                     + "\n"));
             escritor.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de las peliculas.", "Aceptar");
+            Dialog.showSimpleDialog(content, "Error", "Error al guardar la base de datos de las peliculas.", "Aceptar");
         }
     }
 
@@ -141,7 +140,7 @@ public class Pelicula implements Comparable<Pelicula> {
     private String nombre;
     private String autor;
 
-    Pelicula(int _id, int _pos, String _nombre, String _autor) {
+    public Pelicula(int _id, int _pos, String _nombre, String _autor) {
         id = _id;
         pos = _pos;
         nombre = _nombre;

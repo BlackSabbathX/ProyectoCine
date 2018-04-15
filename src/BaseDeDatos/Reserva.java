@@ -67,9 +67,8 @@ public class Reserva implements Comparable<Reserva> {
         } catch (IOException error) {
             Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de las reservas.", "Aceptar");
         } catch (NullPointerException error) {
-            PrintWriter esc;
             try {
-                esc = new PrintWriter(new FileWriter(DBFILE));
+                PrintWriter esc = new PrintWriter(new FileWriter(DBFILE));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
@@ -87,7 +86,7 @@ public class Reserva implements Comparable<Reserva> {
                     + "\n"));
             escritor.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar");
+            Dialog.showSimpleDialog(content, "Error", "Error al guardar la base de datos de los usuarios.", "Aceptar");
         }
     }
 
@@ -129,7 +128,7 @@ public class Reserva implements Comparable<Reserva> {
     private Funcion funcion;
     private Cliente cliente;
 
-    Reserva(int _id, int _pos, Funcion _funcion, Cliente _cliente) {
+    public Reserva(int _id, int _pos, Funcion _funcion, Cliente _cliente) {
         id = _id;
         pos = _pos;
         funcion = _funcion;

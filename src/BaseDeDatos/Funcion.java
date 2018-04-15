@@ -90,7 +90,7 @@ public class Funcion implements Comparable<Funcion> {
                     + "\n"));
             escritor.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar");
+            Dialog.showSimpleDialog(content, "Error", "Error al guardar la base de datos de los usuarios.", "Aceptar");
         }
     }
 
@@ -134,7 +134,7 @@ public class Funcion implements Comparable<Funcion> {
     private Sala sala;
     private Pelicula pelicula;
 
-    Funcion(int _id, int _pos, DateTime _tiempo, Sala _sala, Pelicula _pelicula) {
+    public Funcion(int _id, int _pos, DateTime _tiempo, Sala _sala, Pelicula _pelicula) {
         id = _id;
         pos = _pos;
         tiempo = _tiempo;
