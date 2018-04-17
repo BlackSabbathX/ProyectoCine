@@ -113,7 +113,7 @@ public class Cliente implements Comparable<Cliente> {
     }
 
     private String nombre;
-    private String cedula;
+    private final String cedula;
     private final int pos;
 
     public Cliente(String _cedula, int _pos, String _nombre) {
@@ -132,10 +132,6 @@ public class Cliente implements Comparable<Cliente> {
 
     public String getCedula() {
         return cedula;
-    }
-
-    public void setCedula(String _cedula) {
-        cedula = _cedula;
     }
 
     public int getPos() {
