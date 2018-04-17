@@ -14,6 +14,15 @@ public class Sala implements Comparable<Sala> {
     private static final File DBFILE = new File(DBPATH);
     private static Lista<Sala> salas;
     private static int _pos;
+    private final int id;
+    private final int pos;
+    private String sala;
+
+    public Sala(int _id, int _pos, String _sala) {
+        id = _id;
+        pos = _pos;
+        sala = _sala;
+    }
 
     public static Lista<Sala> getSalas() {
         return salas;
@@ -131,16 +140,6 @@ public class Sala implements Comparable<Sala> {
             }
         }
         return -1;
-    }
-
-    private final int id;
-    private final int pos;
-    private String sala;
-
-    public Sala(int _id, int _pos, String _sala) {
-        id = _id;
-        pos = _pos;
-        sala = _sala;
     }
 
     public int getId() {

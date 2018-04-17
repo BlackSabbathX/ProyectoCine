@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="477.0" prefWidth="714.0" style="-fx-background-color: #039BE5;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana.PrincipalUsuario.PrincipalUsuario">
+    <stylesheets>
+        <URL value="@PrincipalUsuario.css" />
+    </stylesheets>
+    <children>
+        <StackPane fx:id="content" prefHeight="477.0" prefWidth="714.0">
+            <children>
+                <Pane prefHeight="467.0" prefWidth="704.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-5.0" prefHeight="57.0" prefWidth="714.0" style="-fx-background-color: #0288D1;" text="En Cartelera" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="31.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane layoutX="11.0" layoutY="61.0" prefHeight="406.0" prefWidth="692.0" style="-fx-background-color: #0288D1;">
+                     <content>
+                        <VBox fx:id="peliculas" prefHeight="404.0" prefWidth="690.0" style="-fx-background-color: #0288D1;" />
+                     </content>
+                  </ScrollPane>
+               </children>
+                </Pane>
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>

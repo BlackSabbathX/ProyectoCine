@@ -15,6 +15,19 @@ public class Funcion implements Comparable<Funcion> {
     private static final File DBFILE = new File(DBPATH);
     private static Lista<Funcion> funciones;
     private static int _pos;
+    private final int id;
+    private final int pos;
+    private DateTime tiempo;
+    private Sala sala;
+    private Pelicula pelicula;
+
+    public Funcion(int _id, int _pos, DateTime _tiempo, Sala _sala, Pelicula _pelicula) {
+        id = _id;
+        pos = _pos;
+        tiempo = _tiempo;
+        sala = _sala;
+        pelicula = _pelicula;
+    }
 
     public static Lista<Funcion> getFunciones() {
         return funciones;
@@ -126,20 +139,6 @@ public class Funcion implements Comparable<Funcion> {
             i++;
         }
         return -1;
-    }
-
-    private final int id;
-    private final int pos;
-    private DateTime tiempo;
-    private Sala sala;
-    private Pelicula pelicula;
-
-    public Funcion(int _id, int _pos, DateTime _tiempo, Sala _sala, Pelicula _pelicula) {
-        id = _id;
-        pos = _pos;
-        tiempo = _tiempo;
-        sala = _sala;
-        pelicula = _pelicula;
     }
 
     public int getId() {

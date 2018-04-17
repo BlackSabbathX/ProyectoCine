@@ -1,7 +1,20 @@
-/*
- * Empty Stylesheet file.
- */
 
-.mainFxmlClass {
+.jfx-button {
+    -fx-background-color: #FF7043;
+}
 
+.jfx-blank-button {
+    -fx-background-color: #FF8A65;
+}
+
+.jfx-button:hover {
+    -fx-background-color: #ff6639;
+}
+
+.jfx-blank-button:hover {
+    -fx-background-color: #FF8A65;
+}
+
+.jfx-button:pressed {
+    -fx-background-color: #ff5c2f;
 }

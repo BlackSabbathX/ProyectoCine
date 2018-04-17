@@ -14,6 +14,17 @@ public class Pelicula implements Comparable<Pelicula> {
     private static final File DBFILE = new File(DBPATH);
     private static Lista<Pelicula> peliculas;
     private static int _pos;
+    private final int id;
+    private final int pos;
+    private String nombre;
+    private String autor;
+
+    public Pelicula(int _id, int _pos, String _nombre, String _autor) {
+        id = _id;
+        pos = _pos;
+        nombre = _nombre;
+        autor = _autor;
+    }
 
     public static Lista<Pelicula> getPeliculas() {
         return peliculas;
@@ -133,18 +144,6 @@ public class Pelicula implements Comparable<Pelicula> {
             }
         }
         return -1;
-    }
-
-    private final int id;
-    private final int pos;
-    private String nombre;
-    private String autor;
-
-    public Pelicula(int _id, int _pos, String _nombre, String _autor) {
-        id = _id;
-        pos = _pos;
-        nombre = _nombre;
-        autor = _autor;
     }
 
     public int getPos() {

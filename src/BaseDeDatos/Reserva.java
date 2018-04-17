@@ -14,6 +14,17 @@ public class Reserva implements Comparable<Reserva> {
     private static final File DBFILE = new File(DBPATH);
     private static Lista<Reserva> reservas;
     private static int _pos;
+    private final int id;
+    private final int pos;
+    private Funcion funcion;
+    private Cliente cliente;
+
+    public Reserva(int _id, int _pos, Funcion _funcion, Cliente _cliente) {
+        id = _id;
+        pos = _pos;
+        funcion = _funcion;
+        cliente = _cliente;
+    }
 
     public static Lista<Reserva> getReservas() {
         return reservas;
@@ -121,18 +132,6 @@ public class Reserva implements Comparable<Reserva> {
             }
         }
         return -1;
-    }
-
-    private final int id;
-    private final int pos;
-    private Funcion funcion;
-    private Cliente cliente;
-
-    public Reserva(int _id, int _pos, Funcion _funcion, Cliente _cliente) {
-        id = _id;
-        pos = _pos;
-        funcion = _funcion;
-        cliente = _cliente;
     }
 
     public int getId() {

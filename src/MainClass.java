@@ -1,4 +1,5 @@
 import Ventana.Login.Login;
+import Ventana.PrincipalUsuario.PrincipalUsuario;
 import Ventana.Registro.Registro;
 import Ventana.SplashScreen.SplashScreen;
 import javafx.application.Application;
@@ -25,7 +26,7 @@ public class MainClass extends Application {
         SplashScreen.controlador = loaderSS.getController();
 
         FXMLLoader loaderLG = new FXMLLoader(getClass().getResource("/Ventana/Login/Login.fxml"));
-//        FXMLLoader loaderPU = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/PrincipalUsuario.fxml"));
+        FXMLLoader loaderPU = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/PrincipalUsuario.fxml"));
 //        FXMLLoader loaderPE = new FXMLLoader(getClass().getResource("/Ventana/PrincipalEvaluador/PrincipalEvaluador.fxml"));
         FXMLLoader loaderRE = new FXMLLoader(getClass().getResource("/Ventana/Registro/Registro.fxml"));
 //        FXMLLoader loaderAE = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.fxml"));
@@ -38,7 +39,7 @@ public class MainClass extends Application {
 //        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Ventana/PrincipalEvaluador/Reporte/Reporte.fxml"));
 
         Parent rootLG = loaderLG.load();
-//        Parent rootPU = loaderPU.load();
+        Parent rootPU = loaderPU.load();
 //        Parent rootPE = loaderPE.load();
         Parent rootRE = loaderRE.load();
 //        Parent rootAE = loaderAE.load();
@@ -51,7 +52,7 @@ public class MainClass extends Application {
 //        Parent root = loader.load();
 
         Scene sceneLG = new Scene(rootLG);
-//        Scene scenePU = new Scene(rootPU);
+        Scene scenePU = new Scene(rootPU);
 //        Scene scenePE = new Scene(rootPE);
         Scene sceneRE = new Scene(rootRE);
 //        Scene sceneAE = new Scene(rootAE);
@@ -64,7 +65,7 @@ public class MainClass extends Application {
 //        Scene scene = new Scene(root);
 
         Login.login = new Stage(StageStyle.UNDECORATED);
-//        PrincipalUsuario.usuario = new Stage(StageStyle.UNDECORATED);
+        PrincipalUsuario.usuario = new Stage(StageStyle.UNDECORATED);
 //        PrincipalEvaluador.evaluador = new Stage(StageStyle.UNDECORATED);
         Registro.registro = new Stage(StageStyle.UNDECORATED);
 //        AgregarE.agregar = new Stage(StageStyle.UNDECORATED);
@@ -77,7 +78,7 @@ public class MainClass extends Application {
 //        Reporte.reporte = new Stage(StageStyle.UNDECORATED);
 
         Login.login.setScene(sceneLG);
-//        PrincipalUsuario.usuario.setScene(scenePU);
+        PrincipalUsuario.usuario.setScene(scenePU);
 //        PrincipalEvaluador.evaluador.setScene(scenePE);
         Registro.registro.setScene(sceneRE);
 //        AgregarE.agregar.setScene(sceneAE);
@@ -90,7 +91,7 @@ public class MainClass extends Application {
 //        Reporte.reporte.setScene(scene);
 
         Login.controlador = loaderLG.getController();
-//        PrincipalUsuario.controlador = loaderPU.getController();
+        PrincipalUsuario.controlador = loaderPU.getController();
 //        PrincipalEvaluador.controlador = loaderPE.getController();
         Registro.controlador = loaderRE.getController();
 //        AgregarE.controlador = loaderAE.getController();

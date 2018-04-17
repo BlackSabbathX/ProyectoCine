@@ -1,7 +1,9 @@
 package Ventana.Login;
 
 import BaseDeDatos.Usuario;
+import Estructuras.TipoUsuario;
 import Ventana.Dialog;
+import Ventana.PrincipalUsuario.PrincipalUsuario;
 import Ventana.Registro.Registro;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
@@ -73,9 +75,13 @@ public class Login implements Initializable {
         if (!recordar.isSelected()) {
             usuario.setText("");
         }
-        toogleVisible();
         contrasena.setText("");
-        //Abrir pantalla principal
+        toogleVisible();
+        if (_usuario.getTipo() == TipoUsuario.Usuario) {
+            PrincipalUsuario.toogleVisible();
+        } else {
+
+        }
     }
 
     @FXML

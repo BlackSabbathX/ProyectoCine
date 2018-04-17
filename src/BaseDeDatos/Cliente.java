@@ -13,6 +13,15 @@ public class Cliente implements Comparable<Cliente> {
     private static final File DBFILE = new File(DBPATH);
     private static Lista<Cliente> clientes;
     private static int _pos;
+    private final String cedula;
+    private final int pos;
+    private String nombre;
+
+    public Cliente(String _cedula, int _pos, String _nombre) {
+        cedula = _cedula;
+        nombre = _nombre;
+        pos = _pos;
+    }
 
     public static Lista<Cliente> getClientes() {
         return clientes;
@@ -110,16 +119,6 @@ public class Cliente implements Comparable<Cliente> {
             }
         }
         return -1;
-    }
-
-    private String nombre;
-    private final String cedula;
-    private final int pos;
-
-    public Cliente(String _cedula, int _pos, String _nombre) {
-        cedula = _cedula;
-        nombre = _nombre;
-        pos = _pos;
     }
 
     public String getNombre() {
