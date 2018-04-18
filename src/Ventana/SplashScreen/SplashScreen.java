@@ -45,7 +45,7 @@ public class SplashScreen implements Initializable {
         Usuario.load(content);
         new Thread(() -> {
             try {
-                Thread.sleep(5000);
+                Thread.sleep(5);
                 Platform.runLater(() -> {
                     Login.toogleVisible();
                     toogleVisible();

@@ -14,6 +14,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.controlsfx.control.Rating;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,9 +43,9 @@ public class PrincipalUsuario implements Initializable {
         try {
             Pelicula.init(content);
 
-            Pelicula.add(Pelicula.generateId(), "Mad Max: Fury Road", "Acción - Ciencia Ficción - Futurista", "I Don Know Rick", "madmax.jpg");
-            Pelicula.add(Pelicula.generateId(), "Harry Potter Y La Piedra Filosofal", "Ciencia Ficción - Romance", "J. K. Rowling", "hppf.jpg");
-            Pelicula.add(Pelicula.generateId(), "Un Puente Hacia Therabithia", "Ciencia Ficción - Romance - Aventura", "Hmmmm...", "puerta.jpg");
+            Pelicula.add(Pelicula.generateId(), "Mad Max: Fury Road", "Acción - Ciencia Ficción - Futurista", "I Don Know Rick", 4.3, "madmax.jpg");
+            Pelicula.add(Pelicula.generateId(), "Harry Potter Y La Piedra Filosofal", "Ciencia Ficción - Romance", "J. K. Rowling", 4.5, "hppf.jpg");
+            Pelicula.add(Pelicula.generateId(), "Un Puente Hacia Therabithia", "Ciencia Ficción - Romance - Aventura", "Hmmmm...", 3.8, "puerta.jpg");
 
             Pelicula.save(content);
             Pelicula.load(content);
@@ -62,8 +63,6 @@ public class PrincipalUsuario implements Initializable {
     }
 
     private Pane nuevoBanner(Pelicula pelicula) throws IOException {
-        final Pelicula pel = pelicula;
-
         Parent parent = FXMLLoader.load(getClass().getResource("/Ventana/PrincipalUsuario/BannerPelicula.fxml"));
 
         final Pane p = (Pane) parent.lookup("#panel");
@@ -72,11 +71,13 @@ public class PrincipalUsuario implements Initializable {
         Label nombre = (Label) p.getChildren().get(1);
         Label autor = (Label) p.getChildren().get(2);
         Label genero = (Label) p.getChildren().get(3);
+        Rating rate = (Rating) p.getChildren().get(4);
 
         portada.setImage(new Image(new File(pelicula.getImagen()).toURI().toString()));
         nombre.setText(pelicula.getNombre());
         autor.setText(pelicula.getAutor());
         genero.setText(pelicula.getGenero());
+        rate.setRating(pelicula.getRate());
 
         portada.setStyle(style);
         nombre.setStyle(style);
@@ -84,7 +85,7 @@ public class PrincipalUsuario implements Initializable {
         genero.setStyle(style);
 
         EventHandler evt = (EventHandler<MouseEvent>) event -> {
-            System.out.println("click");
+            System.out.println("click" + pelicula.getNombre());
         };
 
         portada.setOnMouseClicked(evt);

@@ -19,14 +19,16 @@ public class Pelicula implements Comparable<Pelicula> {
     private String nombre;
     private String genero;
     private String autor;
+    private double rate;
     private String imagen;
 
-    public Pelicula(int _id, int _pos, String _nombre, String _genero, String _autor, String _imagen) {
+    public Pelicula(int _id, int _pos, String _nombre, String _genero, String _autor, double _rate, String _imagen) {
         id = _id;
         pos = _pos;
         nombre = _nombre;
         genero = _genero;
         autor = _autor;
+        setRate(_rate);
         imagen = _imagen;
     }
 
@@ -76,8 +78,9 @@ public class Pelicula implements Comparable<Pelicula> {
                 String _nombre = registro[1];
                 String _genero = registro[2];
                 String _autor = registro[3];
-                String _imagen = registro[4];
-                add(id, _nombre, _genero, _autor, _imagen);
+                double _rate = Double.parseDouble(registro[4]);
+                String _imagen = registro[5];
+                add(id, _nombre, _genero, _autor, _rate, _imagen);
                 linea = lector.readLine();
             }
             lector.close();
@@ -101,6 +104,7 @@ public class Pelicula implements Comparable<Pelicula> {
                     + c.getNombre() + Separator.A
                     + c.getGenero() + Separator.A
                     + c.getAutor() + Separator.A
+                    + c.getRate() + Separator.A
                     + c.getImagen() + Separator.A
                     + "\n"));
             escritor.close();
@@ -109,8 +113,8 @@ public class Pelicula implements Comparable<Pelicula> {
         }
     }
 
-    public static void add(int _id, String _nombre, String _genero, String _autor, String _imagen) {
-        peliculas.insertarOrdenado(new Pelicula(_id, _pos, _nombre, _genero, _autor, _imagen));
+    public static void add(int _id, String _nombre, String _genero, String _autor, double _rate, String _imagen) {
+        peliculas.insertarOrdenado(new Pelicula(_id, _pos, _nombre, _genero, _autor, _rate, _imagen));
         _pos++;
     }
 
@@ -184,6 +188,16 @@ public class Pelicula implements Comparable<Pelicula> {
 
     public void setAutor(String _autor) {
         autor = _autor;
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double _rate) {
+        if (_rate < 0) rate = 0;
+        else if (_rate > 5) rate = 5;
+        else rate = _rate;
     }
 
     public String getImagen() {
