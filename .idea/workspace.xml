@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pelicula.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pelicula.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid13570.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid13640.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid13855.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid14132.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid14651.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalUsuario/PrincipalUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalUsuario/PrincipalUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Pelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,8 +64,8 @@
       <file leaf-file-name="PrincipalUsuario.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+            <state relative-caret-position="313">
+              <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -410,12 +399,12 @@
       <workItem from="1523673057192" duration="6479000" />
       <workItem from="1523741977091" duration="10054000" />
       <workItem from="1523983460461" duration="9385000" />
-      <workItem from="1524015273592" duration="7591000" />
+      <workItem from="1524015273592" duration="8518000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42855000" />
+    <option name="totallyTimeSpent" value="43782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
@@ -816,8 +805,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+        <state relative-caret-position="313">
+          <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
         </state>
       </provider>
     </entry>
