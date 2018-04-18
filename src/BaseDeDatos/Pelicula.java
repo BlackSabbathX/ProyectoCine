@@ -17,13 +17,17 @@ public class Pelicula implements Comparable<Pelicula> {
     private final int id;
     private final int pos;
     private String nombre;
+    private String genero;
     private String autor;
+    private String imagen;
 
-    public Pelicula(int _id, int _pos, String _nombre, String _autor) {
+    public Pelicula(int _id, int _pos, String _nombre, String _genero, String _autor, String _imagen) {
         id = _id;
         pos = _pos;
         nombre = _nombre;
+        genero = _genero;
         autor = _autor;
+        imagen = _imagen;
     }
 
     public static Lista<Pelicula> getPeliculas() {
@@ -70,8 +74,10 @@ public class Pelicula implements Comparable<Pelicula> {
                 String[] registro = linea.split(Separator.A);
                 int id = Integer.parseInt(registro[0]);
                 String _nombre = registro[1];
-                String _autor = registro[2];
-                add(id, _nombre, _autor);
+                String _genero = registro[2];
+                String _autor = registro[3];
+                String _imagen = registro[4];
+                add(id, _nombre, _genero, _autor, _imagen);
                 linea = lector.readLine();
             }
             lector.close();
@@ -93,7 +99,9 @@ public class Pelicula implements Comparable<Pelicula> {
             PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
             peliculas.forEach(c -> escritor.write(c.getId() + Separator.A
                     + c.getNombre() + Separator.A
+                    + c.getGenero() + Separator.A
                     + c.getAutor() + Separator.A
+                    + c.getImagen() + Separator.A
                     + "\n"));
             escritor.close();
         } catch (IOException error) {
@@ -101,8 +109,8 @@ public class Pelicula implements Comparable<Pelicula> {
         }
     }
 
-    public static void add(int _id, String _nombre, String autor) {
-        peliculas.insertarOrdenado(new Pelicula(_id, _pos, _nombre, autor));
+    public static void add(int _id, String _nombre, String _genero, String _autor, String _imagen) {
+        peliculas.insertarOrdenado(new Pelicula(_id, _pos, _nombre, _genero, _autor, _imagen));
         _pos++;
     }
 
@@ -162,12 +170,28 @@ public class Pelicula implements Comparable<Pelicula> {
         nombre = _nombre;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String _genero) {
+        genero = _genero;
+    }
+
     public String getAutor() {
         return autor;
     }
 
     public void setAutor(String _autor) {
         autor = _autor;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String _imagen) {
+        imagen = _imagen;
     }
 
     @Override
