@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="502.0" prefWidth="777.0" style="-fx-background-color: #039BE5;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana.PeliculaReservas.PeliculaReserva">
+    <stylesheets>
+        <URL value="@PeliculaReserva.css" />
+    </stylesheets>
+    <children>
+        <StackPane fx:id="content" prefHeight="502.0" prefWidth="777.0">
+            <children>
+                <Pane prefHeight="529.0" prefWidth="777.0">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="400.0" layoutY="-5.0" prefHeight="57.0" prefWidth="314.0" style="-fx-background-color: #0288D1;" text="En Cartelera" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Segoe UI" size="31.0" />
+                            </font>
+                        </Label>
+                  <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="321.0" style="-fx-background-color: #0288D1;">
+                     <children>
+                        <Label id="genero" fx:id="genero1" alignment="CENTER" contentDisplay="CENTER" prefHeight="19.0" prefWidth="314.0" text="Pelicula" textFill="#0288d1">
+                           <font>
+                              <Font name="Segoe UI Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <ImageView id="imagen" fx:id="imagen" fitHeight="377.0" fitWidth="321.0" pickOnBounds="true" preserveRatio="true" />
+                        <Rating id="rate" fx:id="rate" blendMode="HARD_LIGHT" disable="true" partialRating="true" prefHeight="32.0" prefWidth="247.0" />
+                        <Label id="nombre" fx:id="nombre" alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="314.0" text="Pelicula" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label id="autor" fx:id="autor" alignment="CENTER" contentDisplay="CENTER" prefHeight="19.0" prefWidth="314.0" text="Pelicula" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label id="genero" fx:id="genero" alignment="CENTER" contentDisplay="CENTER" prefHeight="19.0" prefWidth="314.0" text="Pelicula" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Italic" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                    </children>
+                </Pane>
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>

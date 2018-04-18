@@ -1,6 +1,7 @@
 package Ventana.PrincipalUsuario;
 
 import BaseDeDatos.Pelicula;
+import Ventana.PeliculaReservas.PeliculaReserva;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,6 +42,8 @@ public class PrincipalUsuario implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
+            Banner banner = new Banner();
+
             Pelicula.init(content);
 
             Pelicula.add(Pelicula.generateId(), "Mad Max: Fury Road", "Acción - Ciencia Ficción - Futurista", "I Don Know Rick", 4.3, "madmax.jpg");
@@ -52,47 +55,48 @@ public class PrincipalUsuario implements Initializable {
             Pelicula.save(content);
             Pelicula.load(content);
 
-            peliculas.getChildren().addAll(
-                    nuevoBanner(Pelicula.getPeliculaAt(0)),
-                    nuevoBanner(Pelicula.getPeliculaAt(1)),
-                    nuevoBanner(Pelicula.getPeliculaAt(2))
-            );
+            for (Pelicula p : Pelicula.getPeliculas()) {
+                peliculas.getChildren().add(banner.nuevoBanner(p));
+            }
         } catch (Exception ignored) {
             ignored.printStackTrace();
         }
     }
 
-    private Pane nuevoBanner(Pelicula pelicula) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("/Ventana/PrincipalUsuario/BannerPelicula.fxml"));
+    private class Banner {
 
-        final Pane p = (Pane) parent.lookup("#panel");
-        String style = "-fx-cursor: hand;";
-        ImageView portada = (ImageView) p.getChildren().get(0);
-        Label nombre = (Label) p.getChildren().get(1);
-        Label autor = (Label) p.getChildren().get(2);
-        Label genero = (Label) p.getChildren().get(3);
-        Rating rate = (Rating) p.getChildren().get(4);
+        private Pane nuevoBanner(Pelicula pelicula) throws IOException {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Ventana/PrincipalUsuario/BannerPelicula.fxml"));
 
-        portada.setImage(new Image(new File(pelicula.getImagen()).toURI().toString()));
-        nombre.setText(pelicula.getNombre());
-        autor.setText(pelicula.getAutor());
-        genero.setText(pelicula.getGenero());
-        rate.setRating(pelicula.getRate());
+            final Pane p = (Pane) parent.lookup("#panel");
+            String style = "-fx-cursor: hand;";
+            ImageView portada = (ImageView) p.getChildren().get(0);
+            Label nombre = (Label) p.getChildren().get(1);
+            Label autor = (Label) p.getChildren().get(2);
+            Label genero = (Label) p.getChildren().get(3);
+            Rating rate = (Rating) p.getChildren().get(4);
 
-        portada.setStyle(style);
-        nombre.setStyle(style);
-        autor.setStyle(style);
-        genero.setStyle(style);
+            portada.setImage(new Image(new File(pelicula.getImagen()).toURI().toString()));
+            nombre.setText(pelicula.getNombre());
+            autor.setText(pelicula.getAutor());
+            genero.setText(pelicula.getGenero());
+            rate.setRating(pelicula.getRate());
 
-        EventHandler evt = (EventHandler<MouseEvent>) event -> {
-            System.out.println("click" + pelicula.getNombre());
-        };
+            portada.setStyle(style);
+            nombre.setStyle(style);
+            autor.setStyle(style);
+            genero.setStyle(style);
 
-        portada.setOnMouseClicked(evt);
-        nombre.setOnMouseClicked(evt);
-        autor.setOnMouseClicked(evt);
-        genero.setOnMouseClicked(evt);
-        return p;
+            EventHandler evt = (EventHandler<MouseEvent>) event -> {
+                PeliculaReserva.mostrarPelicula(pelicula);
+            };
+
+            portada.setOnMouseClicked(evt);
+            nombre.setOnMouseClicked(evt);
+            autor.setOnMouseClicked(evt);
+            genero.setOnMouseClicked(evt);
+            return p;
+        }
     }
 
 }
