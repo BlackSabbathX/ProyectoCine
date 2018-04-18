@@ -3,6 +3,10 @@
     -fx-background-color: #FF7043;
 }
 
+.hbox {
+    -fx-background-color: red;
+}
+
 .jfx-blank-button {
     -fx-background-color: #FF8A65;
 }

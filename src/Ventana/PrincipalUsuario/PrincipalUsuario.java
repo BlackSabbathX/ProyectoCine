@@ -3,11 +3,15 @@ package Ventana.PrincipalUsuario;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -30,15 +34,21 @@ public class PrincipalUsuario implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        peliculas.getChildren().add(BannerPelicula.nuevoBanner());
+        peliculas.getChildren().add(nuevoBanner());
+        peliculas.getChildren().add(nuevoBanner());
+        peliculas.getChildren().add(nuevoBanner());
+        peliculas.getChildren().add(nuevoBanner());
     }
 
-    static class BannerPelicula {
-        static Pane nuevoBanner() {
-            Pane panel = new Pane();
-            panel.getChildren().add(new Label("Jose padisanakndf"));
-            return panel;
-        }
+    private Pane nuevoBanner() {
+        HBox panel = new HBox();
+//        panel.getStylesheets().add("Login.css");
+        ImageView portada = new ImageView(new Image(new File("j.jpeg").toURI().toString()));
+        portada.setFitHeight(100);
+        portada.setPreserveRatio(true);
+        panel.getChildren().add(portada);
+        panel.getChildren().add(new Label("Jose padisanakndf"));
+        return panel;
     }
 
 }
