@@ -1,9 +1,8 @@
 package Ventana.Reserva;
 
 import BaseDeDatos.Funcion;
-import BaseDeDatos.Pelicula;
 import Estructuras.DateTime;
-import Ventana.PrincipalUsuario.PrincipalUsuario;
+import Ventana.PeliculaReservas.PeliculaReserva;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +31,8 @@ public class Reserva implements Initializable {
     GridPane puestosr;
     @FXML
     private StackPane content;
+    private boolean[][] selec;
+    private int nselecc;
 
     public static void toogleVisible() {
         if (reserva.isShowing()) {
@@ -43,31 +44,67 @@ public class Reserva implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 5; j++) {
-                String path = "";
-                ImageView estado = new ImageView(new Image(new File("libre.png").toURI().toString()));
-            }
-        }
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 5; j++) {
-                String path = "";
-                ImageView estado = new ImageView(new Image(new File("seleccionado.png").toURI().toString()));
-            }
-        }
+        selec = new boolean[10][10];
     }
 
-    private void setPelicula(Pelicula _pelicula) {
-
+    public void setFuncion(Funcion _funcion) {
+        boolean[][] disp = _funcion.getDisponibles();
+        nselecc = 0;
+        for (int it = 0; it < 10; it++) {
+            for (int jt = 0; jt < 5; jt++) {
+                final int i = it;
+                final int j = jt;
+                final ImageView estado = new ImageView();
+                if (disp[i][j]) {
+                    estado.setImage(new Image(new File("imagenes/libre_32.png").toURI().toString()));
+                    estado.setStyle("-fx-cursor: hand;");
+                    estado.setOnMouseClicked(event -> {
+                        if (selec[i][j]) {
+                            estado.setImage(new Image(new File("imagenes/libre_32.png").toURI().toString()));
+                            selec[i][j] = false;
+                            nselecc--;
+                        } else {
+                            estado.setImage(new Image(new File("imagenes/seleccionado_32.png").toURI().toString()));
+                            selec[i][j] = true;
+                            nselecc++;
+                        }
+                    });
+                } else estado.setImage(new Image(new File("imagenes/ocupado_32.png").toURI().toString()));
+                puestosl.add(estado, j, i);
+            }
+        }
+        for (int it = 0; it < 10; it++) {
+            for (int jt = 0; jt < 5; jt++) {
+                final int i = it;
+                final int j = jt + 5;
+                final ImageView estado = new ImageView();
+                if (disp[i][j]) {
+                    estado.setImage(new Image(new File("imagenes/libre_32.png").toURI().toString()));
+                    estado.setStyle("-fx-cursor: hand;");
+                    estado.setOnMouseClicked(event -> {
+                        if (selec[i][j]) {
+                            estado.setImage(new Image(new File("imagenes/libre_32.png").toURI().toString()));
+                            selec[i][j] = false;
+                            nselecc--;
+                        } else {
+                            estado.setImage(new Image(new File("imagenes/seleccionado_32.png").toURI().toString()));
+                            selec[i][j] = true;
+                            nselecc++;
+                        }
+                    });
+                } else estado.setImage(new Image(new File("imagenes/ocupado_32.png").toURI().toString()));
+                puestosr.add(estado, jt, it);
+            }
+        }
     }
 
     public void volver() {
         toogleVisible();
-        PrincipalUsuario.toogleVisible();
+        PeliculaReserva.toogleVisible();
     }
 
-    public void cerrar() {
-        toogleVisible();
+    public void pagar() {
+
     }
 
     private class Banner {

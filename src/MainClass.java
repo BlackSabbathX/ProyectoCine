@@ -63,47 +63,6 @@ public class MainClass extends Application {
         PeliculaReserva.controlador = loaderPR.getController();
         Reserva.controlador = loaderR.getController();
 
-//        Reserva.usuario.focusedProperty().addListener((observable, ov, nv) -> {
-//            if (nv && AgregarA.agregar.isShowing()) {
-//                AgregarA.toogleVisible();
-//            }
-//        });
-//        AgregarE.agregar.focusedProperty().addListener((observable, ov, nv) -> {
-//            if (!nv) {
-//                AgregarE.toogleVisible();
-//            }
-//        });
-//        EditarE.editar.focusedProperty().addListener((observable, ov, nv) -> {
-//            if (!nv) {
-//                EditarE.toogleVisible();
-//            }
-//        });
-//        EliminarE.eliminar.focusedProperty().addListener((observable, ov, nv) -> {
-//            if (!nv) {
-//                EliminarE.toogleVisible();
-//            }
-//        });
-//        AgregarV.agregar.focusedProperty().addListener((observable, ov, nv) -> {
-//            if (!nv) {
-//                AgregarV.toogleVisible();
-//            }
-//        });
-//        EliminarV.eliminar.focusedProperty().addListener((observable, ov, nv) -> {
-//            if (!nv) {
-//                EliminarV.toogleVisible();
-//            }
-//        });
-//        EliminarA.eliminar.focusedProperty().addListener((observable, ov, nv) -> {
-//            if (!nv) {
-//                EliminarA.toogleVisible();
-//            }
-//        });
-//        Reporte.reporte.focusedProperty().addListener((observable, ov, nv) -> {
-//            if (!nv) {
-//                Reporte.toogleVisible();
-//            }
-//        });
-
         SplashScreen.toogleVisible();
         SplashScreen.controlador.startApp();
     }

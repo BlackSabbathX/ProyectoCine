@@ -129,7 +129,9 @@ public class PeliculaReserva implements Initializable {
             precio.setText("$ " + String.valueOf(funcion.getValor()) + " c/e");
 
             reservar.setOnAction(event -> {
+                toogleVisible();
                 Reserva.toogleVisible();
+                Reserva.controlador.setFuncion(funcion);
             });
             return p;
         }

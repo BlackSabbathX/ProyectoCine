@@ -29,7 +29,7 @@
                         </JFXButton>
                         <ImageView fitHeight="20.0" fitWidth="25.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@img/exiticon.png" />
+                                <Image url="@img/exiticon_64.png" />
                             </image>
                         </ImageView>
                         <JFXButton focusTraversable="false" layoutX="513.0" layoutY="10.0" onAction="#registrarClick" ripplerFill="WHITE" text="Registrarse">
@@ -39,7 +39,7 @@
                         </JFXButton>
                         <ImageView fitHeight="95.0" fitWidth="121.0" layoutX="271.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@img/icon.png" />
+                                <Image url="@img/icon_128.png" />
                             </image>
                         </ImageView>
                         <Label focusTraversable="false" layoutX="267.0" layoutY="109.0" text="Tu">
@@ -64,12 +64,12 @@
                         </JFXPasswordField>
                         <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="177.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@img/user.png" />
+                                <Image url="@img/user_64.png" />
                             </image>
                         </ImageView>
                         <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="175.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@img/pass.png" />
+                                <Image url="@img/pass_64.png" />
                             </image>
                         </ImageView>
                         <JFXButton layoutX="364.0" layoutY="328.0" onAction="#iniciarSesion" ripplerFill="#44b9d7" text="Iniciar sesión">
