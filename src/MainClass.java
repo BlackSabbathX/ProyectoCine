@@ -56,7 +56,7 @@ public class MainClass extends Application {
         Registro.controlador = loaderRE.getController();
         PeliculaReserva.controlador = loaderPR.getController();
 
-//        PeliculaReserva.usuario.focusedProperty().addListener((observable, ov, nv) -> {
+//        Reserva.usuario.focusedProperty().addListener((observable, ov, nv) -> {
 //            if (nv && AgregarA.agregar.isShowing()) {
 //                AgregarA.toogleVisible();
 //            }
