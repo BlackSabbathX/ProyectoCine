@@ -3,6 +3,7 @@ package Ventana.PeliculaReservas;
 import BaseDeDatos.Funcion;
 import BaseDeDatos.Pelicula;
 import Estructuras.DateTime;
+import Ventana.PrincipalUsuario.PrincipalUsuario;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -78,9 +79,17 @@ public class PeliculaReserva implements Initializable {
             for (Funcion f : Funcion.getFunciones(_pelicula)) {
                 funciones.getChildren().add(banner.nuevoBanner(f));
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
+    }
+
+    public void volver() {
+        toogleVisible();
+        PrincipalUsuario.toogleVisible();
+    }
+
+    public void cerrar() {
+        toogleVisible();
     }
 
     private class Banner {
@@ -89,7 +98,6 @@ public class PeliculaReserva implements Initializable {
             Parent parent = FXMLLoader.load(getClass().getResource("/Ventana/PeliculaReservas/BannerFuncion.fxml"));
 
             final Pane p = (Pane) parent.lookup("#panel");
-            String style = "-fx-cursor: hand;";
             Label tiempo = (Label) ((GridPane) p.getChildren().get(0)).getChildren().get(0);
             Label precio = (Label) ((GridPane) p.getChildren().get(0)).getChildren().get(1);
             JFXButton reservar = (JFXButton) ((GridPane) p.getChildren().get(0)).getChildren().get(2);
@@ -107,9 +115,7 @@ public class PeliculaReserva implements Initializable {
             DateTime ti = funcion.getTiempo();
             t = ti.getDia().toString() + " a las " + ti.getHora().toString();
             tiempo.setText(t);
-            precio.setText(String.valueOf(funcion.getValor()));
-
-            reservar.setStyle(style);
+            precio.setText("$" + String.valueOf(funcion.getValor()));
 
             reservar.setOnAction(event -> {
                 System.out.println("Reserva " + funcion.getPelicula().getNombre());

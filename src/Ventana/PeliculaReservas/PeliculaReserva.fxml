@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.ImageView?>
@@ -11,10 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.Rating?>
 
-<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="502.0" prefWidth="777.0" style="-fx-background-color: #039BE5;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana.PeliculaReservas.PeliculaReserva">
-    <stylesheets>
-        <URL value="@PeliculaReserva.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="502.0" prefWidth="777.0" style="-fx-background-color: #039BE5;" styleClass="mainFxmlClass" stylesheets="@Banner.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana.PeliculaReservas.PeliculaReserva">
     <children>
         <StackPane fx:id="content" prefHeight="502.0" prefWidth="777.0">
             <children>
@@ -27,7 +24,7 @@
                         </Label>
                   <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="293.0" style="-fx-background-color: #1976D2;">
                      <children>
-                        <Label id="genero" fx:id="genero1" alignment="CENTER" contentDisplay="CENTER" prefHeight="19.0" prefWidth="314.0" text="Pelicula" textFill="#0288d1">
+                        <Label id="genero" fx:id="genero1" alignment="CENTER" contentDisplay="CENTER" prefHeight="19.0" prefWidth="314.0" text="Información de la pelicula" textFill="#bbdefb">
                            <font>
                               <Font name="Segoe UI Italic" size="16.0" />
                            </font>
@@ -51,11 +48,13 @@
                         </Label>
                      </children>
                   </VBox>
-                  <ScrollPane hbarPolicy="NEVER" layoutX="308.0" layoutY="66.0" prefHeight="424.0" prefWidth="457.0" style="-fx-background-color: #0288D1;">
+                  <ScrollPane hbarPolicy="NEVER" layoutX="308.0" layoutY="66.0" prefHeight="377.0" prefWidth="457.0" style="-fx-background-color: #0288D1;">
                      <content>
-                        <VBox id="funciones" fx:id="funciones" prefHeight="422.0" prefWidth="455.0" style="-fx-background-color: #0288D1;" />
+                        <VBox id="funciones" fx:id="funciones" prefHeight="375.0" prefWidth="455.0" style="-fx-background-color: #0288D1;" />
                      </content>
                   </ScrollPane>
+                  <JFXButton layoutX="308.0" layoutY="460.0" onAction="#volver" prefHeight="28.0" prefWidth="101.0" text="Volver" textFill="WHITE" />
+                  <JFXButton layoutX="605.0" layoutY="460.0" onAction="#cerrar" prefHeight="28.0" prefWidth="157.0" text="Cerrar aplicación" textFill="WHITE" />
                     </children>
                 </Pane>
             </children>

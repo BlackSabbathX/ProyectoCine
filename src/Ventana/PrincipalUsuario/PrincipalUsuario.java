@@ -74,11 +74,23 @@ public class PrincipalUsuario implements Initializable {
 
             Funcion.add(Funcion.generateId(), new DateTime(Dia.jueves, Hora.cinco), Sala.getSalaAt(0), Pelicula.getPeliculaAt(1), 7000, new boolean[10][10]);
             Funcion.add(Funcion.generateId(), new DateTime(Dia.jueves, Hora.nueveA), Sala.getSalaAt(1), Pelicula.getPeliculaAt(2), 6000, new boolean[10][10]);
+            Funcion.add(Funcion.generateId(), new DateTime(Dia.viernes, Hora.siete), Sala.getSalaAt(0), Pelicula.getPeliculaAt(2), 6000, new boolean[10][10]);
+            Funcion.add(Funcion.generateId(), new DateTime(Dia.domingo, Hora.siete), Sala.getSalaAt(0), Pelicula.getPeliculaAt(2), 6000, new boolean[10][10]);
+            Funcion.add(Funcion.generateId(), new DateTime(Dia.sabado, Hora.siete), Sala.getSalaAt(0), Pelicula.getPeliculaAt(2), 6000, new boolean[10][10]);
             Funcion.add(Funcion.generateId(), new DateTime(Dia.miercoles, Hora.siete), Sala.getSalaAt(0), Pelicula.getPeliculaAt(2), 6000, new boolean[10][10]);
+            Funcion.add(Funcion.generateId(), new DateTime(Dia.martes, Hora.siete), Sala.getSalaAt(0), Pelicula.getPeliculaAt(2), 6000, new boolean[10][10]);
+            Funcion.add(Funcion.generateId(), new DateTime(Dia.jueves, Hora.siete), Sala.getSalaAt(0), Pelicula.getPeliculaAt(2), 6000, new boolean[10][10]);
+            Funcion.add(Funcion.generateId(), new DateTime(Dia.lunes, Hora.siete), Sala.getSalaAt(0), Pelicula.getPeliculaAt(2), 6000, new boolean[10][10]);
 
-            Funcion.getFuncionAt(0).setDisponibilidad(true, 2, 3);
-            Funcion.getFuncionAt(1).setDisponibilidad(true, 2, 3);
-            Funcion.getFuncionAt(2).setDisponibilidad(true, 2, 3);
+            Funcion.getFuncionAt(0).setDisponibilidad(true, 0, 0);
+            Funcion.getFuncionAt(1).setDisponibilidad(true, 0, 0);
+            Funcion.getFuncionAt(2).setDisponibilidad(true, 0, 0);
+            Funcion.getFuncionAt(3).setDisponibilidad(true, 0, 0);
+            Funcion.getFuncionAt(4).setDisponibilidad(true, 0, 0);
+            Funcion.getFuncionAt(5).setDisponibilidad(true, 0, 0);
+            Funcion.getFuncionAt(6).setDisponibilidad(true, 0, 0);
+            Funcion.getFuncionAt(7).setDisponibilidad(true, 0, 0);
+            Funcion.getFuncionAt(8).setDisponibilidad(true, 0, 0);
 
             Funcion.save(content);
             Funcion.load(content);
@@ -89,7 +101,6 @@ public class PrincipalUsuario implements Initializable {
                 peliculas.getChildren().add(banner.nuevoBanner(p));
             }
         } catch (Exception ignored) {
-            ignored.printStackTrace();
         }
     }
 
@@ -118,6 +129,7 @@ public class PrincipalUsuario implements Initializable {
             genero.setStyle(style);
 
             EventHandler evt = (EventHandler<MouseEvent>) event -> {
+                toogleVisible();
                 PeliculaReserva.mostrarPelicula(pelicula);
             };
 
