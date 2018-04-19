@@ -63,21 +63,23 @@ public class Reserva implements Initializable {
                 final int j = jt;
                 final ImageView estado = new ImageView();
                 if (disp[i][j]) {
-                    estado.setImage(new Image(new File("imagenes/libre_32.png").toURI().toString()));
+                    estado.setImage(new Image(new File("imagenes/libre_128.png").toURI().toString()));
                     estado.setStyle("-fx-cursor: hand;");
                     estado.setOnMouseClicked(event -> {
                         if (selec[i][j]) {
-                            estado.setImage(new Image(new File("imagenes/libre_32.png").toURI().toString()));
+                            estado.setImage(new Image(new File("imagenes/libre_128.png").toURI().toString()));
                             selec[i][j] = false;
                             nselecc--;
                         } else {
-                            estado.setImage(new Image(new File("imagenes/seleccionado_32.png").toURI().toString()));
+                            estado.setImage(new Image(new File("imagenes/seleccionado_128.png").toURI().toString()));
                             selec[i][j] = true;
                             nselecc++;
                         }
                         actualizarSaldos(_funcion.getValor());
                     });
-                } else estado.setImage(new Image(new File("imagenes/ocupado_32.png").toURI().toString()));
+                } else estado.setImage(new Image(new File("imagenes/ocupado_128.png").toURI().toString()));
+                estado.setFitWidth(32);
+                estado.setFitHeight(32);
                 puestosl.add(estado, j, i);
             }
         }
@@ -87,21 +89,23 @@ public class Reserva implements Initializable {
                 final int j = jt + 5;
                 final ImageView estado = new ImageView();
                 if (disp[i][j]) {
-                    estado.setImage(new Image(new File("imagenes/libre_32.png").toURI().toString()));
+                    estado.setImage(new Image(new File("imagenes/libre_128.png").toURI().toString()));
                     estado.setStyle("-fx-cursor: hand;");
                     estado.setOnMouseClicked(event -> {
                         if (selec[i][j]) {
-                            estado.setImage(new Image(new File("imagenes/libre_32.png").toURI().toString()));
+                            estado.setImage(new Image(new File("imagenes/libre_128.png").toURI().toString()));
                             selec[i][j] = false;
                             nselecc--;
                         } else {
-                            estado.setImage(new Image(new File("imagenes/seleccionado_32.png").toURI().toString()));
+                            estado.setImage(new Image(new File("imagenes/seleccionado_128.png").toURI().toString()));
                             selec[i][j] = true;
                             nselecc++;
                         }
                         actualizarSaldos(_funcion.getValor());
                     });
-                } else estado.setImage(new Image(new File("imagenes/ocupado_32.png").toURI().toString()));
+                } else estado.setImage(new Image(new File("imagenes/ocupado_128.png").toURI().toString()));
+                estado.setFitWidth(32);
+                estado.setFitHeight(32);
                 puestosr.add(estado, jt, it);
             }
         }
