@@ -4,6 +4,7 @@ import BaseDeDatos.Funcion;
 import BaseDeDatos.Pelicula;
 import Estructuras.DateTime;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
+import Ventana.Reserva.Reserva;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -128,7 +129,7 @@ public class PeliculaReserva implements Initializable {
             precio.setText("$ " + String.valueOf(funcion.getValor()) + " c/e");
 
             reservar.setOnAction(event -> {
-                System.out.println("Reserva " + funcion.getPelicula().getNombre());
+                Reserva.toogleVisible();
             });
             return p;
         }
