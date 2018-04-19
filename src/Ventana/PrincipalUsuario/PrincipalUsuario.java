@@ -6,6 +6,7 @@ import BaseDeDatos.Sala;
 import Estructuras.DateTime;
 import Estructuras.Dia;
 import Estructuras.Hora;
+import Ventana.Login.Login;
 import Ventana.PeliculaReservas.PeliculaReserva;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -102,6 +103,15 @@ public class PrincipalUsuario implements Initializable {
             }
         } catch (Exception ignored) {
         }
+    }
+
+    public void volver() {
+        toogleVisible();
+        Login.toogleVisible();
+    }
+
+    public void cerrar() {
+        toogleVisible();
     }
 
     private class Banner {

@@ -42,7 +42,6 @@ public class PeliculaReserva implements Initializable {
     private Label genero;
     @FXML
     private StackPane content;
-    private Pelicula pelicula;
 
     public static void toogleVisible() {
         if (peliculaR.isShowing()) {
@@ -69,15 +68,19 @@ public class PeliculaReserva implements Initializable {
     private void setPelicula(Pelicula _pelicula) {
         funciones.getChildren().clear();
         Banner banner = new Banner();
-        pelicula = _pelicula;
-        imagen.setImage(new Image(new File(pelicula.getImagen()).toURI().toString()));
-        rate.setRating(pelicula.getRate());
-        nombre.setText(pelicula.getNombre());
-        autor.setText(pelicula.getAutor());
-        genero.setText(pelicula.getGenero());
+        imagen.setImage(new Image(new File(_pelicula.getImagen()).toURI().toString()));
+        rate.setRating(_pelicula.getRate());
+        nombre.setText(_pelicula.getNombre());
+        autor.setText(_pelicula.getAutor());
+        genero.setText(_pelicula.getGenero());
         try {
+            boolean ex = true;
             for (Funcion f : Funcion.getFunciones(_pelicula)) {
                 funciones.getChildren().add(banner.nuevoBanner(f));
+                ex = false;
+            }
+            if (ex) {
+                funciones.getChildren().add(banner.nuevoBanner(null));
             }
         } catch (IOException ignored) {
         }
@@ -102,6 +105,13 @@ public class PeliculaReserva implements Initializable {
             Label precio = (Label) ((GridPane) p.getChildren().get(0)).getChildren().get(1);
             JFXButton reservar = (JFXButton) ((GridPane) p.getChildren().get(0)).getChildren().get(2);
 
+            if (funcion == null) {
+                tiempo.setText("No hay funciones esta semana");
+                precio.setText("");
+                reservar.setVisible(false);
+                return p;
+            }
+
             for (int i = 0; i < 10; i++) {
                 for (int j = 0; j < 10; j++) {
                     if (funcion.getDisponibles()[i][j]) {
@@ -115,7 +125,7 @@ public class PeliculaReserva implements Initializable {
             DateTime ti = funcion.getTiempo();
             t = ti.getDia().toString() + " a las " + ti.getHora().toString();
             tiempo.setText(t);
-            precio.setText("$" + String.valueOf(funcion.getValor()));
+            precio.setText("$ " + String.valueOf(funcion.getValor()) + " c/e");
 
             reservar.setOnAction(event -> {
                 System.out.println("Reserva " + funcion.getPelicula().getNombre());
