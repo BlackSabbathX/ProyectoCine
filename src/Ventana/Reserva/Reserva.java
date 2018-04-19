@@ -45,12 +45,14 @@ public class Reserva implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 5; j++) {
-                puestosl.add(new ImageView(new Image(new File("libre.png").toURI().toString())), j, i);
+                String path = "";
+                ImageView estado = new ImageView(new Image(new File("libre.png").toURI().toString()));
             }
         }
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 5; j++) {
-                puestosr.add(new ImageView(new Image(new File("seleccionado.png").toURI().toString())), j, i);
+                String path = "";
+                ImageView estado = new ImageView(new Image(new File("seleccionado.png").toURI().toString()));
             }
         }
     }

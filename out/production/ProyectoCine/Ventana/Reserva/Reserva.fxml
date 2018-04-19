@@ -140,7 +140,7 @@
                         </GridPane>
                             </children>
                         </Pane>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="57.0" prefWidth="523.0" style="-fx-background-color: #1976D2;" text="  Pantalla" textAlignment="CENTER" textFill="WHITE">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="57.0" prefWidth="523.0" style="-fx-background-color: #1976D2;" text="   Pantalla" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font name="Segoe UI" size="31.0" />
                             </font>

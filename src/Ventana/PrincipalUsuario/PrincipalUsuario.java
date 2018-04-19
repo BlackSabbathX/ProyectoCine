@@ -56,9 +56,9 @@ public class PrincipalUsuario implements Initializable {
             Sala.init(content);
             Funcion.init(content);
 
-            Pelicula.add(Pelicula.generateId(), "Mad Max: Fury Road", "Acción - Ciencia Ficción - Futurista", "I Don Know Rick", 4.3, "madmax.jpg");
-            Pelicula.add(Pelicula.generateId(), "Harry Potter Y La Piedra Filosofal", "Ciencia Ficción - Romance", "J. K. Rowling", 4.5, "hppf.jpg");
-            Pelicula.add(Pelicula.generateId(), "Un Puente Hacia Therabithia", "Ciencia Ficción - Romance - Aventura", "Hmmmm...", 3.8, "puerta.jpg");
+            Pelicula.add(Pelicula.generateId(), "Mad Max: Fury Road", "Acción - Ciencia Ficción - Futurista", "I Don Know Rick", 4.3, "portada/madmax.jpg");
+            Pelicula.add(Pelicula.generateId(), "Harry Potter Y La Piedra Filosofal", "Ciencia Ficción - Romance", "J. K. Rowling", 4.5, "portada/hppf.jpg");
+            Pelicula.add(Pelicula.generateId(), "Un Puente Hacia Therabithia", "Ciencia Ficción - Romance - Aventura", "Hmmmm...", 3.8, "portada/puerta.jpg");
 
             Pelicula.save(content);
             Pelicula.load(content);
