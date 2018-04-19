@@ -1,4 +1,5 @@
 import Ventana.Login.Login;
+import Ventana.Pago.Pago;
 import Ventana.PeliculaReservas.PeliculaReserva;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
 import Ventana.Registro.Registro;
@@ -32,36 +33,42 @@ public class MainClass extends Application {
         FXMLLoader loaderRE = new FXMLLoader(getClass().getResource("/Ventana/Registro/Registro.fxml"));
         FXMLLoader loaderPR = new FXMLLoader(getClass().getResource("/Ventana/PeliculaReservas/PeliculaReserva.fxml"));
         FXMLLoader loaderR = new FXMLLoader(getClass().getResource("/Ventana/Reserva/Reserva.fxml"));
+        FXMLLoader loaderP = new FXMLLoader(getClass().getResource("/Ventana/Pago/Pago.fxml"));
 
         Parent rootLG = loaderLG.load();
         Parent rootPU = loaderPU.load();
         Parent rootRE = loaderRE.load();
         Parent rootPR = loaderPR.load();
         Parent rootR = loaderR.load();
+        Parent rootP = loaderP.load();
 
         Scene sceneLG = new Scene(rootLG);
         Scene scenePU = new Scene(rootPU);
         Scene sceneRE = new Scene(rootRE);
         Scene scenePR = new Scene(rootPR);
         Scene sceneR = new Scene(rootR);
+        Scene sceneP = new Scene(rootP);
 
         Login.login = new Stage(StageStyle.UNDECORATED);
         PrincipalUsuario.usuario = new Stage(StageStyle.UNDECORATED);
         Registro.registro = new Stage(StageStyle.UNDECORATED);
         PeliculaReserva.peliculaR = new Stage(StageStyle.UNDECORATED);
         Reserva.reserva = new Stage(StageStyle.UNDECORATED);
+        Pago.pago = new Stage(StageStyle.UNDECORATED);
 
         Login.login.setScene(sceneLG);
         PrincipalUsuario.usuario.setScene(scenePU);
         Registro.registro.setScene(sceneRE);
         PeliculaReserva.peliculaR.setScene(scenePR);
         Reserva.reserva.setScene(sceneR);
+        Pago.pago.setScene(sceneP);
 
         Login.controlador = loaderLG.getController();
         PrincipalUsuario.controlador = loaderPU.getController();
         Registro.controlador = loaderRE.getController();
         PeliculaReserva.controlador = loaderPR.getController();
         Reserva.controlador = loaderR.getController();
+        Pago.controlador = loaderP.getController();
 
         SplashScreen.toogleVisible();
         SplashScreen.controlador.startApp();
