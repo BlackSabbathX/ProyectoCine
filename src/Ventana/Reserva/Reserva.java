@@ -30,6 +30,10 @@ public class Reserva implements Initializable {
     @FXML
     GridPane puestosr;
     @FXML
+    Label valor;
+    @FXML
+    Label puestos;
+    @FXML
     private StackPane content;
     private boolean[][] selec;
     private int nselecc;
@@ -50,6 +54,9 @@ public class Reserva implements Initializable {
     public void setFuncion(Funcion _funcion) {
         boolean[][] disp = _funcion.getDisponibles();
         nselecc = 0;
+        actualizarSaldos(_funcion.getValor());
+        puestosl.getChildren().clear();
+        puestosr.getChildren().clear();
         for (int it = 0; it < 10; it++) {
             for (int jt = 0; jt < 5; jt++) {
                 final int i = it;
@@ -68,6 +75,7 @@ public class Reserva implements Initializable {
                             selec[i][j] = true;
                             nselecc++;
                         }
+                        actualizarSaldos(_funcion.getValor());
                     });
                 } else estado.setImage(new Image(new File("imagenes/ocupado_32.png").toURI().toString()));
                 puestosl.add(estado, j, i);
@@ -91,6 +99,7 @@ public class Reserva implements Initializable {
                             selec[i][j] = true;
                             nselecc++;
                         }
+                        actualizarSaldos(_funcion.getValor());
                     });
                 } else estado.setImage(new Image(new File("imagenes/ocupado_32.png").toURI().toString()));
                 puestosr.add(estado, jt, it);
@@ -105,6 +114,11 @@ public class Reserva implements Initializable {
 
     public void pagar() {
 
+    }
+
+    private void actualizarSaldos(float unitario) {
+        valor.setText("Total: $" + unitario * nselecc);
+        puestos.setText("No. de puestos: " + nselecc);
     }
 
     private class Banner {

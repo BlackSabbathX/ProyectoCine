@@ -84,9 +84,4 @@ public class Login implements Initializable {
         }
     }
 
-    @FXML
-    public void contrasenaEnter() {
-        iniciarSesion();
-    }
-
 }

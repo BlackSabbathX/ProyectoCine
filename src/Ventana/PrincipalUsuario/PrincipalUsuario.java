@@ -88,10 +88,16 @@ public class PrincipalUsuario implements Initializable {
             Funcion.getFuncionAt(2).setDisponibilidad(true, 0, 0);
             Funcion.getFuncionAt(3).setDisponibilidad(true, 0, 0);
             Funcion.getFuncionAt(4).setDisponibilidad(true, 0, 0);
+            Funcion.getFuncionAt(4).setDisponibilidad(true, 2, 3);
+            Funcion.getFuncionAt(4).setDisponibilidad(true, 4, 4);
+            Funcion.getFuncionAt(4).setDisponibilidad(true, 9, 7);
+            Funcion.getFuncionAt(4).setDisponibilidad(true, 8, 1);
             Funcion.getFuncionAt(5).setDisponibilidad(true, 0, 0);
             Funcion.getFuncionAt(6).setDisponibilidad(true, 0, 0);
             Funcion.getFuncionAt(7).setDisponibilidad(true, 0, 0);
             Funcion.getFuncionAt(8).setDisponibilidad(true, 0, 0);
+
+            System.out.println(Funcion.getFuncionAt(4).getPelicula().getNombre());
 
             Funcion.save(content);
             Funcion.load(content);
