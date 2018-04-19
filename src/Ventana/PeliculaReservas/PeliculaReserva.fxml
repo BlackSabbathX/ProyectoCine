@@ -2,6 +2,7 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -19,19 +20,19 @@
             <children>
                 <Pane prefHeight="529.0" prefWidth="777.0">
                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="400.0" layoutY="-5.0" prefHeight="57.0" prefWidth="314.0" style="-fx-background-color: #0288D1;" text="En Cartelera" textAlignment="CENTER" textFill="WHITE">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="291.0" layoutY="-5.0" prefHeight="57.0" prefWidth="487.0" style="-fx-background-color: #0288D1;" text="Funciones" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font name="Segoe UI" size="31.0" />
                             </font>
                         </Label>
-                  <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="321.0" style="-fx-background-color: #0288D1;">
+                  <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="293.0" style="-fx-background-color: #1976D2;">
                      <children>
                         <Label id="genero" fx:id="genero1" alignment="CENTER" contentDisplay="CENTER" prefHeight="19.0" prefWidth="314.0" text="Pelicula" textFill="#0288d1">
                            <font>
                               <Font name="Segoe UI Italic" size="16.0" />
                            </font>
                         </Label>
-                        <ImageView id="imagen" fx:id="imagen" fitHeight="377.0" fitWidth="321.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="imagen" fx:id="imagen" fitHeight="377.0" fitWidth="286.0" pickOnBounds="true" preserveRatio="true" />
                         <Rating id="rate" fx:id="rate" blendMode="HARD_LIGHT" disable="true" partialRating="true" prefHeight="32.0" prefWidth="247.0" />
                         <Label id="nombre" fx:id="nombre" alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="314.0" text="Pelicula" textFill="WHITE">
                            <font>
@@ -50,6 +51,11 @@
                         </Label>
                      </children>
                   </VBox>
+                  <ScrollPane hbarPolicy="NEVER" layoutX="308.0" layoutY="66.0" prefHeight="424.0" prefWidth="457.0" style="-fx-background-color: #0288D1;">
+                     <content>
+                        <VBox id="funciones" fx:id="funciones" prefHeight="422.0" prefWidth="455.0" style="-fx-background-color: #0288D1;" />
+                     </content>
+                  </ScrollPane>
                     </children>
                 </Pane>
             </children>

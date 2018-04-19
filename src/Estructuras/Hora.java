@@ -1,33 +1,42 @@
 package Estructuras;
 
-public class Hora {
-    private int minuto;
+public enum Hora {
+    nueveA(9),
+    once(11),
+    una(13),
+    tres(15),
+    cinco(17),
+    siete(19),
+    nueveP(21);
+
     private int hora;
 
-    public Hora(int _hora, int _minuto) {
-        minuto = _minuto;
+    Hora(int _hora) {
         hora = _hora;
     }
 
-    public boolean esMayor(Hora h) {
-        return ((hora > h.hora) || (hora == h.hora && minuto > h.minuto));
+    public boolean mayorQue(Hora h) {
+        return hora > h.hora;
     }
 
     public boolean igualQue(Hora h) {
-        return (hora == h.hora && minuto == h.minuto);
+        return hora == h.hora;
     }
 
     @Override
     public String toString() {
         String h = String.valueOf(hora);
-        String m = String.valueOf(minuto);
+        String mer = "am";
         if (hora < 10) h = "0" + h;
-        if (minuto < 10) m = "0" + m;
-        return h + ":" + m;
+        if (hora > 12) mer = "pm";
+        return h + ":00 " + mer;
     }
 
     public static Hora fromString(String h) {
-        String[] t = h.split(":");
-        return new Hora(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
+        int n = Integer.parseInt(h.split(":")[0]);
+        for (Hora ho : Hora.values()) {
+            if (ho.hora == n) return ho;
+        }
+        return null;
     }
 }

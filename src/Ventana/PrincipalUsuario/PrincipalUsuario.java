@@ -1,6 +1,11 @@
 package Ventana.PrincipalUsuario;
 
+import BaseDeDatos.Funcion;
 import BaseDeDatos.Pelicula;
+import BaseDeDatos.Sala;
+import Estructuras.DateTime;
+import Estructuras.Dia;
+import Estructuras.Hora;
 import Ventana.PeliculaReservas.PeliculaReserva;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -42,9 +47,13 @@ public class PrincipalUsuario implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
+            peliculas.getChildren().clear();
+
             Banner banner = new Banner();
 
             Pelicula.init(content);
+            Sala.init(content);
+            Funcion.init(content);
 
             Pelicula.add(Pelicula.generateId(), "Mad Max: Fury Road", "Acción - Ciencia Ficción - Futurista", "I Don Know Rick", 4.3, "madmax.jpg");
             Pelicula.add(Pelicula.generateId(), "Harry Potter Y La Piedra Filosofal", "Ciencia Ficción - Romance", "J. K. Rowling", 4.5, "hppf.jpg");
@@ -54,6 +63,27 @@ public class PrincipalUsuario implements Initializable {
             Pelicula.load(content);
             Pelicula.save(content);
             Pelicula.load(content);
+
+            Sala.add(Sala.generateId(), "Sala KONDER");
+            Sala.add(Sala.generateId(), "Sala Matrix");
+
+            Sala.save(content);
+            Sala.load(content);
+            Sala.save(content);
+            Sala.load(content);
+
+            Funcion.add(Funcion.generateId(), new DateTime(Dia.jueves, Hora.cinco), Sala.getSalaAt(0), Pelicula.getPeliculaAt(1), 7000, new boolean[10][10]);
+            Funcion.add(Funcion.generateId(), new DateTime(Dia.jueves, Hora.nueveA), Sala.getSalaAt(1), Pelicula.getPeliculaAt(2), 6000, new boolean[10][10]);
+            Funcion.add(Funcion.generateId(), new DateTime(Dia.miercoles, Hora.siete), Sala.getSalaAt(0), Pelicula.getPeliculaAt(2), 6000, new boolean[10][10]);
+
+            Funcion.getFuncionAt(0).setDisponibilidad(true, 2, 3);
+            Funcion.getFuncionAt(1).setDisponibilidad(true, 2, 3);
+            Funcion.getFuncionAt(2).setDisponibilidad(true, 2, 3);
+
+            Funcion.save(content);
+            Funcion.load(content);
+            Funcion.save(content);
+            Funcion.load(content);
 
             for (Pelicula p : Pelicula.getPeliculas()) {
                 peliculas.getChildren().add(banner.nuevoBanner(p));

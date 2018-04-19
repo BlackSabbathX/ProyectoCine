@@ -1,7 +1,9 @@
 package Ventana.PeliculaReservas;
 
+import BaseDeDatos.Funcion;
 import BaseDeDatos.Pelicula;
-import javafx.event.EventHandler;
+import Estructuras.DateTime;
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,9 +11,10 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.controlsfx.control.Rating;
 
@@ -25,6 +28,8 @@ public class PeliculaReserva implements Initializable {
     public static Stage peliculaR;
     public static PeliculaReserva controlador;
     @FXML
+    private VBox funciones;
+    @FXML
     private ImageView imagen;
     @FXML
     private Rating rate;
@@ -34,8 +39,6 @@ public class PeliculaReserva implements Initializable {
     private Label autor;
     @FXML
     private Label genero;
-//    @FXML
-//    private Pane info;
     @FXML
     private StackPane content;
     private Pelicula pelicula;
@@ -63,46 +66,57 @@ public class PeliculaReserva implements Initializable {
     }
 
     private void setPelicula(Pelicula _pelicula) {
+        funciones.getChildren().clear();
+        Banner banner = new Banner();
         pelicula = _pelicula;
         imagen.setImage(new Image(new File(pelicula.getImagen()).toURI().toString()));
-//        imagen.setX((info.getWidth() / 2) - (imagen.getFitWidth() / 2) + 17);
         rate.setRating(pelicula.getRate());
         nombre.setText(pelicula.getNombre());
         autor.setText(pelicula.getAutor());
         genero.setText(pelicula.getGenero());
+        try {
+            for (Funcion f : Funcion.getFunciones(_pelicula)) {
+                funciones.getChildren().add(banner.nuevoBanner(f));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    private Pane nuevoBanner(Pelicula pelicula) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("/Ventana/PrincipalUsuario/BannerPelicula.fxml"));
+    private class Banner {
 
-        final Pane p = (Pane) parent.lookup("#panel");
-        String style = "-fx-cursor: hand;";
-        ImageView portada = (ImageView) p.getChildren().get(0);
-        Label nombre = (Label) p.getChildren().get(1);
-        Label autor = (Label) p.getChildren().get(2);
-        Label genero = (Label) p.getChildren().get(3);
-        Rating rate = (Rating) p.getChildren().get(4);
+        private Pane nuevoBanner(Funcion funcion) throws IOException {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Ventana/PeliculaReservas/BannerFuncion.fxml"));
 
-        portada.setImage(new Image(new File(pelicula.getImagen()).toURI().toString()));
-        nombre.setText(pelicula.getNombre());
-        autor.setText(pelicula.getAutor());
-        genero.setText(pelicula.getGenero());
-        rate.setRating(pelicula.getRate());
+            final Pane p = (Pane) parent.lookup("#panel");
+            String style = "-fx-cursor: hand;";
+            Label tiempo = (Label) ((GridPane) p.getChildren().get(0)).getChildren().get(0);
+            Label precio = (Label) ((GridPane) p.getChildren().get(0)).getChildren().get(1);
+            JFXButton reservar = (JFXButton) ((GridPane) p.getChildren().get(0)).getChildren().get(2);
 
-        portada.setStyle(style);
-        nombre.setStyle(style);
-        autor.setStyle(style);
-        genero.setStyle(style);
+            for (int i = 0; i < 10; i++) {
+                for (int j = 0; j < 10; j++) {
+                    if (funcion.getDisponibles()[i][j]) {
+                        reservar.setDisable(false);
+                        break;
+                    }
+                }
+            }
 
-        EventHandler evt = (EventHandler<MouseEvent>) event -> {
-            System.out.println("click" + pelicula.getNombre());
-        };
+            String t;
+            DateTime ti = funcion.getTiempo();
+            t = ti.getDia().toString() + " a las " + ti.getHora().toString();
+            tiempo.setText(t);
+            precio.setText(String.valueOf(funcion.getValor()));
 
-        portada.setOnMouseClicked(evt);
-        nombre.setOnMouseClicked(evt);
-        autor.setOnMouseClicked(evt);
-        genero.setOnMouseClicked(evt);
-        return p;
+            reservar.setStyle(style);
+
+            reservar.setOnAction(event -> {
+                System.out.println("Reserva " + funcion.getPelicula().getNombre());
+            });
+            return p;
+        }
+
     }
 
 }
