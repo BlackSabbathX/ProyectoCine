@@ -1,6 +1,8 @@
 package Ventana.SplashScreen;
 
-import BaseDeDatos.*;
+import BaseDeDatos.Cliente;
+import BaseDeDatos.Reserva;
+import BaseDeDatos.Usuario;
 import Ventana.Login.Login;
 import javafx.application.Platform;
 import javafx.fxml.FXML;

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,29 +8,37 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="477.0" prefWidth="714.0" style="-fx-background-color: #039BE5;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana.PrincipalUsuario.PrincipalUsuario">
+<?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" fx:id="pane" prefHeight="477.0" prefWidth="714.0"
+            style="-fx-background-color: #039BE5;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141"
+            fx:controller="Ventana.PrincipalUsuario.PrincipalUsuario">
     <stylesheets>
-        <URL value="@PrincipalUsuario.css" />
+        <URL value="@PrincipalUsuario.css"/>
     </stylesheets>
     <children>
         <StackPane fx:id="content" prefHeight="477.0" prefWidth="714.0">
             <children>
                 <Pane prefHeight="467.0" prefWidth="704.0">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-5.0" prefHeight="57.0" prefWidth="714.0" style="-fx-background-color: #0288D1;" text="En Cartelera" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font name="Segoe UI" size="31.0" />
-                     </font>
-                  </Label>
-                  <ScrollPane hbarPolicy="NEVER" layoutX="11.0" layoutY="61.0" prefHeight="406.0" prefWidth="692.0" style="-fx-background-color: #0288D1;">
-                     <content>
-                        <VBox fx:id="peliculas" prefHeight="404.0" prefWidth="690.0" style="-fx-background-color: #0288D1;" />
-                     </content>
-                  </ScrollPane>
-                  <JFXButton layoutX="11.0" layoutY="12.0" onAction="#volver" prefHeight="28.0" prefWidth="104.0" text="Cerrar sesión" textAlignment="RIGHT" textFill="WHITE" />
-                  <JFXButton layoutX="576.0" layoutY="12.0" onAction="#cerrar" prefHeight="28.0" prefWidth="124.0" text="Cerrar aplicación" textAlignment="RIGHT" textFill="WHITE" />
-               </children>
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-5.0" prefHeight="57.0"
+                               prefWidth="714.0" style="-fx-background-color: #0288D1;" text="En Cartelera"
+                               textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Segoe UI" size="31.0"/>
+                            </font>
+                        </Label>
+                        <ScrollPane hbarPolicy="NEVER" layoutX="11.0" layoutY="61.0" prefHeight="406.0"
+                                    prefWidth="692.0" style="-fx-background-color: #0288D1;">
+                            <content>
+                                <VBox fx:id="peliculas" prefHeight="404.0" prefWidth="690.0"
+                                      style="-fx-background-color: #0288D1;"/>
+                            </content>
+                        </ScrollPane>
+                        <JFXButton layoutX="11.0" layoutY="12.0" onAction="#volver" prefHeight="28.0" prefWidth="104.0"
+                                   text="Cerrar sesión" textAlignment="RIGHT" textFill="WHITE"/>
+                        <JFXButton layoutX="576.0" layoutY="12.0" onAction="#cerrar" prefHeight="28.0" prefWidth="124.0"
+                                   text="Cerrar aplicación" textAlignment="RIGHT" textFill="WHITE"/>
+                    </children>
                 </Pane>
             </children>
         </StackPane>

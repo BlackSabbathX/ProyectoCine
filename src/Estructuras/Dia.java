@@ -51,18 +51,18 @@ public enum Dia {
         numDia = i;
     }
 
+    public static Dia fromString(String text) {
+        for (Dia dia : Dia.values()) {
+            if (dia.toString().toLowerCase().equals(text.toLowerCase())) return dia;
+        }
+        return null;
+    }
+
     private int getNumDia() {
         return numDia;
     }
 
     public boolean mayorQue(Dia dia) {
         return numDia > dia.numDia;
-    }
-
-    public static Dia fromString(String text) {
-        for (Dia dia : Dia.values()) {
-            if (dia.toString().toLowerCase().equals(text.toLowerCase())) return dia;
-        }
-        return null;
     }
 }

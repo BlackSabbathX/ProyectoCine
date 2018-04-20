@@ -1,24 +1,12 @@
 
 .jfx-button {
-    -fx-background-color: #FF7043;
-}
-
-.grid-pane {
-    -fx-column-halignment: center;
-}
-
-.jfx-blank-button {
-    -fx-background-color: #FF8A65;
+    -fx-background-color: #1976D2;
 }
 
 .jfx-button:hover {
-    -fx-background-color: #ff6639;
-}
-
-.jfx-blank-button:hover {
-    -fx-background-color: #FF8A65;
+    -fx-background-color: #1565C0;
 }
 
 .jfx-button:pressed {
-    -fx-background-color: #ff5c2f;
+    -fx-background-color: #0D47A1;
 }

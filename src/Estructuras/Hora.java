@@ -15,6 +15,14 @@ public enum Hora {
         hora = _hora;
     }
 
+    public static Hora fromString(String h) {
+        int n = Integer.parseInt(h.split(":")[0]);
+        for (Hora ho : Hora.values()) {
+            if (ho.hora == n) return ho;
+        }
+        return null;
+    }
+
     public boolean mayorQue(Hora h) {
         return hora > h.hora;
     }
@@ -30,13 +38,5 @@ public enum Hora {
         if (hora < 10) h = "0" + h;
         if (hora > 12) mer = "pm";
         return h + ":00 " + mer;
-    }
-
-    public static Hora fromString(String h) {
-        int n = Integer.parseInt(h.split(":")[0]);
-        for (Hora ho : Hora.values()) {
-            if (ho.hora == n) return ho;
-        }
-        return null;
     }
 }

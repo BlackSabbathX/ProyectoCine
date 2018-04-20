@@ -10,6 +10,11 @@ public class DateTime {
         hora = _hora;
     }
 
+    public static DateTime fromString(String d) {
+        String[] t = d.split(Separator.B);
+        return new DateTime(Dia.fromString(t[0]), Hora.fromString(t[1]));
+    }
+
     public boolean mayorQue(DateTime d) {
         return (dia.mayorQue(d.dia) || (dia == d.dia && hora.mayorQue(d.hora)));
     }
@@ -37,10 +42,5 @@ public class DateTime {
     @Override
     public String toString() {
         return dia.toString() + Separator.B + hora.toString();
-    }
-
-    public static DateTime fromString(String d) {
-        String[] t = d.split(Separator.B);
-        return new DateTime(Dia.fromString(t[0]), Hora.fromString(t[1]));
     }
 }

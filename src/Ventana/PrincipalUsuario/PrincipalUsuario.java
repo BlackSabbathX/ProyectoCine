@@ -103,8 +103,6 @@ public class PrincipalUsuario implements Initializable, DraggedScene {
             Funcion.getFuncionAt(7).setDisponibilidad(true, 0, 0);
             Funcion.getFuncionAt(8).setDisponibilidad(true, 0, 0);
 
-            System.out.println(Funcion.getFuncionAt(4).getPelicula().getNombre());
-
             Funcion.save(content);
             Funcion.load(content);
             Funcion.save(content);

@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Registro implements Initializable , DraggedScene {
+public class Registro implements Initializable, DraggedScene {
 
     public static Stage registro;
     public static Registro controlador;

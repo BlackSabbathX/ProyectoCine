@@ -32,6 +32,8 @@ public class Reserva implements Initializable, DraggedScene {
     @FXML
     private Label puestos;
     @FXML
+    private Label sala;
+    @FXML
     private StackPane content;
     @FXML
     private AnchorPane pane;
@@ -63,6 +65,7 @@ public class Reserva implements Initializable, DraggedScene {
         boolean[][] disp = _funcion.getDisponibles();
         nselecc = 0;
         total = 0f;
+        sala.setText(_funcion.getSala().getSala());
         actualizarSaldos(_funcion.getValor());
         puestosl.getChildren().clear();
         puestosr.getChildren().clear();
