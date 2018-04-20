@@ -4,12 +4,14 @@ import BaseDeDatos.Cliente;
 import BaseDeDatos.Usuario;
 import Estructuras.TipoUsuario;
 import Ventana.Dialog;
+import Ventana.DraggedScene;
 import Ventana.Login.Login;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -17,7 +19,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Registro implements Initializable {
+public class Registro implements Initializable , DraggedScene {
 
     public static Stage registro;
     public static Registro controlador;
@@ -33,6 +35,8 @@ public class Registro implements Initializable {
     private JFXPasswordField contrasena1;
     @FXML
     private StackPane content;
+    @FXML
+    private AnchorPane pane;
 
     public static void toogleVisible() {
         if (registro.isShowing()) {
@@ -44,6 +48,7 @@ public class Registro implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        onDraggedScene(pane);
         usuario.focusedProperty().addListener(observable -> usuario.setUnFocusColor(Color.BLACK));
         contrasena.focusedProperty().addListener(observable -> contrasena.setUnFocusColor(Color.BLACK));
         contrasena1.focusedProperty().addListener(observable -> contrasena1.setUnFocusColor(Color.BLACK));

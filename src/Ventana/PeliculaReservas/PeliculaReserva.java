@@ -1,8 +1,10 @@
 package Ventana.PeliculaReservas;
 
+import BaseDeDatos.Actual;
 import BaseDeDatos.Funcion;
 import BaseDeDatos.Pelicula;
 import Estructuras.DateTime;
+import Ventana.DraggedScene;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
 import Ventana.Reserva.Reserva;
 import com.jfoenix.controls.JFXButton;
@@ -13,10 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.controlsfx.control.Rating;
 
@@ -25,7 +24,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PeliculaReserva implements Initializable {
+public class PeliculaReserva implements Initializable, DraggedScene {
 
     public static Stage peliculaR;
     public static PeliculaReserva controlador;
@@ -43,6 +42,8 @@ public class PeliculaReserva implements Initializable {
     private Label genero;
     @FXML
     private StackPane content;
+    @FXML
+    private AnchorPane pane;
 
     public static void toogleVisible() {
         if (peliculaR.isShowing()) {
@@ -52,21 +53,22 @@ public class PeliculaReserva implements Initializable {
         }
     }
 
-    public static void mostrarPelicula(Pelicula _pelicula) {
+    public static void mostrarPelicula() {
         if (peliculaR.isShowing()) {
-            controlador.setPelicula(_pelicula);
+            controlador.setPelicula();
         } else {
             toogleVisible();
-            controlador.setPelicula(_pelicula);
+            controlador.setPelicula();
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        this.onDraggedScene(pane);
     }
 
-    private void setPelicula(Pelicula _pelicula) {
+    private void setPelicula() {
+        Pelicula _pelicula = Actual.getPelicula();
         funciones.getChildren().clear();
         Banner banner = new Banner();
         imagen.setImage(new Image(new File(_pelicula.getImagen()).toURI().toString()));
@@ -130,8 +132,9 @@ public class PeliculaReserva implements Initializable {
 
             reservar.setOnAction(event -> {
                 toogleVisible();
+                Actual.setFuncion(funcion);
                 Reserva.toogleVisible();
-                Reserva.controlador.setFuncion(funcion);
+                Reserva.controlador.setFuncion();
             });
             return p;
         }

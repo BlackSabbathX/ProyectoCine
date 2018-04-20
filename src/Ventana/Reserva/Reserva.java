@@ -1,42 +1,43 @@
 package Ventana.Reserva;
 
+import BaseDeDatos.Actual;
 import BaseDeDatos.Funcion;
-import Estructuras.DateTime;
+import Ventana.DraggedScene;
+import Ventana.Pago.Pago;
 import Ventana.PeliculaReservas.PeliculaReserva;
-import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Reserva implements Initializable {
+public class Reserva implements Initializable, DraggedScene {
 
     public static Stage reserva;
     public static Reserva controlador;
     @FXML
-    GridPane puestosl;
+    private GridPane puestosl;
     @FXML
-    GridPane puestosr;
+    private GridPane puestosr;
     @FXML
-    Label valor;
+    private Label valor;
     @FXML
-    Label puestos;
+    private Label puestos;
     @FXML
     private StackPane content;
+    @FXML
+    private AnchorPane pane;
     private boolean[][] selec;
     private int nselecc;
+    private float total;
 
     public static void toogleVisible() {
         if (reserva.isShowing()) {
@@ -48,12 +49,20 @@ public class Reserva implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        onDraggedScene(pane);
         selec = new boolean[10][10];
     }
 
-    public void setFuncion(Funcion _funcion) {
+    public void setFuncion() {
+        Funcion _funcion = Actual.getFuncion();
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                selec[i][j] = false;
+            }
+        }
         boolean[][] disp = _funcion.getDisponibles();
         nselecc = 0;
+        total = 0f;
         actualizarSaldos(_funcion.getValor());
         puestosl.getChildren().clear();
         puestosr.getChildren().clear();
@@ -117,52 +126,25 @@ public class Reserva implements Initializable {
     }
 
     public void pagar() {
-
+        if (nselecc <= 0) return;
+        Pago.controlador.mostrar(total);
     }
 
     private void actualizarSaldos(float unitario) {
-        valor.setText("Total: $" + unitario * nselecc);
+        total = unitario * nselecc;
+        valor.setText("Total: $" + total);
         puestos.setText("No. de puestos: " + nselecc);
     }
 
-    private class Banner {
-
-        private Pane nuevoBanner(Funcion funcion) throws IOException {
-            Parent parent = FXMLLoader.load(getClass().getResource("/Ventana/PeliculaReservas/BannerFuncion.fxml"));
-
-            final Pane p = (Pane) parent.lookup("#panel");
-            Label tiempo = (Label) ((GridPane) p.getChildren().get(0)).getChildren().get(0);
-            Label precio = (Label) ((GridPane) p.getChildren().get(0)).getChildren().get(1);
-            JFXButton reservar = (JFXButton) ((GridPane) p.getChildren().get(0)).getChildren().get(2);
-
-            if (funcion == null) {
-                tiempo.setText("No hay funciones esta semana");
-                precio.setText("");
-                reservar.setVisible(false);
-                return p;
-            }
-
-            for (int i = 0; i < 10; i++) {
-                for (int j = 0; j < 10; j++) {
-                    if (funcion.getDisponibles()[i][j]) {
-                        reservar.setDisable(false);
-                        break;
-                    }
+    public void reservaOkay() {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (selec[i][j]) {
+                    Actual.getFuncion().setDisponibilidad(false, i, j);
                 }
             }
-
-            String t;
-            DateTime ti = funcion.getTiempo();
-            t = ti.getDia().toString() + " a las " + ti.getHora().toString();
-            tiempo.setText(t);
-            precio.setText("$ " + String.valueOf(funcion.getValor()) + " c/e");
-
-            reservar.setOnAction(event -> {
-                System.out.println("Reserva " + funcion.getPelicula().getNombre());
-            });
-            return p;
         }
-
+        setFuncion();
     }
 
 }

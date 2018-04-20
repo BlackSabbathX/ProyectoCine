@@ -1,11 +1,13 @@
 package Ventana.PrincipalUsuario;
 
+import BaseDeDatos.Actual;
 import BaseDeDatos.Funcion;
 import BaseDeDatos.Pelicula;
 import BaseDeDatos.Sala;
 import Estructuras.DateTime;
 import Estructuras.Dia;
 import Estructuras.Hora;
+import Ventana.DraggedScene;
 import Ventana.Login.Login;
 import Ventana.PeliculaReservas.PeliculaReserva;
 import javafx.event.EventHandler;
@@ -17,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -28,7 +31,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PrincipalUsuario implements Initializable {
+public class PrincipalUsuario implements Initializable, DraggedScene {
 
     public static Stage usuario;
     public static PrincipalUsuario controlador;
@@ -36,6 +39,8 @@ public class PrincipalUsuario implements Initializable {
     private StackPane content;
     @FXML
     private VBox peliculas;
+    @FXML
+    private AnchorPane pane;
 
     public static void toogleVisible() {
         if (usuario.isShowing()) {
@@ -47,6 +52,7 @@ public class PrincipalUsuario implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        onDraggedScene(pane);
         try {
             peliculas.getChildren().clear();
 
@@ -146,7 +152,8 @@ public class PrincipalUsuario implements Initializable {
 
             EventHandler evt = (EventHandler<MouseEvent>) event -> {
                 toogleVisible();
-                PeliculaReserva.mostrarPelicula(pelicula);
+                Actual.setPelicula(pelicula);
+                PeliculaReserva.mostrarPelicula();
             };
 
             portada.setOnMouseClicked(evt);

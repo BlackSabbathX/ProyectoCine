@@ -47,7 +47,7 @@ public class Reserva implements Comparable<Reserva> {
         int _id;
         boolean isIn;
         do {
-            _id = random.nextInt(10000);
+            _id = random.nextInt(100000);
             isIn = false;
             for (Reserva reserva : reservas) {
                 if (reserva.getId() == _id) {

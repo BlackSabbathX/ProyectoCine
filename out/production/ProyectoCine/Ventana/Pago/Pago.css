@@ -1,24 +1,12 @@
 
 .jfx-button {
-    -fx-background-color: #FF7043;
-}
-
-.hbox {
-    -fx-background-color: red;
-}
-
-.jfx-blank-button {
-    -fx-background-color: #FF8A65;
+    -fx-background-color: #00006e;
 }
 
 .jfx-button:hover {
-    -fx-background-color: #ff6639;
-}
-
-.jfx-blank-button:hover {
-    -fx-background-color: #FF8A65;
+    -fx-background-color: #00005b;
 }
 
 .jfx-button:pressed {
-    -fx-background-color: #ff5c2f;
+    -fx-background-color: #000032;
 }
