@@ -53,14 +53,14 @@ public class MainClass extends Application {
         PrincipalUsuario.usuario = new Stage(StageStyle.UNDECORATED);
         Registro.registro = new Stage(StageStyle.UNDECORATED);
         PeliculaReserva.peliculaR = new Stage(StageStyle.UNDECORATED);
-        Reserva.stage = new Stage(StageStyle.UNDECORATED);
+        Reserva.reserva = new Stage(StageStyle.UNDECORATED);
         Pago.pago = new Stage(StageStyle.UNDECORATED);
 
         Login.login.setScene(sceneLG);
         PrincipalUsuario.usuario.setScene(scenePU);
         Registro.registro.setScene(sceneRE);
         PeliculaReserva.peliculaR.setScene(scenePR);
-        Reserva.stage.setScene(sceneR);
+        Reserva.reserva.setScene(sceneR);
         Pago.pago.setScene(sceneP);
 
         Login.controlador = loaderLG.getController();

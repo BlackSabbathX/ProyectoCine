@@ -2,7 +2,6 @@ package Ventana.Reserva;
 
 import BaseDeDatos.Actual;
 import BaseDeDatos.Funcion;
-import BaseDeDatos.Pelicula;
 import Ventana.DraggedScene;
 import Ventana.Pago.Pago;
 import Ventana.PeliculaReservas.PeliculaReserva;
@@ -20,9 +19,9 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Reserva  implements Initializable, DraggedScene  {
+public class Reserva implements Initializable, DraggedScene {
 
-    public static Stage stage;
+    public static Stage reserva;
     public static Reserva controlador;
     @FXML
     private GridPane puestosl;
@@ -42,15 +41,12 @@ public class Reserva  implements Initializable, DraggedScene  {
     private int nselecc;
     private float total;
 
-    public static void load(){
-
-    }
 
     public static void toogleVisible() {
-        if (stage.isShowing()) {
-            stage.hide();
+        if (reserva.isShowing()) {
+            reserva.hide();
         } else {
-            stage.show();
+            reserva.show();
         }
     }
 

@@ -6,6 +6,7 @@ import BaseDeDatos.Usuario;
 import Estructuras.TipoUsuario;
 import Ventana.Dialog;
 import Ventana.DraggedScene;
+import Ventana.PrincipalAdministrador.PrincipalAdministrador;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
 import Ventana.Registro.Registro;
 import com.jfoenix.controls.JFXCheckBox;
@@ -89,7 +90,8 @@ public class Login implements Initializable, DraggedScene {
             Actual.setCliente(Cliente.getClienteAt(Cliente.indexOf(u)));
             PrincipalUsuario.toogleVisible();
         } else {
-
+            Actual.setUsuario(_usuario);
+            PrincipalAdministrador.toogleVisible();
         }
     }
 
