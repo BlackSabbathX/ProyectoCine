@@ -52,7 +52,6 @@ public class Reserva implements Comparable<Reserva> {
             for (Reserva reserva : reservas) {
                 if (reserva.getId() == _id) {
                     isIn = true;
-                    reservas.reset();
                     break;
                 }
             }
@@ -108,7 +107,7 @@ public class Reserva implements Comparable<Reserva> {
 
     public static void removeAt(int i) {
         if (i >= 0 && i < reservas.size()) {
-            reservas.remove(i);
+            reservas.removeAt(i);
         }
     }
 
@@ -127,7 +126,6 @@ public class Reserva implements Comparable<Reserva> {
         for (Reserva reserva : reservas) {
             if (reserva.getId() == _id) {
                 int p = reserva.getPos();
-                reservas.reset();
                 return p;
             }
         }

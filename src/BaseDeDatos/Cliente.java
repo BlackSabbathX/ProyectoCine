@@ -86,7 +86,6 @@ public class Cliente implements Comparable<Cliente> {
     public static boolean exists(String _cedula) {
         for (Cliente cliente : clientes) {
             if (cliente.getCedula().equals(_cedula)) {
-                clientes.reset();
                 return true;
             }
         }
@@ -95,7 +94,7 @@ public class Cliente implements Comparable<Cliente> {
 
     public static void removeAt(int i) {
         if (i >= 0 && i < clientes.size()) {
-            clientes.remove(i);
+            clientes.removeAt(i);
         }
     }
 
@@ -114,7 +113,6 @@ public class Cliente implements Comparable<Cliente> {
         for (Cliente cliente : clientes) {
             if (cliente.getCedula().equals(_cedula)) {
                 int p = cliente.getPos();
-                clientes.reset();
                 return p;
             }
         }

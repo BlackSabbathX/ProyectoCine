@@ -104,7 +104,6 @@ public class Usuario implements Comparable<Usuario> {
     public static boolean exists(String _usuario) {
         for (Usuario usuario : usuarios) {
             if (usuario.getUsuario().equals(_usuario)) {
-                usuarios.reset();
                 return true;
             }
         }
@@ -115,10 +114,8 @@ public class Usuario implements Comparable<Usuario> {
         for (Usuario usuario : usuarios) {
             if (usuario.getUsuario().equals(_usuario)) {
                 if (usuario.contrasenaCorrecta(_contrasena)) {
-                    usuarios.reset();
                     return usuario;
                 } else {
-                    usuarios.reset();
                     break;
                 }
             }

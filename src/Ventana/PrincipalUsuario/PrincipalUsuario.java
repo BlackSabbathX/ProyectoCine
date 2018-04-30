@@ -109,9 +109,11 @@ public class PrincipalUsuario implements Initializable, DraggedScene {
             Funcion.load(content);
 
             for (Pelicula p : Pelicula.getPeliculas()) {
+                System.out.println(p.getNombre());
                 peliculas.getChildren().add(banner.nuevoBanner(p));
             }
         } catch (Exception ignored) {
+            ignored.printStackTrace();
         }
     }
 

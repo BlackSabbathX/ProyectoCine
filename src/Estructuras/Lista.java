@@ -1,180 +1,171 @@
 package Estructuras;
 
-
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
-public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> {
+public class Lista<T extends Comparable<T>> implements Iterable<T> {
 
-    private Nodo<T> ptr;
-    private Nodo<T> actual;
     private int count;
+    private Nodo<T> inicio;
+    private Nodo<T> fin;
 
     public Lista() {
-        ptr = null;
-        actual = null;
-        count = 0;
+        this.count = 0;
+        this.inicio = null;
+        this.fin = null;
+    }
+
+    public boolean isEmpty() {
+        return count == 0;
     }
 
     public int size() {
         return count;
     }
 
-    public void clear() {
-        ptr = null;
-        count = 0;
-        reset();
-    }
-
-    public void reset() {
-        actual = ptr;
-    }
-
-//    public void add(T dato) {
-//        if (ptr == null) {
-//            ptr = new Nodo<>(dato);
-//        } else if (ptr.link == null) {
-//            if (dato.compareTo(ptr.dato) >= 0) {
-//                ptr.link = new Nodo<>(dato);
-//            } else {
-//                ptr = new Nodo<>(dato, ptr);
-//            }
-//        } else {
-//            Nodo<T> actual = ptr;
-//            if (dato.compareTo(actual.dato) <= 0) {
-//                ptr = new Nodo<>(dato, ptr);
-//                count++;
-//                reset();
-//                return;
-//            }
-//            do {
-//                if (dato.compareTo(actual.dato) >= 0 && dato.compareTo(actual.link.dato) <= 0) {
-//                    actual.link = new Nodo<>(dato, actual.link);
-//                    count++;
-//                    reset();
-//                    return;
-//                }
-//                actual = actual.link;
-//            } while (actual.link != null);
-//            actual.link = new Nodo<>(dato);
-//        }
-//        count++;
-//        reset();
-//    }
-//
-//    public void add(T dato) {
-//        if (ptr == null) {
-//            ptr = new Nodo<>(dato);
-//        } else {
-//            ptr = new Nodo<>(dato, ptr);
-//        }
-//        count++;
-//        reset();
-//    }
-
-    public int indexOf(T dato) {
-        Nodo<T> _actual = ptr;
-        int pos = 0;
-        while (_actual != null) {
-            if (_actual.dato.equals(dato)) {
-                return pos;
-            }
-            pos++;
-            _actual = _actual.link;
+    public void add(T dato) {
+        switch (count) {
+            case 0:
+                inicio = new Nodo<>(dato);
+                fin = inicio;
+                break;
+            default:
+                Nodo<T> temp = inicio;
+                while (temp != null) {
+                    int cmp = temp.dato.compareTo(dato);
+                    if (cmp > 0) {
+                        insert(temp.ant, new Nodo<>(dato), temp);
+                        break;
+                    } else if (cmp == 0) {
+                        insert(temp, new Nodo<>(dato), temp.sig);
+                        break;
+                    }
+                    temp = temp.sig;
+                }
+                if (temp == null) {
+                    insert(fin, new Nodo<>(dato), fin.sig);
+                }
         }
-        return -1;
+        count++;
+    }
+
+    private void insert(Nodo<T> nodoa, Nodo<T> nodon, Nodo<T> nodod) {
+        nodon.ant = nodoa;
+        nodon.sig = nodod;
+        if (nodoa != null) nodoa.sig = nodon;
+        if (nodod != null) nodod.ant = nodon;
+        if (nodoa == fin) fin = nodon;
+        if (nodod == inicio) inicio = nodon;
     }
 
     public T get(int i) {
-        Nodo<T> _actual = ptr;
-        int pos = 0;
-        while (_actual != null) {
-            if (pos == i) {
-                return _actual.dato;
+        Nodo<T> temp = inicio;
+        int j = 0;
+        while (temp != null) {
+            if (j == i) {
+                return temp.dato;
             }
-            pos++;
-            _actual = _actual.link;
+            j++;
+            temp = temp.sig;
         }
         return null;
     }
 
-    public void set(int i, T dato) {
-        Nodo<T> actual = ptr;
-        int pos = 0;
-        while (actual != null) {
-            if (pos == i) {
-                actual.dato = dato;
+    public void removeAt(int i) {
+        Nodo<T> temp = inicio;
+        if (count == 0) return;
+        int j = 0;
+        while (temp != null) {
+            if (j == i) {
+                if (temp.ant == null && temp.sig == null) {
+                    inicio = null;
+                    fin = null;
+                } else if (temp == inicio) {
+                    inicio = temp.sig;
+                    temp.sig.ant = null;
+                } else if (temp == fin) {
+                    fin = temp.ant;
+                    temp.ant.sig = null;
+                } else {
+                    temp.ant.sig = temp.sig;
+                    temp.sig.ant = temp.ant;
+                }
+                count--;
+                break;
             }
-            pos++;
-            actual = actual.link;
+            j++;
+            temp = temp.sig;
         }
     }
 
-    public void remove(int i) {
-        Nodo<T> actual = ptr;
-        int pos = 0;
-        if (ptr == null) return;
-        if (i == 0) {
-            ptr = ptr.link;
-            count--;
-            reset();
-            return;
-        }
-        while (actual != null) {
-            if (pos == i - 1) {
-                actual.link = actual.link.link;
-                count--;
-                return;
-            }
-            pos++;
-            actual = actual.link;
-        }
+    public void clear() {
+        fin = null;
+        inicio = null;
+        count = 0;
     }
 
     @Override
     public Iterator<T> iterator() {
-        return this;
+        return new ListIterator();
     }
 
-    @Override
-    public boolean hasNext() {
-        if (actual == null) {
-            reset();
-            return false;
-        } else {
-            return true;
+    private class Nodo<Y> {
+
+        private Nodo<Y> ant;
+        private Nodo<Y> sig;
+        private Y dato;
+
+        private Nodo(Nodo<Y> ant, Y dato, Nodo<Y> sig) {
+            this.ant = ant;
+            this.dato = dato;
+            this.sig = sig;
         }
+
+        private Nodo(Nodo<Y> ant, Y dato) {
+            this.ant = ant;
+            this.dato = dato;
+            this.sig = null;
+        }
+
+        private Nodo(Y dato, Nodo<Y> sig) {
+            this.ant = null;
+            this.dato = dato;
+            this.sig = sig;
+        }
+
+        private Nodo(Y dato) {
+            this.ant = null;
+            this.dato = dato;
+            this.sig = null;
+        }
+
     }
 
-    @Override
-    public T next() {
-        if (this.hasNext()) {
-            T dato = actual.dato;
-            actual = actual.link;
+    private class ListIterator implements Iterator<T> {
+
+        private Nodo<T> temp;
+        private int pos;
+
+        private ListIterator() {
+            temp = inicio;
+            pos = 0;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return pos < size();
+        }
+
+        @Override
+        public T next() {
+            T dato;
+            if (pos == 0) {
+                dato = temp.dato;
+            } else {
+                temp = temp.sig;
+                dato = temp.dato;
+            }
+            pos++;
             return dato;
-        }
-        reset();
-        throw new NoSuchElementException();
-    }
-
-    @Override
-    public void remove() {
-        throw new UnsupportedOperationException();
-    }
-
-
-    public class Nodo<G> {
-        G dato;
-        Nodo<G> link;
-
-        Nodo(G _dato, Nodo<G> _link) {
-            dato = _dato;
-            link = _link;
-        }
-
-        Nodo(G _dato) {
-            dato = _dato;
-            link = null;
         }
     }
 }

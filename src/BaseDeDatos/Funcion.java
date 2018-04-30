@@ -69,7 +69,6 @@ public class Funcion implements Comparable<Funcion> {
             for (Funcion funcion : funciones) {
                 if (funcion.getId() == _id) {
                     isIn = true;
-                    funciones.reset();
                     break;
                 }
             }
@@ -148,7 +147,7 @@ public class Funcion implements Comparable<Funcion> {
 
     public static void removeAt(int i) {
         if (i >= 0 && i < funciones.size()) {
-            funciones.remove(i);
+            funciones.removeAt(i);
         }
     }
 
@@ -167,7 +166,6 @@ public class Funcion implements Comparable<Funcion> {
         int i = 0;
         for (Funcion funcion : funciones) {
             if (funcion.getId() == _id) {
-                funciones.reset();
                 return i;
             }
             i++;

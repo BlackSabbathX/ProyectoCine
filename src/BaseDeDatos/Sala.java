@@ -50,7 +50,6 @@ public class Sala implements Comparable<Sala> {
             for (Sala sala : salas) {
                 if (sala.getId() == _id) {
                     isIn = true;
-                    salas.reset();
                     break;
                 }
             }
@@ -104,7 +103,7 @@ public class Sala implements Comparable<Sala> {
 
     public static void removeAt(int i) {
         if (i >= 0 && i < salas.size()) {
-            salas.remove(i);
+            salas.removeAt(i);
         }
     }
 
@@ -123,7 +122,6 @@ public class Sala implements Comparable<Sala> {
         int i = 0;
         for (Sala sala : salas) {
             if (sala.getSala().equals(_sala)) {
-                salas.reset();
                 return i;
             }
             i++;
@@ -135,7 +133,6 @@ public class Sala implements Comparable<Sala> {
         for (Sala sala : salas) {
             if (sala.getId() == _id) {
                 int p = sala.getPos();
-                salas.reset();
                 return p;
             }
         }

@@ -58,7 +58,6 @@ public class Pelicula implements Comparable<Pelicula> {
             for (Pelicula pelicula : peliculas) {
                 if (pelicula.getId() == _id) {
                     isIn = true;
-                    peliculas.reset();
                     break;
                 }
             }
@@ -120,7 +119,7 @@ public class Pelicula implements Comparable<Pelicula> {
 
     public static void removeAt(int i) {
         if (i >= 0 && i < peliculas.size()) {
-            peliculas.remove(i);
+            peliculas.removeAt(i);
         }
     }
 
@@ -139,7 +138,6 @@ public class Pelicula implements Comparable<Pelicula> {
         int i = 0;
         for (Pelicula pelicula : peliculas) {
             if (pelicula.getNombre().equals(_nombre)) {
-                peliculas.reset();
                 return i;
             }
             i++;
@@ -151,7 +149,6 @@ public class Pelicula implements Comparable<Pelicula> {
         for (Pelicula pelicula : peliculas) {
             if (pelicula.getId() == _id) {
                 int p = pelicula.getPos();
-                peliculas.reset();
                 return p;
             }
         }
