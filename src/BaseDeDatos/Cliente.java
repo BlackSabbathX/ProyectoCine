@@ -79,7 +79,7 @@ public class Cliente implements Comparable<Cliente> {
     }
 
     public static void add(String _cedula, String _nombre) {
-        clientes.insertarOrdenado(new Cliente(_cedula, _pos, _nombre));
+        clientes.add(new Cliente(_cedula, _pos, _nombre));
         _pos++;
     }
 
@@ -94,17 +94,17 @@ public class Cliente implements Comparable<Cliente> {
     }
 
     public static void removeAt(int i) {
-        if (i >= 0 && i < clientes.getItemCount()) {
+        if (i >= 0 && i < clientes.size()) {
             clientes.remove(i);
         }
     }
 
     public static int getItemCount() {
-        return clientes.getItemCount();
+        return clientes.size();
     }
 
     public static Cliente getClienteAt(int i) {
-        if (i >= 0 && i < clientes.getItemCount()) {
+        if (i >= 0 && i < clientes.size()) {
             return clientes.get(i);
         }
         return null;

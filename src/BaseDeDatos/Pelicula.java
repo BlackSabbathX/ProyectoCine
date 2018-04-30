@@ -114,22 +114,22 @@ public class Pelicula implements Comparable<Pelicula> {
     }
 
     public static void add(int _id, String _nombre, String _genero, String _autor, double _rate, String _imagen) {
-        peliculas.insertarOrdenado(new Pelicula(_id, _pos, _nombre, _genero, _autor, _rate, _imagen));
+        peliculas.add(new Pelicula(_id, _pos, _nombre, _genero, _autor, _rate, _imagen));
         _pos++;
     }
 
     public static void removeAt(int i) {
-        if (i >= 0 && i < peliculas.getItemCount()) {
+        if (i >= 0 && i < peliculas.size()) {
             peliculas.remove(i);
         }
     }
 
     public static int getItemCount() {
-        return peliculas.getItemCount();
+        return peliculas.size();
     }
 
     public static Pelicula getPeliculaAt(int i) {
-        if (i >= 0 && i < peliculas.getItemCount()) {
+        if (i >= 0 && i < peliculas.size()) {
             return peliculas.get(i);
         }
         return null;

@@ -102,22 +102,22 @@ public class Reserva implements Comparable<Reserva> {
     }
 
     public static void add(int _id, Funcion _funcion, Cliente _cliente) {
-        reservas.insertarOrdenado(new Reserva(_id, _pos, _funcion, _cliente));
+        reservas.add(new Reserva(_id, _pos, _funcion, _cliente));
         _pos++;
     }
 
     public static void removeAt(int i) {
-        if (i >= 0 && i < reservas.getItemCount()) {
+        if (i >= 0 && i < reservas.size()) {
             reservas.remove(i);
         }
     }
 
     public static int getItemCount() {
-        return reservas.getItemCount();
+        return reservas.size();
     }
 
     public static Reserva getReservaAt(int i) {
-        if (i >= 0 && i < reservas.getItemCount()) {
+        if (i >= 0 && i < reservas.size()) {
             return reservas.get(i);
         }
         return null;

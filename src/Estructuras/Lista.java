@@ -16,7 +16,7 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         count = 0;
     }
 
-    public int getItemCount() {
+    public int size() {
         return count;
     }
 
@@ -30,47 +30,47 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         actual = ptr;
     }
 
-    public void insertarOrdenado(T dato) {
-        if (ptr == null) {
-            ptr = new Nodo<>(dato);
-        } else if (ptr.link == null) {
-            if (dato.compareTo(ptr.dato) >= 0) {
-                ptr.link = new Nodo<>(dato);
-            } else {
-                ptr = new Nodo<>(dato, ptr);
-            }
-        } else {
-            Nodo<T> actual = ptr;
-            if (dato.compareTo(actual.dato) <= 0) {
-                ptr = new Nodo<>(dato, ptr);
-                count++;
-                reset();
-                return;
-            }
-            do {
-                if (dato.compareTo(actual.dato) >= 0 && dato.compareTo(actual.link.dato) <= 0) {
-                    actual.link = new Nodo<>(dato, actual.link);
-                    count++;
-                    reset();
-                    return;
-                }
-                actual = actual.link;
-            } while (actual.link != null);
-            actual.link = new Nodo<>(dato);
-        }
-        count++;
-        reset();
-    }
-
-    public void insertar(T dato) {
-        if (ptr == null) {
-            ptr = new Nodo<>(dato);
-        } else {
-            ptr = new Nodo<>(dato, ptr);
-        }
-        count++;
-        reset();
-    }
+//    public void add(T dato) {
+//        if (ptr == null) {
+//            ptr = new Nodo<>(dato);
+//        } else if (ptr.link == null) {
+//            if (dato.compareTo(ptr.dato) >= 0) {
+//                ptr.link = new Nodo<>(dato);
+//            } else {
+//                ptr = new Nodo<>(dato, ptr);
+//            }
+//        } else {
+//            Nodo<T> actual = ptr;
+//            if (dato.compareTo(actual.dato) <= 0) {
+//                ptr = new Nodo<>(dato, ptr);
+//                count++;
+//                reset();
+//                return;
+//            }
+//            do {
+//                if (dato.compareTo(actual.dato) >= 0 && dato.compareTo(actual.link.dato) <= 0) {
+//                    actual.link = new Nodo<>(dato, actual.link);
+//                    count++;
+//                    reset();
+//                    return;
+//                }
+//                actual = actual.link;
+//            } while (actual.link != null);
+//            actual.link = new Nodo<>(dato);
+//        }
+//        count++;
+//        reset();
+//    }
+//
+//    public void add(T dato) {
+//        if (ptr == null) {
+//            ptr = new Nodo<>(dato);
+//        } else {
+//            ptr = new Nodo<>(dato, ptr);
+//        }
+//        count++;
+//        reset();
+//    }
 
     public int indexOf(T dato) {
         Nodo<T> _actual = ptr;

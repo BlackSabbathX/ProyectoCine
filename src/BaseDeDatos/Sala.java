@@ -98,22 +98,22 @@ public class Sala implements Comparable<Sala> {
     }
 
     public static void add(int _id, String _sala) {
-        salas.insertarOrdenado(new Sala(_id, _pos, _sala));
+        salas.add(new Sala(_id, _pos, _sala));
         _pos++;
     }
 
     public static void removeAt(int i) {
-        if (i >= 0 && i < salas.getItemCount()) {
+        if (i >= 0 && i < salas.size()) {
             salas.remove(i);
         }
     }
 
     public static int getItemCount() {
-        return salas.getItemCount();
+        return salas.size();
     }
 
     public static Sala getSalaAt(int i) {
-        if (i >= 0 && i < salas.getItemCount()) {
+        if (i >= 0 && i < salas.size()) {
             return salas.get(i);
         }
         return null;

@@ -98,7 +98,7 @@ public class Usuario implements Comparable<Usuario> {
 
     public static void add(String _usuarioStr, String _contrasena, TipoUsuario _tipo) {
         Usuario _usuario = new Usuario(_usuarioStr, _contrasena, _tipo);
-        usuarios.insertar(_usuario);
+        usuarios.add(_usuario);
     }
 
     public static boolean exists(String _usuario) {

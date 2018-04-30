@@ -41,7 +41,7 @@ public class Funcion implements Comparable<Funcion> {
         Lista<Funcion> _funciones = new Lista<>();
         for (Funcion f : funciones) {
             if (f.getPelicula().equals(_pelicula)) {
-                _funciones.insertarOrdenado(f);
+                _funciones.add(f);
             }
         }
         return _funciones;
@@ -142,22 +142,22 @@ public class Funcion implements Comparable<Funcion> {
     }
 
     public static void add(int _id, DateTime _tiempo, Sala _sala, Pelicula _pelicula, float _valor, boolean[][] _disponibles) {
-        funciones.insertarOrdenado(new Funcion(_id, _pos, _tiempo, _sala, _pelicula, _valor, _disponibles));
+        funciones.add(new Funcion(_id, _pos, _tiempo, _sala, _pelicula, _valor, _disponibles));
         _pos++;
     }
 
     public static void removeAt(int i) {
-        if (i >= 0 && i < funciones.getItemCount()) {
+        if (i >= 0 && i < funciones.size()) {
             funciones.remove(i);
         }
     }
 
     public static int getItemCount() {
-        return funciones.getItemCount();
+        return funciones.size();
     }
 
     public static Funcion getFuncionAt(int i) {
-        if (i >= 0 && i < funciones.getItemCount()) {
+        if (i >= 0 && i < funciones.size()) {
             return funciones.get(i);
         }
         return null;
