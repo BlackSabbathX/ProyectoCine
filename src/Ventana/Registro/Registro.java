@@ -57,7 +57,7 @@ public class Registro implements Initializable, DraggedScene {
             if (newValue) {
                 nombre.setPromptText("Codigo de verificación");
                 nombre.setText("");
-                usuario.setPromptText("Digite un usuario");
+                usuario.setPromptText("Digite un administrador");
             } else {
                 nombre.setPromptText("Nombre");
                 nombre.setText("");
@@ -85,7 +85,7 @@ public class Registro implements Initializable, DraggedScene {
         String n = nombre.getText().trim();
         if (Usuario.exists(u)) {
             usuario.setUnFocusColor(Color.RED);
-            Dialog.showSimpleDialog(content, "Error", "El documento o usuario ingresado ya ha sido registrado.", "Aceptar");
+            Dialog.showSimpleDialog(content, "Error", "El documento o administrador ingresado ya ha sido registrado.", "Aceptar");
             return;
         }
         if (u.equals("")) {

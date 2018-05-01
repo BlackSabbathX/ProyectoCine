@@ -119,6 +119,7 @@ public class Pelicula implements Comparable<Pelicula> {
 
     public static void removeAt(int i) {
         if (i >= 0 && i < peliculas.size()) {
+            Funcion.removeByPelicula(Pelicula.getPeliculaAt(i));
             peliculas.removeAt(i);
         }
     }

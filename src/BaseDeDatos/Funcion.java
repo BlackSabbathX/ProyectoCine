@@ -151,6 +151,18 @@ public class Funcion implements Comparable<Funcion> {
         }
     }
 
+    public static void removeByPelicula(Pelicula pelicula) {
+        Lista<Funcion> n = new Lista<>();
+        for (Funcion f : funciones) {
+            if (f.getPelicula() != pelicula) {
+                n.add(f);
+            }
+        }
+        funciones = n;
+        Funcion.save(null);
+        Funcion.load(null);
+    }
+
     public static int getItemCount() {
         return funciones.size();
     }

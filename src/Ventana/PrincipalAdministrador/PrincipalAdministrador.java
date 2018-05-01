@@ -2,7 +2,10 @@ package Ventana.PrincipalAdministrador;
 
 import BaseDeDatos.Actual;
 import BaseDeDatos.Pelicula;
+import Estructuras.Accion;
+import Estructuras.Tipo;
 import Ventana.DraggedScene;
+import Ventana.Lista.Listar;
 import Ventana.Login.Login;
 import Ventana.PeliculaReservas.PeliculaReserva;
 import javafx.event.EventHandler;
@@ -27,7 +30,7 @@ import java.util.ResourceBundle;
 
 public class PrincipalAdministrador implements Initializable, DraggedScene {
 
-    public static Stage usuario;
+    public static Stage administrador;
     public static PrincipalAdministrador controlador;
     @FXML
     private StackPane content;
@@ -35,10 +38,10 @@ public class PrincipalAdministrador implements Initializable, DraggedScene {
     private AnchorPane pane;
 
     public static void toogleVisible() {
-        if (usuario.isShowing()) {
-            usuario.hide();
+        if (administrador.isShowing()) {
+            administrador.hide();
         } else {
-            usuario.show();
+            administrador.show();
         }
     }
 
@@ -47,13 +50,65 @@ public class PrincipalAdministrador implements Initializable, DraggedScene {
         onDraggedScene(pane);
     }
 
+    @FXML
     public void volver() {
         toogleVisible();
         Login.toogleVisible();
     }
 
+    @FXML
     public void cerrar() {
         toogleVisible();
+    }
+
+    @FXML
+    public void agregarP() {
+    }
+
+    @FXML
+    public void agregarF() {
+    }
+
+    @FXML
+    public void agregarS() {
+    }
+
+    @FXML
+    public void agregarC() {
+    }
+
+    @FXML
+    public void eliminarP() {
+        Listar.toogleVisible(Accion.eliminar, Tipo.pelicula);
+    }
+
+    @FXML
+    public void eliminarF() {
+    }
+
+    @FXML
+    public void eliminarC() {
+        Listar.toogleVisible(Accion.eliminar, Tipo.cliente);
+    }
+
+    @FXML
+    public void eliminarS() {
+    }
+
+    @FXML
+    public void listaP() {
+    }
+
+    @FXML
+    public void listaS() {
+    }
+
+    @FXML
+    public void listaF() {
+    }
+
+    @FXML
+    public void listaC() {
     }
 
     private class Banner {

@@ -3,27 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Funcion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Funcion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pelicula.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pelicula.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sala.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Sala.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuario.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Usuario.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Cliente.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Funcion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Funcion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Pelicula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Pelicula.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Reserva.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Reserva.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Sala.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Sala.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/BaseDeDatos/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/Estructuras/Lista.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/Estructuras/Lista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/Login/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/Login/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalUsuario/PrincipalUsuario$Banner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalUsuario/PrincipalUsuario$Banner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalUsuario/PrincipalUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalUsuario/PrincipalUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/MainClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalAdministrador/PrincipalAdministrador$Banner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalAdministrador/PrincipalAdministrador$Banner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalAdministrador/PrincipalAdministrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalAdministrador/PrincipalAdministrador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/PrincipalAdministrador/PrincipalUsuario.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/Registro/Registro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoCine/Ventana/Registro/Registro.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Funcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Funcion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Pelicula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Reserva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Sala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Sala.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Estructuras/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Estructuras/Lista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalAdministrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalAdministrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalUsuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalAdministrador.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,62 +81,49 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PrincipalUsuario.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java">
+    <leaf>
+      <file leaf-file-name="Listar.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Ventana/Lista/Listar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="110" column="43" lean-forward="true" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pelicula.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Pelicula.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-444">
-              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+            <state relative-caret-position="-93">
+              <caret line="146" column="58" lean-forward="true" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
               <folding>
-                <element signature="e#954#955#0" expanded="true" />
-                <element signature="e#986#987#0" expanded="true" />
+                <element signature="e#2832#2833#0" expanded="true" />
+                <element signature="e#2863#2864#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lista.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Estructuras/Lista.java">
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ventana/Login/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            <state relative-caret-position="170">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrincipalAdministrador.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalAdministrador.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
               <folding>
-                <element signature="e#331#332#0" expanded="true" />
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#389#390#0" expanded="true" />
-                <element signature="e#417#418#0" expanded="true" />
-                <element signature="e#2743#2744#0" expanded="true" />
-                <element signature="e#2784#2785#0" expanded="true" />
-                <element signature="e#3730#3731#0" expanded="true" />
-                <element signature="e#3773#3774#0" expanded="true" />
+                <element signature="e#1770#1771#0" expanded="true" />
+                <element signature="e#1838#1839#0" expanded="true" />
+                <element signature="e#1926#1927#0" expanded="true" />
+                <element signature="e#1994#1995#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Funcion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Funcion.java">
+      <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Cliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="121" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="-567">
+              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -146,6 +134,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -198,20 +187,25 @@
         <option value="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" />
         <option value="$PROJECT_DIR$/src/Ventana/Reserva/Reserva.css" />
         <option value="$PROJECT_DIR$/src/Ventana/Reserva/Reserva.java" />
-        <option value="$PROJECT_DIR$/src/MainClass.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/BannerPelicula.fxml" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalUsuario.fxml" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalAdministrador.css" />
-        <option value="$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalAdministrador.java" />
         <option value="$PROJECT_DIR$/src/Ventana/Login/Login.java" />
-        <option value="$PROJECT_DIR$/src/BaseDeDatos/Funcion.java" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Sala.java" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" />
-        <option value="$PROJECT_DIR$/src/BaseDeDatos/Reserva.java" />
-        <option value="$PROJECT_DIR$/src/BaseDeDatos/Cliente.java" />
-        <option value="$PROJECT_DIR$/src/BaseDeDatos/Pelicula.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" />
         <option value="$PROJECT_DIR$/src/Estructuras/Lista.java" />
+        <option value="$PROJECT_DIR$/src/Estructuras/Accion.java" />
+        <option value="$PROJECT_DIR$/src/Estructuras/Tipo.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/Lista/Listar.fxml" />
+        <option value="$PROJECT_DIR$/src/Ventana/Lista/Pelicula.fxml" />
+        <option value="$PROJECT_DIR$/src/BaseDeDatos/Cliente.java" />
+        <option value="$PROJECT_DIR$/src/BaseDeDatos/Reserva.java" />
+        <option value="$PROJECT_DIR$/src/BaseDeDatos/Pelicula.java" />
+        <option value="$PROJECT_DIR$/src/BaseDeDatos/Funcion.java" />
+        <option value="$PROJECT_DIR$/src/MainClass.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalAdministrador.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/Lista/Listar.java" />
       </list>
     </option>
   </component>
@@ -266,6 +260,20 @@
               <item name="ProyectoCine" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Ventana" type="462c0819:PsiDirectoryNode" />
+              <item name="Lista" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoCine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoCine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Ventana" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoCine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoCine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Ventana" type="462c0819:PsiDirectoryNode" />
               <item name="PrincipalAdministrador" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -306,11 +314,11 @@
       <recent name="Ventana" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Ventana/PrincipalAdministrador" />
+      <recent name="$PROJECT_DIR$/src/Ventana/Lista" />
       <recent name="$PROJECT_DIR$/src/Ventana" />
+      <recent name="$PROJECT_DIR$/src/Ventana/PrincipalAdministrador" />
       <recent name="$PROJECT_DIR$/imagenes" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/Ventana/PeliculaReservas" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -450,16 +458,19 @@
       <workItem from="1524440845103" duration="3544000" />
       <workItem from="1524759341150" duration="522000" />
       <workItem from="1524840596905" duration="342000" />
-      <workItem from="1525041155644" duration="6260000" />
+      <workItem from="1525041155644" duration="7104000" />
+      <workItem from="1525098199246" duration="606000" />
+      <workItem from="1525139594386" duration="595000" />
+      <workItem from="1525151478093" duration="19000" />
+      <workItem from="1525199292040" duration="7492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105274000" />
+    <option name="totallyTimeSpent" value="114830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -469,12 +480,13 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32786885" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3065574" />
       <window_info anchor="bottom" id="Floobits" order="15" weight="0.32913387" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18181819" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19393939" />
       <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -483,7 +495,6 @@
       <window_info anchor="right" id="JetGradle" order="6" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
       <window_info anchor="bottom" id="Changes" order="7" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Profiler" order="9" />
@@ -540,62 +551,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalAdministrador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/Reserva/Reserva.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/Reserva/Reserva.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3108">
-          <caret line="148" column="47" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -788,34 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/Login/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="92" column="40" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalAdministrador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Reserva.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="54" column="26" lean-forward="true" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -834,16 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
@@ -851,31 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="81" column="6" lean-forward="true" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Funcion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="110" column="43" lean-forward="true" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Pelicula.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-444">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-          <folding>
-            <element signature="e#954#955#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -892,6 +784,128 @@
             <element signature="e#2784#2785#0" expanded="true" />
             <element signature="e#3730#3731#0" expanded="true" />
             <element signature="e#3773#3774#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Estructuras/Accion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Estructuras/Tipo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/Lista/Listar.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/BannerPelicula.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/Lista/Pelicula.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Pelicula.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="121" column="64" selection-start-line="121" selection-start-column="64" selection-end-line="121" selection-end-column="64" />
+          <folding>
+            <element signature="e#954#955#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Funcion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="162" column="27" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Reserva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="123" column="23" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
+          <folding>
+            <element signature="e#761#762#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/Lista/Cliente.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/Login/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="79" column="70" selection-start-line="79" selection-start-column="70" selection-end-line="79" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalAdministrador/PrincipalAdministrador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding>
+            <element signature="e#1770#1771#0" expanded="true" />
+            <element signature="e#1838#1839#0" expanded="true" />
+            <element signature="e#1926#1927#0" expanded="true" />
+            <element signature="e#1994#1995#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="110" column="43" lean-forward="true" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cliente.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/Lista/Listar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-93">
+          <caret line="146" column="58" lean-forward="true" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
+          <folding>
+            <element signature="e#2832#2833#0" expanded="true" />
+            <element signature="e#2863#2864#0" expanded="true" />
           </folding>
         </state>
       </provider>

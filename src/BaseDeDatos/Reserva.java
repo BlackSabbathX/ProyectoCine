@@ -30,6 +30,16 @@ public class Reserva implements Comparable<Reserva> {
         return reservas;
     }
 
+    public static Lista<Reserva> getReservas(Cliente cliente) {
+        Lista<Reserva> r = new Lista<>();
+        for (Reserva re : reservas) {
+            if (re.getCliente() == cliente) {
+                r.add(re);
+            }
+        }
+        return r;
+    }
+
     public static void init(StackPane content) {
         reservas = new Lista<>();
         _pos = 0;
@@ -109,6 +119,18 @@ public class Reserva implements Comparable<Reserva> {
         if (i >= 0 && i < reservas.size()) {
             reservas.removeAt(i);
         }
+    }
+
+    public static void removeByCliente(Cliente cliente) {
+        Lista<Reserva> n = new Lista<>();
+        for (Reserva r : reservas) {
+            if (r.getCliente() != cliente) {
+                n.add(r);
+            }
+        }
+        reservas = n;
+        Reserva.save(null);
+        Reserva.load(null);
     }
 
     public static int getItemCount() {
