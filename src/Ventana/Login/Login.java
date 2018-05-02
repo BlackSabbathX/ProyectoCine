@@ -88,6 +88,7 @@ public class Login implements Initializable, DraggedScene {
         if (_usuario.getTipo() == TipoUsuario.Usuario) {
             Actual.setUsuario(_usuario);
             Actual.setCliente(Cliente.getClienteAt(Cliente.indexOf(u)));
+            PrincipalUsuario.controlador.loadPeliculas();
             PrincipalUsuario.toogleVisible();
         } else {
             Actual.setUsuario(_usuario);

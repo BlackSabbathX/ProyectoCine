@@ -144,6 +144,8 @@ public class Pago implements Initializable, DraggedScene {
         }
         int cod = BaseDeDatos.Reserva.generateId();
         BaseDeDatos.Reserva.add(cod, Actual.getFuncion(), Actual.getCliente());
+        BaseDeDatos.Reserva.save(content);
+        BaseDeDatos.Reserva.load(content);
         limpiar();
         codigo.setText("Transacción exitosa, codigo");
         total.setText(String.valueOf(cod));

@@ -1,18 +1,25 @@
 package Ventana.Agregar.Pelicula;
 
-import BaseDeDatos.Actual;
 import Ventana.DraggedScene;
-import Ventana.Reserva.Reserva;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.controlsfx.control.Rating;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
 
 public class Pelicula implements Initializable, DraggedScene {
@@ -22,79 +29,176 @@ public class Pelicula implements Initializable, DraggedScene {
     @FXML
     private StackPane content;
     @FXML
-    private JFXTextField tarjeta;
+    private JFXTextField nombre;
     @FXML
-    private JFXTextField mes;
+    private JFXTextField autor;
     @FXML
-    private JFXTextField ano;
+    private JFXTextField genero;
     @FXML
-    private JFXTextField ccv;
+    private Label estado;
     @FXML
-    private Label total;
+    private Rating rate;
     @FXML
-    private Label codigo;
+    private JFXButton portada;
     @FXML
     private AnchorPane pane;
+    private boolean portadaSelec;
+    private String porName;
 
     public static void toogleVisible() {
-        if (agPelicula.isShowing()) {
-            agPelicula.hide();
-        } else {
-            agPelicula.show();
-        }
+        agPelicula.show();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.onDraggedScene(pane);
-        tarjeta.focusedProperty().addListener(observable -> tarjeta.setUnFocusColor(Color.WHITE));
-        mes.focusedProperty().addListener(observable -> mes.setUnFocusColor(Color.WHITE));
-        ano.focusedProperty().addListener(observable -> ano.setUnFocusColor(Color.WHITE));
-        ccv.focusedProperty().addListener(observable -> ccv.setUnFocusColor(Color.WHITE));
+        nombre.focusedProperty().addListener(observable -> nombre.setUnFocusColor(Color.WHITE));
+        autor.focusedProperty().addListener(observable -> autor.setUnFocusColor(Color.WHITE));
+        genero.focusedProperty().addListener(observable -> genero.setUnFocusColor(Color.WHITE));
+        portadaSelec = false;
+        porName = "";
+    }
+
+    @FXML
+    public void seleccionarPortada() {
+        FileChooser chooser = new FileChooser();
+        chooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+                new FileChooser.ExtensionFilter("JPEG", "*.jpeg")
+        );
+        File p = chooser.showOpenDialog(agPelicula);
+        if (p != null) {
+            try {
+                Files.copy(Paths.get(p.getAbsolutePath()), Paths.get(new File("portada/" + p.getName()).getAbsolutePath()), StandardCopyOption.REPLACE_EXISTING);
+                portadaSelec = true;
+                porName = p.getName();
+                portada.setText(porName);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
     void confirmar() {
-        if (tarjeta.getText().isEmpty()) {
-            tarjeta.setUnFocusColor(Color.RED);
+        if (nombre.getText().isEmpty()) {
+            nombre.setUnFocusColor(Color.RED);
+            estado.setStyle("" +
+                    "-fx-background-color:  #ff371e;" +
+                    "-fx-text-fill: #000000;");
+            estado.setText("El nombre es obligatorio");
+            new Thread(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(() -> {
+                    estado.setStyle("" +
+                            "-fx-background-color: #6d3ed0;" +
+                            "-fx-text-fill: #ffffff;");
+                    estado.setText("Complete la información de la pelicula");
+                });
+            }).start();
             return;
         }
-        if (mes.getText().isEmpty()) {
-            mes.setUnFocusColor(Color.RED);
+        if (autor.getText().isEmpty()) {
+            autor.setUnFocusColor(Color.RED);
+            estado.setStyle("" +
+                    "-fx-background-color:  #ff371e;" +
+                    "-fx-text-fill: #000000;");
+            estado.setText("El/La autor(a) es obligatorio");
+            new Thread(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(() -> {
+                    estado.setStyle("" +
+                            "-fx-background-color: #6d3ed0;" +
+                            "-fx-text-fill: #ffffff;");
+                    estado.setText("Complete la información de la pelicula");
+                });
+            }).start();
             return;
         }
-        if (ano.getText().isEmpty()) {
-            ano.setUnFocusColor(Color.RED);
+        if (genero.getText().isEmpty()) {
+            genero.setUnFocusColor(Color.RED);
+            estado.setStyle("" +
+                    "-fx-background-color:  #ff371e;" +
+                    "-fx-text-fill: #000000;");
+            estado.setText("El genero es obligatorio");
+            new Thread(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(() -> {
+                    estado.setStyle("" +
+                            "-fx-background-color: #6d3ed0;" +
+                            "-fx-text-fill: #ffffff;");
+                    estado.setText("Complete la información de la pelicula");
+                });
+            }).start();
             return;
         }
-        if (ccv.getText().isEmpty()) {
-            ccv.setUnFocusColor(Color.RED);
+        if (!portadaSelec || porName.trim().equals("")) {
+            estado.setStyle("" +
+                    "-fx-background-color:  #ff371e;" +
+                    "-fx-text-fill: #000000;");
+            estado.setText("La portada es obligatoria");
+            new Thread(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(() -> {
+                    estado.setStyle("" +
+                            "-fx-background-color: #6d3ed0;" +
+                            "-fx-text-fill: #ffffff;");
+                    estado.setText("Complete la información de la pelicula");
+                });
+            }).start();
             return;
         }
-        int cod = BaseDeDatos.Reserva.generateId();
-        BaseDeDatos.Reserva.add(cod, Actual.getFuncion(), Actual.getCliente());
+        BaseDeDatos.Pelicula.add(BaseDeDatos.Pelicula.generateId(), nombre.getText().trim(), genero.getText().trim(), autor.getText().trim(), rate.getRating(), "portada/" + porName);
+        BaseDeDatos.Pelicula.save(content);
+        BaseDeDatos.Pelicula.load(content);
+        estado.setStyle("" +
+                "-fx-background-color:  #8cff66;" +
+                "-fx-text-fill: #000000;");
+        estado.setText(nombre.getText() + " agregada exitosamente.");
         limpiar();
-        codigo.setText("Transacción exitosa, codigo");
-        total.setText(String.valueOf(cod));
-        Reserva.controlador.reservaOkay();
+        new Thread(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            Platform.runLater(() -> {
+                estado.setStyle("" +
+                        "-fx-background-color: #6d3ed0;" +
+                        "-fx-text-fill: #ffffff;");
+                estado.setText("Complete la información de la pelicula");
+            });
+        }).start();
     }
 
     @FXML
     void salida() {
-        toogleVisible();
-    }
-
-    public void mostrar(float valor) {
-        agPelicula.show();
-        limpiar();
-        codigo.setText("Pagos por ventanilla virtual");
-        total.setText("$" + String.valueOf(valor));
+        agPelicula.hide();
     }
 
     private void limpiar() {
-        tarjeta.setText("");
-        ccv.setText("");
-        mes.setText("");
-        ano.setText("");
+        nombre.setText("");
+        autor.setText("");
+        genero.setText("");
+        portada.setText("Click aqui para seleccionar...");
+        rate.setRating(2.5);
+        portadaSelec = false;
+        porName = "";
     }
 }

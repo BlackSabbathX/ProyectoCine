@@ -28,7 +28,7 @@
                                 <Font name="Segoe UI" size="15.0" />
                             </font>
                         </JFXTextField>
-                        <Label fx:id="codigo" alignment="CENTER" layoutY="-6.0" prefHeight="51.0" prefWidth="475.0" style="-fx-background-color: #00006e;" text="  Agregar una sala" textFill="WHITE">
+                        <Label fx:id="codigo" alignment="CENTER" layoutY="-6.0" prefHeight="51.0" prefWidth="475.0" style="-fx-background-color: #00006e;" text="  Agregar un cliente" textFill="WHITE">
                             <font>
                                 <Font name="Segoe UI" size="23.0" />
                             </font>

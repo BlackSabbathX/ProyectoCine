@@ -1,8 +1,6 @@
 package Ventana.SplashScreen;
 
-import BaseDeDatos.Cliente;
-import BaseDeDatos.Reserva;
-import BaseDeDatos.Usuario;
+import BaseDeDatos.*;
 import Ventana.Login.Login;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -33,16 +31,16 @@ public class SplashScreen implements Initializable {
     }
 
     public void startApp() {
-//        Pelicula.init(content);
-//        Sala.init(content);
+        Pelicula.init(content);
+        Sala.init(content);
         Cliente.init(content);
-//        Funcion.init(content);
+        Funcion.init(content);
         Reserva.init(content);
         Usuario.init(content);
-//        Pelicula.load(content);
-//        Sala.load(content);
+        Pelicula.load(content);
+        Sala.load(content);
         Cliente.load(content);
-//        Funcion.load(content);
+        Funcion.load(content);
         Reserva.load(content);
         Usuario.load(content);
         new Thread(() -> {

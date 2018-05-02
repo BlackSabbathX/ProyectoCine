@@ -145,6 +145,7 @@ public class Reserva implements Initializable, DraggedScene {
             for (int j = 0; j < 10; j++) {
                 if (selec[i][j]) {
                     Actual.getFuncion().setDisponibilidad(false, i, j);
+                    Funcion.save(null);
                 }
             }
         }
