@@ -109,5 +109,5 @@ public class PrincipalAdministrador implements Initializable, DraggedScene {
     public void listaC() {
         Listar.toogleVisible(Accion.listar, Tipo.cliente);
     }
-    
+
 }

@@ -4,6 +4,7 @@ import BaseDeDatos.Actual;
 import Ventana.DraggedScene;
 import Ventana.Reserva.Reserva;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -34,6 +35,8 @@ public class Pago implements Initializable, DraggedScene {
     @FXML
     private Label codigo;
     @FXML
+    private Label estado;
+    @FXML
     private AnchorPane pane;
 
     public static void toogleVisible() {
@@ -57,18 +60,86 @@ public class Pago implements Initializable, DraggedScene {
     void confirmar() {
         if (tarjeta.getText().isEmpty()) {
             tarjeta.setUnFocusColor(Color.RED);
+            estado.setStyle("" +
+                    "-fx-background-color:  #ff371e;" +
+                    "-fx-text-fill: #000000;");
+            estado.setText("El numero de la tarjeta es obligatorio");
+            new Thread(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(() -> {
+                    estado.setStyle("" +
+                            "-fx-background-color: #6d3ed0;" +
+                            "-fx-text-fill: #ffffff;");
+                    estado.setText("Medios aceptados");
+                });
+            }).start();
             return;
         }
         if (mes.getText().isEmpty()) {
             mes.setUnFocusColor(Color.RED);
+            estado.setStyle("" +
+                    "-fx-background-color:  #ff371e;" +
+                    "-fx-text-fill: #000000;");
+            estado.setText("La fecha de vencimiento es obligatoria");
+            new Thread(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(() -> {
+                    estado.setStyle("" +
+                            "-fx-background-color: #6d3ed0;" +
+                            "-fx-text-fill: #ffffff;");
+                    estado.setText("Medios aceptados");
+                });
+            }).start();
             return;
         }
         if (ano.getText().isEmpty()) {
             ano.setUnFocusColor(Color.RED);
+            estado.setStyle("" +
+                    "-fx-background-color:  #ff371e;" +
+                    "-fx-text-fill: #000000;");
+            estado.setText("La fecha de vencimiento es obligatoria");
+            new Thread(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(() -> {
+                    estado.setStyle("" +
+                            "-fx-background-color: #6d3ed0;" +
+                            "-fx-text-fill: #ffffff;");
+                    estado.setText("Medios aceptados");
+                });
+            }).start();
             return;
         }
         if (ccv.getText().isEmpty()) {
             ccv.setUnFocusColor(Color.RED);
+            estado.setStyle("" +
+                    "-fx-background-color:  #ff371e;" +
+                    "-fx-text-fill: #000000;");
+            estado.setText("El codigo de seguridad es obligatorio");
+            new Thread(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(() -> {
+                    estado.setStyle("" +
+                            "-fx-background-color: #6d3ed0;" +
+                            "-fx-text-fill: #ffffff;");
+                    estado.setText("Medios aceptados");
+                });
+            }).start();
             return;
         }
         int cod = BaseDeDatos.Reserva.generateId();
@@ -77,6 +148,23 @@ public class Pago implements Initializable, DraggedScene {
         codigo.setText("Transacción exitosa, codigo");
         total.setText(String.valueOf(cod));
         Reserva.controlador.reservaOkay();
+        estado.setStyle("" +
+                "-fx-background-color:  #8cff66;" +
+                "-fx-text-fill: #000000;");
+        estado.setText("Transacción exitosa, codigo de reserva generado");
+        new Thread(() -> {
+            try {
+                Thread.sleep(4000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            Platform.runLater(() -> {
+                estado.setStyle("" +
+                        "-fx-background-color: #6d3ed0;" +
+                        "-fx-text-fill: #ffffff;");
+                estado.setText("Medios de pago");
+            });
+        }).start();
     }
 
     @FXML

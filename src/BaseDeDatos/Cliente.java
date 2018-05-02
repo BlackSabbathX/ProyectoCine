@@ -95,6 +95,7 @@ public class Cliente implements Comparable<Cliente> {
     public static void removeAt(int i) {
         if (i >= 0 && i < clientes.size()) {
             Reserva.removeByCliente(Cliente.getClienteAt(i));
+            Usuario.remove(Cliente.getClienteAt(i).getCedula());
             clientes.removeAt(i);
         }
     }

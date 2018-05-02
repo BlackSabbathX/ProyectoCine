@@ -141,7 +141,7 @@ public class Listar implements Initializable, DraggedScene {
             portada.setImage(new Image(new File(pelicula.getImagen()).toURI().toString()));
             nombre.setText(pelicula.getNombre());
             autor.setText(pelicula.getAutor());
-            numero.setText("" + pelicula.getPos());
+            numero.setText("" + (pelicula.getPos() + 1));
 
             p.setStyle(style);
 
@@ -169,7 +169,7 @@ public class Listar implements Initializable, DraggedScene {
             Label cedula = (Label) p.getChildren().get(2);
 
             nombre.setText(cliente.getNombre());
-            numero.setText("" + cliente.getPos());
+            numero.setText("" + (cliente.getPos() + 1));
             cedula.setText(cliente.getCedula());
 
             p.setStyle(style);
@@ -197,7 +197,7 @@ public class Listar implements Initializable, DraggedScene {
             Label nombre = (Label) p.getChildren().get(1);
 
             nombre.setText(sala.getSala());
-            numero.setText("" + sala.getPos());
+            numero.setText("" + (sala.getPos() + 1));
 
             p.setStyle(style);
 
@@ -225,7 +225,7 @@ public class Listar implements Initializable, DraggedScene {
             Label tiempo = (Label) p.getChildren().get(2);
             Label sala = (Label) p.getChildren().get(3);
 
-            numero.setText("" + funcion.getPos());
+            numero.setText("" + (funcion.getPos() + 1));
             pelicula.setText(funcion.getPelicula().getNombre());
             tiempo.setText(funcion.getTiempo().toString());
             sala.setText(funcion.getSala().getSala());

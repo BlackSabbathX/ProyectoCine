@@ -41,6 +41,23 @@ public class Sala implements Initializable, DraggedScene {
     void confirmar() {
         if (sala.getText().isEmpty()) {
             sala.setUnFocusColor(Color.RED);
+            estado.setStyle("" +
+                    "-fx-background-color:  #ff371e;" +
+                    "-fx-text-fill: #000000;");
+            estado.setText("El nombre de la sala es obligatorio");
+            new Thread(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(() -> {
+                    estado.setStyle("" +
+                            "-fx-background-color: #6d3ed0;" +
+                            "-fx-text-fill: #ffffff;");
+                    estado.setText("Digite el nombre de la sala");
+                });
+            }).start();
             return;
         }
         BaseDeDatos.Sala.add(BaseDeDatos.Sala.generateId(), sala.getText().trim());
@@ -53,7 +70,7 @@ public class Sala implements Initializable, DraggedScene {
         limpiar();
         new Thread(() -> {
             try {
-                Thread.sleep(3000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

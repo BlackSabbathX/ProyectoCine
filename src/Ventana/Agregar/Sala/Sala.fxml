@@ -33,7 +33,7 @@
                                 <Font name="Segoe UI" size="23.0" />
                             </font>
                         </Label>
-                        <Label fx:id="estado" alignment="CENTER" layoutX="-3.0" layoutY="179.0" prefHeight="31.0" prefWidth="481.0" style="-fx-background-color: #6d3ed0;" text="Digite el nombre de la sala" textFill="WHITE">
+                        <Label fx:id="estado" alignment="CENTER" layoutX="-3.0" layoutY="170.0" prefHeight="40.0" prefWidth="481.0" style="-fx-background-color: #6d3ed0;" text="Digite el nombre de la sala" textFill="WHITE">
                             <font>
                                 <Font name="Segoe UI" size="20.0" />
                             </font>

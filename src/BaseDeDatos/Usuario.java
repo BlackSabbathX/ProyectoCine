@@ -110,6 +110,17 @@ public class Usuario implements Comparable<Usuario> {
         return false;
     }
 
+    public static void remove(String usuario) {
+        for (int i = 0; i < usuarios.size(); i++) {
+            if (usuarios.get(i).getUsuario().equals(usuario)) {
+                usuarios.removeAt(i);
+                Usuario.save(null);
+                Usuario.load(null);
+                break;
+            }
+        }
+    }
+
     public static Usuario logear(String _usuario, String _contrasena) {
         for (Usuario usuario : usuarios) {
             if (usuario.getUsuario().equals(_usuario)) {

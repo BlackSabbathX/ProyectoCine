@@ -1,9 +1,8 @@
 package Ventana.Agregar.Cliente;
 
-import BaseDeDatos.Actual;
 import Ventana.DraggedScene;
-import Ventana.Reserva.Reserva;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -22,79 +21,99 @@ public class Cliente implements Initializable, DraggedScene {
     @FXML
     private StackPane content;
     @FXML
-    private JFXTextField tarjeta;
+    private JFXTextField nombre;
     @FXML
-    private JFXTextField mes;
+    private JFXTextField cedula;
     @FXML
-    private JFXTextField ano;
-    @FXML
-    private JFXTextField ccv;
-    @FXML
-    private Label total;
-    @FXML
-    private Label codigo;
+    private Label estado;
     @FXML
     private AnchorPane pane;
 
     public static void toogleVisible() {
-        if (agCliente.isShowing()) {
-            agCliente.hide();
-        } else {
-            agCliente.show();
-        }
+        agCliente.show();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.onDraggedScene(pane);
-        tarjeta.focusedProperty().addListener(observable -> tarjeta.setUnFocusColor(Color.WHITE));
-        mes.focusedProperty().addListener(observable -> mes.setUnFocusColor(Color.WHITE));
-        ano.focusedProperty().addListener(observable -> ano.setUnFocusColor(Color.WHITE));
-        ccv.focusedProperty().addListener(observable -> ccv.setUnFocusColor(Color.WHITE));
+        nombre.focusedProperty().addListener(observable -> nombre.setUnFocusColor(Color.WHITE));
+        cedula.focusedProperty().addListener(observable -> cedula.setUnFocusColor(Color.WHITE));
     }
 
     @FXML
     void confirmar() {
-        if (tarjeta.getText().isEmpty()) {
-            tarjeta.setUnFocusColor(Color.RED);
+        if (nombre.getText().isEmpty()) {
+            nombre.setUnFocusColor(Color.RED);
+            estado.setStyle("" +
+                    "-fx-background-color:  #ff371e;" +
+                    "-fx-text-fill: #000000;");
+            estado.setText("El nombre del cliente es obligatorio");
+            new Thread(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(() -> {
+                    estado.setStyle("" +
+                            "-fx-background-color: #6d3ed0;" +
+                            "-fx-text-fill: #ffffff;");
+                    estado.setText("Digite los datos del cliente");
+                });
+            }).start();
             return;
         }
-        if (mes.getText().isEmpty()) {
-            mes.setUnFocusColor(Color.RED);
+        if (cedula.getText().isEmpty()) {
+            cedula.setUnFocusColor(Color.RED);
+            estado.setStyle("" +
+                    "-fx-background-color:  #ff371e;" +
+                    "-fx-text-fill: #000000;");
+            estado.setText("La cedula del cliente es obligatoria");
+            new Thread(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(() -> {
+                    estado.setStyle("" +
+                            "-fx-background-color: #6d3ed0;" +
+                            "-fx-text-fill: #ffffff;");
+                    estado.setText("Digite los datos del cliente");
+                });
+            }).start();
             return;
         }
-        if (ano.getText().isEmpty()) {
-            ano.setUnFocusColor(Color.RED);
-            return;
-        }
-        if (ccv.getText().isEmpty()) {
-            ccv.setUnFocusColor(Color.RED);
-            return;
-        }
-        int cod = BaseDeDatos.Reserva.generateId();
-        BaseDeDatos.Reserva.add(cod, Actual.getFuncion(), Actual.getCliente());
+        BaseDeDatos.Cliente.add(cedula.getText().trim(), nombre.getText().trim());
+        BaseDeDatos.Cliente.save(content);
+        BaseDeDatos.Cliente.load(content);
+        estado.setStyle("" +
+                "-fx-background-color:  #8cff66;" +
+                "-fx-text-fill: #000000;");
+        estado.setText(nombre.getText() + " agregad@ exitosamente.");
         limpiar();
-        codigo.setText("Transacción exitosa, codigo");
-        total.setText(String.valueOf(cod));
-        Reserva.controlador.reservaOkay();
+        new Thread(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            Platform.runLater(() -> {
+                estado.setStyle("" +
+                        "-fx-background-color: #6d3ed0;" +
+                        "-fx-text-fill: #ffffff;");
+                estado.setText("Digite los datos del cliente");
+            });
+        }).start();
     }
 
     @FXML
     void salida() {
-        toogleVisible();
-    }
-
-    public void mostrar(float valor) {
-        agCliente.show();
-        limpiar();
-        codigo.setText("Pagos por ventanilla virtual");
-        total.setText("$" + String.valueOf(valor));
+        agCliente.hide();
     }
 
     private void limpiar() {
-        tarjeta.setText("");
-        ccv.setText("");
-        mes.setText("");
-        ano.setText("");
+        nombre.setText("");
+        cedula.setText("");
     }
 }
