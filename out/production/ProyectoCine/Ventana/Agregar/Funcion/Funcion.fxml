@@ -1,139 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.text.*?>
-<?import java.net.URL?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" fx:id="pane" prefHeight="393.0" prefWidth="463.0"
-            style="-fx-background-color: #340d9e;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141"
-            fx:controller="Ventana.Agregar.Funcion.Funcion">
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="337.0" prefWidth="475.0" style="-fx-background-color: #340d9e;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana.Agregar.Funcion.Funcion">
     <stylesheets>
-        <URL value="@Funcion.css"/>
+        <URL value="@Funcion.css" />
     </stylesheets>
     <children>
-        <StackPane fx:id="content" prefHeight="393.0" prefWidth="475.0">
+        <StackPane fx:id="content" prefHeight="360.0" prefWidth="475.0">
             <children>
-                <Pane prefHeight="393.0" prefWidth="564.0">
+                <Pane prefHeight="251.0" prefWidth="475.0">
                     <children>
-                        <Label layoutX="12.0" layoutY="61.0" text="Numero de tarjeta ::: " textFill="WHITE">
+                        <Label layoutX="12.0" layoutY="69.0" text="Dia de la semana" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI" size="21.0"/>
+                                <Font name="Segoe UI" size="21.0" />
                             </font>
                         </Label>
-                        <JFXTextField fx:id="tarjeta" focusColor="WHITE" layoutX="207.0" layoutY="61.0"
-                                      prefColumnCount="10" prefHeight="28.0" prefWidth="254.0"
-                                      style="-fx-text-fill: #fff;" unFocusColor="WHITE">
+                        <Label fx:id="codigo" alignment="CENTER" layoutY="-6.0" prefHeight="51.0" prefWidth="475.0" style="-fx-background-color: #00006e;" text="Agregar una Función" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI" size="15.0"/>
-                            </font>
-                        </JFXTextField>
-                        <Label layoutX="12.0" layoutY="101.0" text="Fecha de vencimiento ::: " textFill="WHITE">
-                            <font>
-                                <Font name="Segoe UI" size="21.0"/>
+                                <Font name="Segoe UI" size="23.0" />
                             </font>
                         </Label>
-                        <JFXTextField fx:id="mes" alignment="CENTER" focusColor="WHITE" layoutX="239.0" layoutY="97.0"
-                                      prefColumnCount="2" prefHeight="28.0" prefWidth="50.0"
-                                      style="-fx-text-fill: #fff;" unFocusColor="WHITE">
+                        <Label fx:id="estado" alignment="CENTER" layoutX="-3.0" layoutY="320.0" prefHeight="40.0" prefWidth="481.0" style="-fx-background-color: #6d3ed0;" text="Complete la información de la función" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI" size="15.0"/>
-                            </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="ano" alignment="CENTER" focusColor="WHITE" layoutX="298.0" layoutY="97.0"
-                                      prefColumnCount="2" prefHeight="28.0" prefWidth="72.0"
-                                      style="-fx-text-fill: #fff;" unFocusColor="WHITE">
-                            <font>
-                                <Font name="Segoe UI" size="15.0"/>
-                            </font>
-                        </JFXTextField>
-                        <Label layoutX="373.0" layoutY="99.0" text=" Mes/Año" textFill="WHITE">
-                            <font>
-                                <Font name="Segoe UI Light" size="21.0"/>
+                                <Font name="Segoe UI" size="20.0" />
                             </font>
                         </Label>
-                        <Label layoutX="12.0" layoutY="140.0" text="Codigo de seguridad de tarjeta ::: "
-                               textFill="WHITE">
+                        <JFXButton layoutX="308.0" layoutY="272.0" onAction="#confirmar" prefHeight="31.0" prefWidth="154.0" text="Agregar" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI" size="21.0"/>
-                            </font>
-                        </Label>
-                        <JFXTextField fx:id="ccv" alignment="CENTER" focusColor="WHITE" layoutX="330.0" layoutY="140.0"
-                                      prefColumnCount="3" prefHeight="28.0" prefWidth="86.0"
-                                      style="-fx-text-fill: #fff;" unFocusColor="WHITE">
-                            <font>
-                                <Font name="Segoe UI" size="15.0"/>
-                            </font>
-                        </JFXTextField>
-                        <Label fx:id="codigo" layoutY="-6.0" prefHeight="51.0" prefWidth="475.0"
-                               style="-fx-background-color: #00006e;" text="  Pagos por ventanilla virtual"
-                               textFill="WHITE">
-                            <font>
-                                <Font name="Segoe UI" size="23.0"/>
-                            </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="-4.0" layoutY="246.0" prefHeight="31.0" prefWidth="481.0"
-                               style="-fx-background-color: #6d3ed0;" text="Medios aceptados" textFill="WHITE">
-                            <font>
-                                <Font name="Segoe UI" size="20.0"/>
-                            </font>
-                        </Label>
-                        <ImageView fitHeight="87.0" fitWidth="86.0" layoutX="12.0" layoutY="292.0" pickOnBounds="true"
-                                   preserveRatio="true">
-                            <image>
-                                <Image url="@img/american_128.png"/>
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="87.0" fitWidth="86.0" layoutX="105.0" layoutY="292.0" pickOnBounds="true"
-                                   preserveRatio="true">
-                            <image>
-                                <Image url="@img/dinners_128.png"/>
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="87.0" fitWidth="86.0" layoutX="196.0" layoutY="292.0" pickOnBounds="true"
-                                   preserveRatio="true">
-                            <image>
-                                <Image url="@img/maestro_128.png"/>
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="87.0" fitWidth="86.0" layoutX="286.0" layoutY="292.0" pickOnBounds="true"
-                                   preserveRatio="true">
-                            <image>
-                                <Image url="@img/mastercard_128.png"/>
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="87.0" fitWidth="86.0" layoutX="375.0" layoutY="292.0" pickOnBounds="true"
-                                   preserveRatio="true">
-                            <image>
-                                <Image url="@img/visa_128.png"/>
-                            </image>
-                        </ImageView>
-                        <JFXButton layoutX="308.0" layoutY="196.0" onAction="#confirmar" prefHeight="31.0"
-                                   prefWidth="154.0" text="Confirmar pago" textFill="WHITE">
-                            <font>
-                                <Font name="Segoe UI" size="16.0"/>
+                                <Font name="Segoe UI" size="16.0" />
                             </font>
                         </JFXButton>
-                        <JFXButton layoutX="11.0" layoutY="196.0" onAction="#salida" prefHeight="31.0" prefWidth="145.0"
-                                   text="Salida segura" textFill="WHITE">
+                        <JFXButton layoutX="11.0" layoutY="272.0" onAction="#salida" prefHeight="31.0" prefWidth="145.0" text="Volver" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI" size="16.0"/>
+                                <Font name="Segoe UI" size="16.0" />
                             </font>
                         </JFXButton>
-                        <Label fx:id="total" alignment="CENTER_RIGHT" layoutX="294.0" layoutY="5.0" prefHeight="31.0"
-                               prefWidth="174.0" text="Total" textFill="WHITE">
+                        <Label layoutX="126.0" layoutY="105.0" text="Hora" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Light" size="19.0"/>
+                                <Font name="Segoe UI" size="21.0" />
                             </font>
                         </Label>
-                        <Label layoutX="422.0" layoutY="138.0" text="CCV" textFill="WHITE">
+                        <Label alignment="CENTER_RIGHT" layoutX="67.0" layoutY="142.0" prefHeight="27.0" prefWidth="104.0" text="Pelicula" textFill="WHITE">
                             <font>
-                                <Font name="Segoe UI Light" size="21.0"/>
+                                <Font name="Segoe UI" size="21.0" />
                             </font>
                         </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="71.0" layoutY="181.0" prefHeight="27.0" prefWidth="98.0" text="Sala" textFill="WHITE">
+                            <font>
+                                <Font name="Segoe UI" size="21.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="220.0" text="Valor por entrada" textFill="WHITE">
+                            <font>
+                                <Font name="Segoe UI" size="21.0" />
+                            </font>
+                        </Label>
+                  <JFXComboBox fx:id="dia" focusColor="WHITE" layoutX="184.0" layoutY="69.0" prefHeight="28.0" prefWidth="277.0" unFocusColor="WHITE" />
+                  <JFXComboBox fx:id="hora" focusColor="WHITE" layoutX="184.0" layoutY="104.0" prefHeight="28.0" prefWidth="277.0" unFocusColor="WHITE" />
+                  <JFXComboBox fx:id="pelicula" focusColor="WHITE" layoutX="184.0" layoutY="141.0" prefHeight="28.0" prefWidth="277.0" unFocusColor="WHITE" />
+                  <JFXComboBox fx:id="sala" focusColor="WHITE" layoutX="184.0" layoutY="180.0" prefHeight="28.0" prefWidth="277.0" unFocusColor="WHITE" />
+                  <JFXTextField fx:id="valor" focusColor="WHITE" layoutX="184.0" layoutY="219.0" prefHeight="28.0" prefWidth="277.0" unFocusColor="WHITE" />
                     </children>
                 </Pane>
             </children>

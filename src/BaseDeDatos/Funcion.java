@@ -145,6 +145,13 @@ public class Funcion implements Comparable<Funcion> {
         _pos++;
     }
 
+    public static boolean horasCruzadas(DateTime tiempo, Sala sala) {
+        for (Funcion f : funciones) {
+            if (f.getTiempo().igualQue(tiempo) && f.getSala() == sala) return true;
+        }
+        return false;
+    }
+
     public static void removeAt(int i) {
         if (i >= 0 && i < funciones.size()) {
             Reserva.removeByFuncion(Funcion.getFuncionAt(i));
@@ -165,7 +172,7 @@ public class Funcion implements Comparable<Funcion> {
         Reserva.removeByPelicula(pelicula);
     }
 
-    public static void removeBySala(Sala sala){
+    public static void removeBySala(Sala sala) {
         Lista<Funcion> n = new Lista<>();
         for (Funcion f : funciones) {
             if (f.getSala() != sala) {

@@ -34,9 +34,7 @@ public enum Hora {
     @Override
     public String toString() {
         String h = String.valueOf(hora);
-        String mer = "am";
         if (hora < 10) h = "0" + h;
-        if (hora > 12) mer = "pm";
-        return h + ":00 " + mer;
+        return h + ":00 ";
     }
 }
