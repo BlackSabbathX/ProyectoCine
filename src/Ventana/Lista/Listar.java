@@ -1,7 +1,9 @@
 package Ventana.Lista;
 
 import BaseDeDatos.Cliente;
+import BaseDeDatos.Funcion;
 import BaseDeDatos.Pelicula;
+import BaseDeDatos.Sala;
 import Estructuras.Accion;
 import Estructuras.Tipo;
 import Ventana.DraggedScene;
@@ -64,10 +66,16 @@ public class Listar implements Initializable, DraggedScene {
         String _lista = "";
         switch (_accion) {
             case eliminar:
-                _lista = _lista.concat("Eliminar " + _tipo.name() + "s");
+                if (_tipo == Tipo.cliente)
+                    _lista = "Doble click para eliminar un " + _tipo.name();
+                else
+                    _lista = "Doble click para eliminar una " + _tipo.name();
                 break;
             case listar:
-                _lista = _lista.concat("Lista de " + _tipo.name() + "s");
+                if (_tipo == Tipo.funcion)
+                    _lista = "Lista de " + _tipo.name() + "es";
+                else
+                    _lista = "Lista de " + _tipo.name() + "s";
                 break;
         }
         lista.setText(_lista);
@@ -84,6 +92,13 @@ public class Listar implements Initializable, DraggedScene {
                 }
                 break;
             case funcion:
+                for (Funcion f : Funcion.getFunciones()) {
+                    try {
+                        tabla.getChildren().add(b.nuevoBanner(f));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
                 break;
             case pelicula:
                 for (Pelicula c : Pelicula.getPeliculas()) {
@@ -95,6 +110,13 @@ public class Listar implements Initializable, DraggedScene {
                 }
                 break;
             case sala:
+                for (Sala s : Sala.getSalas()) {
+                    try {
+                        tabla.getChildren().add(b.nuevoBanner(s));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
                 break;
         }
     }
@@ -137,7 +159,6 @@ public class Listar implements Initializable, DraggedScene {
             return p;
         }
 
-
         private Pane nuevoBanner(Cliente cliente) throws IOException {
             Parent parent = FXMLLoader.load(getClass().getResource("/Ventana/Lista/Cliente.fxml"));
 
@@ -158,6 +179,64 @@ public class Listar implements Initializable, DraggedScene {
                     Cliente.removeAt(cliente.getPos());
                     Cliente.save(content);
                     Cliente.load(content);
+                    setContent(accion, tipo);
+                }
+            };
+
+            if (accion == Accion.eliminar)
+                p.setOnMouseClicked(evt);
+            return p;
+        }
+
+        private Pane nuevoBanner(Sala sala) throws IOException {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Ventana/Lista/Sala.fxml"));
+
+            final Pane p = (Pane) parent.lookup("#panel");
+            String style = "-fx-cursor: hand;";
+            Label numero = (Label) p.getChildren().get(0);
+            Label nombre = (Label) p.getChildren().get(1);
+
+            nombre.setText(sala.getSala());
+            numero.setText("" + sala.getPos());
+
+            p.setStyle(style);
+
+            EventHandler evt = (EventHandler<MouseEvent>) event -> {
+                if (event.getClickCount() == 2) {
+                    Sala.removeAt(sala.getPos());
+                    Sala.save(content);
+                    Sala.load(content);
+                    setContent(accion, tipo);
+                }
+            };
+
+            if (accion == Accion.eliminar)
+                p.setOnMouseClicked(evt);
+            return p;
+        }
+
+        private Pane nuevoBanner(Funcion funcion) throws IOException {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Ventana/Lista/Funcion.fxml"));
+
+            final Pane p = (Pane) parent.lookup("#panel");
+            String style = "-fx-cursor: hand;";
+            Label numero = (Label) p.getChildren().get(0);
+            Label pelicula = (Label) p.getChildren().get(1);
+            Label tiempo = (Label) p.getChildren().get(2);
+            Label sala = (Label) p.getChildren().get(3);
+
+            numero.setText("" + funcion.getPos());
+            pelicula.setText(funcion.getPelicula().getNombre());
+            tiempo.setText(funcion.getTiempo().toString());
+            sala.setText(funcion.getSala().getSala());
+
+            p.setStyle(style);
+
+            EventHandler evt = (EventHandler<MouseEvent>) event -> {
+                if (event.getClickCount() == 2) {
+                    Funcion.removeAt(funcion.getPos());
+                    Funcion.save(content);
+                    Funcion.load(content);
                     setContent(accion, tipo);
                 }
             };

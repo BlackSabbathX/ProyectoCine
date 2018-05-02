@@ -84,6 +84,7 @@ public class PrincipalAdministrador implements Initializable, DraggedScene {
 
     @FXML
     public void eliminarF() {
+        Listar.toogleVisible(Accion.eliminar, Tipo.funcion);
     }
 
     @FXML
@@ -93,22 +94,27 @@ public class PrincipalAdministrador implements Initializable, DraggedScene {
 
     @FXML
     public void eliminarS() {
+        Listar.toogleVisible(Accion.eliminar, Tipo.sala);
     }
 
     @FXML
     public void listaP() {
+        Listar.toogleVisible(Accion.listar, Tipo.pelicula);
     }
 
     @FXML
     public void listaS() {
+        Listar.toogleVisible(Accion.listar, Tipo.sala);
     }
 
     @FXML
     public void listaF() {
+        Listar.toogleVisible(Accion.listar, Tipo.funcion);
     }
 
     @FXML
     public void listaC() {
+        Listar.toogleVisible(Accion.listar, Tipo.cliente);
     }
 
     private class Banner {

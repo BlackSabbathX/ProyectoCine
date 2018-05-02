@@ -133,6 +133,42 @@ public class Reserva implements Comparable<Reserva> {
         Reserva.load(null);
     }
 
+    public static void removeByPelicula(Pelicula pelicula) {
+        Lista<Reserva> n = new Lista<>();
+        for (Reserva r : reservas) {
+            if (r.getFuncion().getPelicula() != pelicula) {
+                n.add(r);
+            }
+        }
+        reservas = n;
+        Reserva.save(null);
+        Reserva.load(null);
+    }
+
+    public static void removeByFuncion(Funcion funcion) {
+        Lista<Reserva> n = new Lista<>();
+        for (Reserva r : reservas) {
+            if (r.getFuncion() != funcion) {
+                n.add(r);
+            }
+        }
+        reservas = n;
+        Reserva.save(null);
+        Reserva.load(null);
+    }
+
+    public static void removeBySala(Sala sala) {
+        Lista<Reserva> n = new Lista<>();
+        for (Reserva r : reservas) {
+            if (r.getFuncion().getSala() != sala) {
+                n.add(r);
+            }
+        }
+        reservas = n;
+        Reserva.save(null);
+        Reserva.load(null);
+    }
+
     public static int getItemCount() {
         return reservas.size();
     }

@@ -103,6 +103,7 @@ public class Sala implements Comparable<Sala> {
 
     public static void removeAt(int i) {
         if (i >= 0 && i < salas.size()) {
+            Funcion.removeBySala(Sala.getSalaAt(i));
             salas.removeAt(i);
         }
     }
