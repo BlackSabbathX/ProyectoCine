@@ -57,7 +57,7 @@
                                                       <Font name="Segoe UI" size="14.0" />
                                                    </font>
                                                 </JFXButton>
-                                                <JFXButton layoutX="19.0" layoutY="137.0" onAction="#listaP" prefHeight="28.0" prefWidth="130.0" style="-fx-background-color: #00bfa5;" text="Editar" textFill="WHITE">
+                                                <JFXButton layoutX="19.0" layoutY="137.0" onAction="#listaP" prefHeight="28.0" prefWidth="130.0" style="-fx-background-color: #00bfa5;" text="Lista" textFill="WHITE">
                                                    <font>
                                                       <Font name="Segoe UI" size="14.0" />
                                                    </font>
@@ -86,7 +86,7 @@
                                                       <Font name="Segoe UI" size="14.0" />
                                                    </font>
                                                 </JFXButton>
-                                                <JFXButton layoutX="16.0" layoutY="139.0" onAction="#listaF" prefHeight="28.0" prefWidth="130.0" style="-fx-background-color: #00bfa5;" text="Editar" textFill="WHITE">
+                                                <JFXButton layoutX="16.0" layoutY="139.0" onAction="#listaF" prefHeight="28.0" prefWidth="130.0" style="-fx-background-color: #00bfa5;" text="Lista" textFill="WHITE">
                                                    <font>
                                                       <Font name="Segoe UI" size="14.0" />
                                                    </font>
@@ -115,7 +115,7 @@
                                                       <Font name="Segoe UI" size="14.0" />
                                                    </font>
                                                 </JFXButton>
-                                                <JFXButton layoutX="19.0" layoutY="141.0" onAction="#listaS" prefHeight="28.0" prefWidth="130.0" style="-fx-background-color: #00bfa5;" text="Editar" textFill="WHITE">
+                                                <JFXButton layoutX="19.0" layoutY="141.0" onAction="#listaS" prefHeight="28.0" prefWidth="130.0" style="-fx-background-color: #00bfa5;" text="Lista" textFill="WHITE">
                                                    <font>
                                                       <Font name="Segoe UI" size="14.0" />
                                                    </font>
@@ -144,7 +144,7 @@
                                                       <Font name="Segoe UI" size="14.0" />
                                                    </font>
                                                 </JFXButton>
-                                                <JFXButton layoutX="14.0" layoutY="142.0" onAction="#listaC" prefHeight="28.0" prefWidth="131.0" style="-fx-background-color: #00bfa5;" text="Editar" textFill="WHITE">
+                                                <JFXButton layoutX="14.0" layoutY="142.0" onAction="#listaC" prefHeight="28.0" prefWidth="131.0" style="-fx-background-color: #00bfa5;" text="Lista" textFill="WHITE">
                                                    <font>
                                                       <Font name="Segoe UI" size="14.0" />
                                                    </font>

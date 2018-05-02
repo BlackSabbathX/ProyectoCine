@@ -1,3 +1,7 @@
+import Ventana.Agregar.Cliente.Cliente;
+import Ventana.Agregar.Funcion.Funcion;
+import Ventana.Agregar.Pelicula.Pelicula;
+import Ventana.Agregar.Sala.Sala;
 import Ventana.Lista.Listar;
 import Ventana.Login.Login;
 import Ventana.Pago.Pago;
@@ -39,6 +43,11 @@ public class MainClass extends Application {
         FXMLLoader loaderP = new FXMLLoader(getClass().getResource("/Ventana/Pago/Pago.fxml"));
         FXMLLoader loaderL = new FXMLLoader(getClass().getResource("/Ventana/Lista/Listar.fxml"));
 
+        FXMLLoader loaderAgC = new FXMLLoader(getClass().getResource("/Ventana/Agregar/Cliente/Cliente.fxml"));
+        FXMLLoader loaderAgF = new FXMLLoader(getClass().getResource("/Ventana/Agregar/Funcion/Funcion.fxml"));
+        FXMLLoader loaderAgP = new FXMLLoader(getClass().getResource("/Ventana/Agregar/Pelicula/Pelicula.fxml"));
+        FXMLLoader loaderAgS = new FXMLLoader(getClass().getResource("/Ventana/Agregar/Sala/Sala.fxml"));
+
         Parent rootLG = loaderLG.load();
         Parent rootPU = loaderPU.load();
         Parent rootPA = loaderPA.load();
@@ -47,6 +56,11 @@ public class MainClass extends Application {
         Parent rootR = loaderR.load();
         Parent rootP = loaderP.load();
         Parent rootL = loaderL.load();
+
+        Parent rootAgC = loaderAgC.load();
+        Parent rootAgF = loaderAgF.load();
+        Parent rootAgP = loaderAgP.load();
+        Parent rootAgS = loaderAgS.load();
 
         Scene sceneLG = new Scene(rootLG);
         Scene scenePU = new Scene(rootPU);
@@ -57,6 +71,11 @@ public class MainClass extends Application {
         Scene sceneP = new Scene(rootP);
         Scene sceneL = new Scene(rootL);
 
+        Scene sceneAgC = new Scene(rootAgC);
+        Scene sceneAgF = new Scene(rootAgF);
+        Scene sceneAgP = new Scene(rootAgP);
+        Scene sceneAgS = new Scene(rootAgS);
+
         Login.login = new Stage(StageStyle.UNDECORATED);
         PrincipalUsuario.usuario = new Stage(StageStyle.UNDECORATED);
         PrincipalAdministrador.administrador = new Stage(StageStyle.UNDECORATED);
@@ -65,6 +84,11 @@ public class MainClass extends Application {
         Reserva.reserva = new Stage(StageStyle.UNDECORATED);
         Pago.pago = new Stage(StageStyle.UNDECORATED);
         Listar.listar = new Stage(StageStyle.UNDECORATED);
+
+        Cliente.agCliente = new Stage(StageStyle.UNDECORATED);
+        Funcion.agFuncion = new Stage(StageStyle.UNDECORATED);
+        Pelicula.agPelicula = new Stage(StageStyle.UNDECORATED);
+        Sala.agSala = new Stage(StageStyle.UNDECORATED);
 
         Login.login.setScene(sceneLG);
         PrincipalUsuario.usuario.setScene(scenePU);
@@ -75,6 +99,11 @@ public class MainClass extends Application {
         Pago.pago.setScene(sceneP);
         Listar.listar.setScene(sceneL);
 
+        Cliente.agCliente.setScene(sceneAgC);
+        Funcion.agFuncion.setScene(sceneAgF);
+        Pelicula.agPelicula.setScene(sceneAgP);
+        Sala.agSala.setScene(sceneAgS);
+
         Login.controlador = loaderLG.getController();
         PrincipalUsuario.controlador = loaderPU.getController();
         PrincipalAdministrador.controlador = loaderPA.getController();
@@ -83,6 +112,11 @@ public class MainClass extends Application {
         Reserva.controlador = loaderR.getController();
         Pago.controlador = loaderP.getController();
         Listar.controlador = loaderL.getController();
+
+        Cliente.controlador = loaderAgC.getController();
+        Funcion.controlador = loaderAgF.getController();
+        Pelicula.controlador = loaderAgP.getController();
+        Sala.controlador = loaderAgS.getController();
 
         SplashScreen.toogleVisible();
         SplashScreen.controlador.startApp();
