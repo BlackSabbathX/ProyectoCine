@@ -1,6 +1,8 @@
 package Estructuras;
 
 
+import java.util.Calendar;
+
 public enum Dia {
     lunes(1) {
         @Override
@@ -56,6 +58,29 @@ public enum Dia {
             if (dia.toString().toLowerCase().equals(text.toLowerCase())) return dia;
         }
         return null;
+    }
+
+    public static Dia hoy() {
+        Calendar c = Calendar.getInstance();
+        int d = c.get(Calendar.DAY_OF_WEEK);
+        switch (d) {
+            case 2:
+                return lunes;
+            case 3:
+                return martes;
+            case 4:
+                return miercoles;
+            case 5:
+                return jueves;
+            case 6:
+                return viernes;
+            case 7:
+                return sabado;
+            case 1:
+                return domingo;
+            default:
+                return null;
+        }
     }
 
     private int getNumDia() {

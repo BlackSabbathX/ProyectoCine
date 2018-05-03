@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,6 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="pane" prefHeight="477.0" prefWidth="711.0" style="-fx-background-color: #00bcd4;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana.PrincipalAdministrador.PrincipalAdministrador">
@@ -28,7 +30,14 @@
                      <tabs>
                         <Tab text="Ventas">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane hbarPolicy="NEVER" layoutX="4.0" layoutY="5.0" prefHeight="387.0" prefWidth="707.0" style="-fx-background-color: #0097aa;">
+                                       <content>
+                                          <VBox fx:id="funciones" alignment="TOP_CENTER" prefHeight="385.0" prefWidth="705.0" style="-fx-background-color: #0097aa;" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children></AnchorPane>
                           </content>
                         </Tab>
                         <Tab text="Administrar Datos">

@@ -6,6 +6,7 @@ import Estructuras.DateTime;
 import Estructuras.Dia;
 import Estructuras.Hora;
 import Ventana.DraggedScene;
+import Ventana.PrincipalAdministrador.PrincipalAdministrador;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
@@ -245,6 +246,7 @@ public class Funcion implements Initializable, DraggedScene {
         BaseDeDatos.Funcion.add(BaseDeDatos.Funcion.generateId(), new DateTime(Dia.fromString(dia.getSelectionModel().getSelectedItem()), Hora.fromString(hora.getSelectionModel().getSelectedItem())), Sala.getSalaAt(sala.getSelectionModel().getSelectedIndex()), Pelicula.getPeliculaAt(pelicula.getSelectionModel().getSelectedIndex()), Float.parseFloat(valor.getText().trim()), disponibilidad);
         BaseDeDatos.Funcion.save(content);
         BaseDeDatos.Funcion.load(content);
+        PrincipalAdministrador.controlador.loadContent();
         estado.setStyle("" +
                 "-fx-background-color:  #8cff66;" +
                 "-fx-text-fill: #000000;");

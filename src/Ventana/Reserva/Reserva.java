@@ -1,10 +1,13 @@
 package Ventana.Reserva;
 
 import BaseDeDatos.Actual;
+import BaseDeDatos.Cliente;
 import BaseDeDatos.Funcion;
 import Ventana.DraggedScene;
 import Ventana.Pago.Pago;
 import Ventana.PeliculaReservas.PeliculaReserva;
+import Ventana.PrincipalAdministrador.PrincipalAdministrador;
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -36,6 +39,8 @@ public class Reserva implements Initializable, DraggedScene {
     @FXML
     private StackPane content;
     @FXML
+    private JFXButton pago;
+    @FXML
     private AnchorPane pane;
     private boolean[][] selec;
     private int nselecc;
@@ -58,6 +63,7 @@ public class Reserva implements Initializable, DraggedScene {
 
     public void setFuncion() {
         Funcion _funcion = Actual.getFuncion();
+        if (Actual.getCliente().getCedula().equals("669272262")) pago.setText("Confirmar compra");
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 selec[i][j] = false;
@@ -126,12 +132,23 @@ public class Reserva implements Initializable, DraggedScene {
 
     public void volver() {
         toogleVisible();
-        PeliculaReserva.toogleVisible();
+        if (Actual.getCliente().getCedula().equals("669272262"))
+            PrincipalAdministrador.toogleVisible();
+        else
+            PeliculaReserva.toogleVisible();
     }
 
     public void pagar() {
         if (nselecc <= 0) return;
-        Pago.controlador.mostrar(total);
+        if (Actual.getCliente().getCedula().equals("669272262")) {
+            BaseDeDatos.Reserva.add(BaseDeDatos.Reserva.generateId(), Actual.getFuncion(), Actual.getCliente());
+            BaseDeDatos.Reserva.save(content);
+            BaseDeDatos.Reserva.load(content);
+            reservaOkay();
+            Actual.setCliente(new Cliente("669272262", -1, "Administrador"));
+        } else {
+            Pago.controlador.mostrar(total);
+        }
     }
 
     private void actualizarSaldos(float unitario) {

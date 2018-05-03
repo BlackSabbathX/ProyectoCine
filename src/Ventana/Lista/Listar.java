@@ -1,12 +1,10 @@
 package Ventana.Lista;
 
-import BaseDeDatos.Cliente;
-import BaseDeDatos.Funcion;
-import BaseDeDatos.Pelicula;
-import BaseDeDatos.Sala;
+import BaseDeDatos.*;
 import Estructuras.Accion;
 import Estructuras.Tipo;
 import Ventana.DraggedScene;
+import Ventana.PrincipalAdministrador.PrincipalAdministrador;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -150,6 +148,10 @@ public class Listar implements Initializable, DraggedScene {
                     Pelicula.removeAt(pelicula.getPos());
                     Pelicula.save(content);
                     Pelicula.load(content);
+                    Funcion.save(content);
+                    Funcion.load(content);
+                    Reserva.save(content);
+                    Reserva.load(content);
                     setContent(accion, tipo);
                 }
             };
@@ -179,6 +181,8 @@ public class Listar implements Initializable, DraggedScene {
                     Cliente.removeAt(cliente.getPos());
                     Cliente.save(content);
                     Cliente.load(content);
+                    Reserva.save(content);
+                    Reserva.load(content);
                     setContent(accion, tipo);
                 }
             };
@@ -206,6 +210,10 @@ public class Listar implements Initializable, DraggedScene {
                     Sala.removeAt(sala.getPos());
                     Sala.save(content);
                     Sala.load(content);
+                    Funcion.save(content);
+                    Funcion.load(content);
+                    Reserva.save(content);
+                    Reserva.load(content);
                     setContent(accion, tipo);
                 }
             };
@@ -237,7 +245,10 @@ public class Listar implements Initializable, DraggedScene {
                     Funcion.removeAt(funcion.getPos());
                     Funcion.save(content);
                     Funcion.load(content);
+                    Reserva.save(content);
+                    Reserva.load(content);
                     setContent(accion, tipo);
+                    PrincipalAdministrador.controlador.loadContent();
                 }
             };
 

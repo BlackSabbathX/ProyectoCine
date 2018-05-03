@@ -79,8 +79,13 @@ public class Reserva implements Comparable<Reserva> {
                 String[] registro = linea.split(Separator.A);
                 int _id = Integer.parseInt(registro[0]);
                 Funcion _funcion = Funcion.getFuncionAt(Funcion.indexOf(Integer.parseInt(registro[1])));
-                Cliente _cliente = Cliente.getClienteAt(Cliente.indexOf(registro[2]));
-                add(_id, _funcion, _cliente);
+                if (registro[2].equals("669272262")) {
+                    Cliente _cliente = new Cliente("669272262", -1, "Administrador");
+                    add(_id, _funcion, _cliente);
+                } else {
+                    Cliente _cliente = Cliente.getClienteAt(Cliente.indexOf(registro[2]));
+                    add(_id, _funcion, _cliente);
+                }
                 linea = lector.readLine();
             }
             lector.close();
@@ -129,8 +134,6 @@ public class Reserva implements Comparable<Reserva> {
             }
         }
         reservas = n;
-        Reserva.save(null);
-        Reserva.load(null);
     }
 
     public static void removeByPelicula(Pelicula pelicula) {
@@ -141,8 +144,6 @@ public class Reserva implements Comparable<Reserva> {
             }
         }
         reservas = n;
-        Reserva.save(null);
-        Reserva.load(null);
     }
 
     public static void removeByFuncion(Funcion funcion) {
@@ -153,8 +154,6 @@ public class Reserva implements Comparable<Reserva> {
             }
         }
         reservas = n;
-        Reserva.save(null);
-        Reserva.load(null);
     }
 
     public static void removeBySala(Sala sala) {
@@ -165,8 +164,6 @@ public class Reserva implements Comparable<Reserva> {
             }
         }
         reservas = n;
-        Reserva.save(null);
-        Reserva.load(null);
     }
 
     public static int getItemCount() {

@@ -1,6 +1,7 @@
 package BaseDeDatos;
 
 import Estructuras.DateTime;
+import Estructuras.Dia;
 import Estructuras.Lista;
 import Estructuras.Separator;
 import Ventana.Dialog;
@@ -41,6 +42,16 @@ public class Funcion implements Comparable<Funcion> {
         Lista<Funcion> _funciones = new Lista<>();
         for (Funcion f : funciones) {
             if (f.getPelicula().equals(_pelicula)) {
+                _funciones.add(f);
+            }
+        }
+        return _funciones;
+    }
+
+    public static Lista<Funcion> getFunciones(Dia dia) {
+        Lista<Funcion> _funciones = new Lista<>();
+        for (Funcion f : funciones) {
+            if (f.getTiempo().getDia() == dia) {
                 _funciones.add(f);
             }
         }
@@ -167,9 +178,6 @@ public class Funcion implements Comparable<Funcion> {
             }
         }
         funciones = n;
-        Funcion.save(null);
-        Funcion.load(null);
-        Reserva.removeByPelicula(pelicula);
     }
 
     public static void removeBySala(Sala sala) {
@@ -180,9 +188,6 @@ public class Funcion implements Comparable<Funcion> {
             }
         }
         funciones = n;
-        Funcion.save(null);
-        Funcion.load(null);
-        Reserva.removeBySala(sala);
     }
 
     public static int getItemCount() {
